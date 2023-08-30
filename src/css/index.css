@@ -1,0 +1,12 @@
+/* @import './common'; */
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+@import './general.css';
+@import './header.css';
+@import './categoriesList.css';
+@import './fondsList.css';
+@import './content.css';
+@import './modalBook.css';
+@import './burgerMenu.css';
+@import './loginization.css';
+@import './shoppingList.css';

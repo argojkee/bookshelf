@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Save the Children",
+    "url": "https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",
+    "img": "../fonds-svg/save-children.svg"
+  },
+  {
+    "title": "Project HOPE",
+    "url": "https://www.projecthope.org/country/ukraine/",
+    "img": "../fonds-svg/project-hope.svg"
+  },
+  {
+    "title": "UNITED24",
+    "url": "https://u24.gov.ua/uk",
+    "img": "../fonds-svg/united-24.svg"
+  },
+  {
+    "title": "International Medical Corps",
+    "url": "https://internationalmedicalcorps.org/country/ukraine/",
+    "img": "../fonds-svg/medical-corps.svg"
+  },
+  {
+    "title": "Medicins Sans Frontieres",
+    "url": "https://www.msf.org/ukraine",
+    "img": "../fonds-svg/sans-frontieres.svg"
+  },
+  {
+    "title": "RAZOM",
+    "url": "https://www.razomforukraine.org/",
+    "img": "../fonds-svg/razom.svg"
+  },
+  {
+    "title": "Action against hunger",
+    "url": "https://www.actionagainsthunger.org/location/europe/ukraine/",
+    "img": "../fonds-svg/against-hunger.svg"
+  },
+  {
+    "title": "World vision",
+    "url": "https://www.wvi.org/emergencies/ukraine",
+    "img": "../fonds-svg/world-vision.svg"
+  },
+  {
+    "title": "Serhiy Prytula Charity Foundation",
+    "url": "https://prytulafoundation.org/en",
+    "img": "../fonds-svg/pritula.svg"
+  }
+]
