@@ -1,6 +1,48 @@
+.title-categoris {
+  margin-top: 40px;
+  margin-left: 24px;
+
+color: var(--primary-stilization-color);
+font-family: DM Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; 
+letter-spacing: -0.36px;
+text-transform: uppercase;
+
+}
+
+.list-category:hover ~ .title-categoris,
+.list-category:focus ~ .title-categoris {
+  color: rgba(17, 17, 17, 0.60);
+}
+
 .categories-container {
   width: 328px;
-  height: 472px;
-  overflow: auto;
-  border: 1px solid #ccc;
+
+  max-height: 472px;
+  overflow-y: scroll;
+
+  border: transparent;
+  margin-left: 24px;
+}
+
+.list-category{
+  list-style: none;
+
+color: rgba(17, 17, 17, 0.60);
+font-family: DM Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 133.333% */
+letter-spacing: -0.36px;
+
+margin-top: 32px;
+}
+
+.list-category:hover,
+.list-category:focus {
+  color: var(--primary-stilization-color);
 }
