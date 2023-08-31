@@ -1,4 +1,3 @@
-
 //ф-ція для створення розмітки, яка видає топ книг
 export function renderMarkupTopBooks(array) {
   const markup = `<ul class="content_list_categories">${array
@@ -28,34 +27,32 @@ export function renderMarkupTopBooks(array) {
     })
     .join('')}</ul>`;
 
-    // const btnSeeMore = document.querySelector('.content_container_btn');
-    // btnSeeMore.addEventListener('submit', handleSumitSeeMore);
+  // const btnSeeMore = document.querySelector('.content_container_btn');
+  // btnSeeMore.addEventListener('submit', handleSumitSeeMore);
   return markup;
 }
 
 function handleSumitSeeMore(e) {
-    e.preventDefault();
-    // далі узнати категорію на яку клацнули
+  e.preventDefault();
+  // далі узнати категорію на яку клацнули
 }
 
 // визначаємо, кількість книг в одній категорії в залежності від розміру екрана
 function countTopBooks(index) {
   if (document.documentElement.clientWidth < 768) {
-     return 1;
-   } else if (
-     document.documentElement.clientWidth > 767 &&
+    return 1;
+  } else if (
+    document.documentElement.clientWidth > 767 &&
     document.documentElement.clientWidth < 1440
-    
   ) {
-     return 3;
+    return 3;
   } else if (document.documentElement.clientWidth > 1439) {
-     return 5;
+    return 5;
   }
-  
 }
 
 export function renderError(error) {
-    return `<div class="content-error">
+  return `<div class="content-error">
          ERROR
     </div>`;
 }
