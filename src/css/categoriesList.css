@@ -1,0 +1,6 @@
+.categories-container {
+  width: 328px;
+  height: 472px;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
