@@ -1,0 +1,58 @@
+.content{
+    /* width: 100%; */
+}
+
+.content_item{
+    width: 100%;
+}
+
+.content__image{
+    width: 100px;
+}
+.content-info{
+    display: block;
+}
+
+/* заголовок */
+.title-container-topBooks{
+    margin-bottom: 40px;
+}
+
+/* синя частина заголовка*/
+.title_blue{
+    color: var(--primary-stilization-color);
+}
+
+/* категорія книг */
+.content_kategory_name{
+    margin-bottom: 18px;
+}
+
+.hidden{
+    display: none;
+}
+
+.hidden{
+    display: none;
+}
+/* кнопка SEE MORE */
+
+.content_container_btn{
+    display: block;
+     margin-left: auto;
+}
+
+.content_btnSeeMore{
+    width: 124px;
+    height: 46px;
+    border-radius: 40px;
+    border: 2px solid var(--primary-stilization-color);
+    padding: 14px, 28px, 14px, 28px;
+    /* background-color: red; */
+}
+
+.content-error{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
