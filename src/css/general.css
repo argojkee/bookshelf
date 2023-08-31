@@ -104,7 +104,13 @@ button {
     padding-right: 32px;
   }
 
+  .content_list{
+    display: flex;
+  }
   
+  .content_item{
+    width: calc(100% / 4);
+}
 }
 
 @media screen and (min-width: 1440px) {

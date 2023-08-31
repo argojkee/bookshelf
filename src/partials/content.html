@@ -1,17 +1,24 @@
 <!-- список книг -->
 <div class="container-books">
     <h1 class="title-container-topBooks">Best sellers <span class="title_blue"> books </span></h1>
-    <!-- <ul class="content_item">
-        <span id="content_kategory_name">назва категорії</span>
-        <li class="party_topBooks"> 
-
-           <a class="content__link" href="${event.largeImageURL}" >
-             <img class="content__image" src="${event.webformatURL}" alt="${event.tags}" loading="lazy"  />
-           </a>
-           <div class="content-info">
-            <span id="content_book_name">назва книги</span>
-            <span id="content_book_author">автор книги</span>
-            </div>
-        </li> 
+    
+    <!-- <ul class="content_categoty_item">
+        <li>
+        <span class="content_kategory_name">*****${list_name}</span>
+        <ul>
+         <div class="content_list">                              
+            <li class="content_part ${index >= count ? 'hidden' : ''}"> 
+                <a class="content__link" href="${book_image}" >
+                  <img class="content__image" src="${book_image}" alt="${title}" loading="lazy"  />
+                </a>           
+                <p id="content_book_name">${title}</p>
+                <p id="content_book_author">${author}</p>
+            </li>
+         </div>
+        </ul>
+       <div class="btn_seeMore">
+                <button type="button" class="btn" data-action="save">SEE MORE</button>
+       </div>
     </ul> -->
+
 </div>

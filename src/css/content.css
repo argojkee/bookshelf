@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.content_part{
+.content_item{
     width: 100%;
 }
 
@@ -32,10 +32,27 @@
     display: none;
 }
 
-
+.hidden{
+    display: none;
+}
 /* кнопка SEE MORE */
+
 .btn_seeMore{
+    display: block;
+     margin-left: auto;
+}
+
+.btn{
     width: 124px;
     height: 46px;
+    border-radius: 40px;
+    border: 2px solid var(--primary-stilization-color);
+    padding: 14px, 28px, 14px, 28px;
+    /* background-color: red; */
+}
+
+.content-error{
+    width: 200px;
+    height: 200px;
     background-color: red;
 }
