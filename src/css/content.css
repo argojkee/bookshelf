@@ -1,5 +1,5 @@
 .content{
-    width: 100%;
+    /* width: 100%; */
 }
 
 .content_item{
@@ -7,7 +7,7 @@
 }
 
 .content__image{
-    width: 100%;
+    width: 100px;
 }
 .content-info{
     display: block;
@@ -37,12 +37,12 @@
 }
 /* кнопка SEE MORE */
 
-.btn_seeMore{
+.content_container_btn{
     display: block;
      margin-left: auto;
 }
 
-.btn{
+.content_btnSeeMore{
     width: 124px;
     height: 46px;
     border-radius: 40px;

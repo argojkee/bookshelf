@@ -17,7 +17,7 @@ function getTopBooks() {
 //якщо дані витягуємо вдало, то кладемо їх в масив
 function renderData(data) {
   if (data.length === 0) {
-    console.log('немає книг, потрібно показати картинку про це');
+    //немає книг, потрібно показати картинку про це');
     let markup = renderError(data);
     containerBook.insertAdjacentHTML('beforeend', markup);
     return;
@@ -25,7 +25,6 @@ function renderData(data) {
 
   let markup = renderMarkupTopBooks(data);
   containerBook.insertAdjacentHTML('beforeend', markup);
-  console.log(markup);
 }
 
 //якщо помилка, то оброблюємо помилку

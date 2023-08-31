@@ -1,3 +1,4 @@
+
 //ф-ція для створення розмітки, яка видає топ книг
 export function renderMarkupTopBooks(array) {
   const markup = `<ul class="content_list_categories">${array
@@ -20,14 +21,21 @@ export function renderMarkupTopBooks(array) {
           </li>`;
         })
         .join('')}</ul>
-          <div class="btn_seeMore">
-                <button type="button" class="btn" data-action="save">SEE MORE</button>
+          <div class="content_container_btn">
+                <button type="button" class="content_btnSeeMore" action="submit">SEE MORE</button>
        </div>
        </li>`;
     })
     .join('')}</ul>`;
-console.log(markup);
+
+    // const btnSeeMore = document.querySelector('.content_container_btn');
+    // btnSeeMore.addEventListener('submit', handleSumitSeeMore);
   return markup;
+}
+
+function handleSumitSeeMore(e) {
+    e.preventDefault();
+    // далі узнати категорію на яку клацнули
 }
 
 // визначаємо, кількість книг в одній категорії в залежності від розміру екрана
@@ -39,10 +47,8 @@ function countTopBooks(index) {
     document.documentElement.clientWidth < 1440
     
   ) {
-    console.log('check: 3');
      return 3;
   } else if (document.documentElement.clientWidth > 1439) {
-    console.log('check: 5');
      return 5;
   }
   
