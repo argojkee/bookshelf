@@ -1,0 +1,12 @@
+.shopping-list-delete-btn {
+    background-color: #4F2EE8;
+    border-radius: 50%;
+}
+
+.shopping-list-wrapper {
+    background-color: var(--main-background-color);
+}
+
+.shopping-list-is-empty-message {
+    text-align: center;
+}
