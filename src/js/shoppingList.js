@@ -17,9 +17,8 @@ const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
 if(books) {
     refs.shoppingListIsEmptyMessage.hidden = true;
+    createMarkup(books);
 }
-
-createMarkup(books);
 
 refs.ul.addEventListener("click", deleteItem);
 
@@ -75,10 +74,10 @@ function deleteItem(event) {
         return;
     }
 
-    const item = event.target.closest('.shopping-list-item').dataset.id;
+    const itemId = event.target.closest('.shopping-list-item').dataset.id;
     const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-    const filteredBooks = books.filter(({_id}) => _id !== item);
+    const filteredBooks = books.filter(({_id}) => _id !== itemId);
     localStorage.removeItem(STORAGE_KEY);
     refs.shoppingListIsEmptyMessage.hidden = false;
 
