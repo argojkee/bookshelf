@@ -1,1 +1,86 @@
+.header{
+  box-sizing: content-box;
+  padding: 18px 20px;
+  border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid #111;
+  max-height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+@media screen and (min-width: 768px) {
+  .header {max-height: 72px;}
+}
+
+
+.header-nav{
+  display: flex;
+  align-items: center;
+}
+
+.header-link{
+
+}
+
+
+.header-home{
+    color: var(--primary-color-text);
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    display: block;
+    }
+
+.li-header-margin{
+  margin-right: 40px;
+  margin-left: 24px;
+}
+
+@media screen and (min-width: 1440px) {
+  .li-header-margin {margin-right: 76px;}
+}
+
+.header-shopping {
+    color: var(--primary-color-text);
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    display: block;
+}
+
+
+.current{
+    display: flex;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 36px;
+    background: #EAC645;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header-home,
+  .header-shopping,
+  .current {
+    display: none;
+  }
+}
+
+
+.icon-pic{
+  stroke: black;
+}
+
+.dark body{
+  background-color: #111;
+  color: #FFF;
+}
+.dark a{color: #FFF;}
