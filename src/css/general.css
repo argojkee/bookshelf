@@ -11,7 +11,9 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-regular.woff') format('woff');
+  src: url('../fonts/dm-sans-v14-latin-regular.woff2') format('woff2'),
+    url('../fonts/dm-sans-regular.woff') format('woff');
+
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -19,7 +21,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-medium.woff2') format('woff2'),
+  src: url('../fonts/dm-sans-v14-latin-500.woff2') format('woff2'),
     url('../fonts/dm-sans-medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
@@ -28,7 +30,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-bold.woff2') format('woff2'),
+  src: url('../fonts/dm-sans-v14-latin-700.woff2') format('woff2'),
     url('../fonts/dm-sans-bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
@@ -37,7 +39,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-italic-regular.woff2') format('woff2'),
+  src: url('../fonts/dm-sans-v14-latin-italic.woff2') format('woff2'),
     url('../fonts/dm-sans-italic-regular.woff') format('woff');
   font-weight: 400;
   font-style: italic;
