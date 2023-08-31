@@ -7,6 +7,7 @@
   --main-background-color-dark-theme: #202024;
   --primary-stilization-color: #4f2ee8;
   --secondary-stilization-color: #eac645;
+  --content-count: 1;
 }
 
 @font-face {
@@ -80,6 +81,7 @@ button {
   .container {
     width: 100%;
   }
+ 
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
@@ -101,6 +103,8 @@ button {
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  
 }
 
 @media screen and (min-width: 1440px) {

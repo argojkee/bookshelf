@@ -1,0 +1,41 @@
+.content{
+    width: 100%;
+}
+
+.content_part{
+    width: 100%;
+}
+
+.content__image{
+    width: 100%;
+}
+.content-info{
+    display: block;
+}
+
+/* заголовок */
+.title-container-topBooks{
+    margin-bottom: 40px;
+}
+
+/* синя частина заголовка*/
+.title_blue{
+    color: var(--primary-stilization-color);
+}
+
+/* категорія книг */
+.content_kategory_name{
+    margin-bottom: 18px;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* кнопка SEE MORE */
+.btn_seeMore{
+    width: 124px;
+    height: 46px;
+    background-color: red;
+}
