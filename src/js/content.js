@@ -20,6 +20,7 @@ function renderData(data) {
     //немає книг, потрібно показати картинку про це');
     let markup = renderError(data);
     containerBook.insertAdjacentHTML('beforeend', markup);
+    console.log(markup);
     return;
   }
 

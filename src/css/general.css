@@ -73,20 +73,37 @@ button {
 }
 
 .container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content_book{
   margin-left: auto;
   margin-right: auto;
 }
-
+.content{
+  width: 100%;
+  background-color: #eac645;
+}
 @media screen and (min-width: 374px) {
   .container {
     width: 100%;
   }
  
+  .content_image{
+    height: 316px;
+  }
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .container {
     width: 375px;
+  }
+  .content_image{
+    height: 316px;
   }
 }
 
@@ -109,7 +126,23 @@ button {
   }
   
   .content_item{
-    width: calc(100% / 4);
+    width: calc(100% / 3);
+}
+
+.content_book{
+    width: 218px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.content__image{    
+    height: 316px;
+}
+
+.content_list_topBooks{
+  display: flex;
+  justify-content: flex-start;
 }
 }
 
@@ -119,4 +152,25 @@ button {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .content{
+  width: 996px;
+  background-color: #eac645;
+}
+
+.content_list_topBooks{
+  display: flex;
+  justify-content: flex-start;
+gap: 72px;
+}
+
+.content_book{
+    width: 180px;
+    height: 256px
+    
+}
+.content__image{
+    height: 256px; 
+    
+}
 }

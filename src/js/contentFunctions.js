@@ -1,14 +1,15 @@
 
 //ф-ція для створення розмітки, яка видає топ книг
 export function renderMarkupTopBooks(array) {
-  const markup = `<ul class="content_list_categories">${array
+  const markup = ` <h1 class="title-container-topBooks">Best sellers <span class="title_blue"> books </span></h1>
+  <ul class="content_list_categories">${array
     .map((katItem, index) => {
       return `<li><span>${
         katItem.list_name
-      }</span><ul class="content_list_topBooks" style="display:flex">${katItem.books
+      }</span><ul class="content_list_topBooks">${katItem.books
         .map((book, indexBook) => {
           let count = countTopBooks(indexBook);
-          return `<li class="content_book  ${
+          return `<li id="${book._id}" class="content_book  ${
             indexBook >= count ? 'hidden' : ''
           }">
           <a  href="${book.book_image}" >
