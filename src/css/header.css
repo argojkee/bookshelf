@@ -1,16 +1,19 @@
 .header{
   box-sizing: content-box;
-  padding: 18px 20px;
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
   max-height: 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
 }
 
 @media screen and (min-width: 768px) {
   .header {max-height: 72px;}
+}
+.header-container {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
