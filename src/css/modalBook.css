@@ -146,6 +146,7 @@ body.dark .modal-book {
   margin-top: 18px;
   overflow-y: scroll;
   max-height: 170px;
+  width: 280px;
 }
 
 .modal-book-buy-list {
