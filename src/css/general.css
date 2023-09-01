@@ -7,11 +7,15 @@
   --main-background-color-dark-theme: #202024;
   --primary-stilization-color: #4f2ee8;
   --secondary-stilization-color: #eac645;
+  --content-count: 1;
 }
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-regular.woff') format('woff');
+  src: url('../fonts/dm-sans-v14-latin-regular.woff2') format('woff2'),
+    url('../fonts/dm-sans-regular.woff') format('woff'),
+    url('../fonts/DMSans-Regular.ttf') format('ttf');
+
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -19,8 +23,9 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-medium.woff2') format('woff2'),
-    url('../fonts/dm-sans-medium.woff') format('woff');
+  src: url('../fonts/dm-sans-v14-latin-500.woff2') format('woff2'),
+    url('../fonts/dm-sans-medium.woff') format('woff'),
+    url('../fonts/DMSans-Medium.ttf') format('ttf');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -28,8 +33,9 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-bold.woff2') format('woff2'),
-    url('../fonts/dm-sans-bold.woff') format('woff');
+  src: url('../fonts/dm-sans-v14-latin-700.woff2') format('woff2'),
+    url('../fonts/dm-sans-bold.woff') format('woff'),
+    url('../fonts/DMSans-Bold.ttf') format('ttf');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -37,8 +43,9 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('../fonts/dm-sans-italic-regular.woff2') format('woff2'),
-    url('../fonts/dm-sans-italic-regular.woff') format('woff');
+  src: url('../fonts/dm-sans-v14-latin-italic.woff2') format('woff2'),
+    url('../fonts/dm-sans-italic-regular.woff') format('woff'),
+    url('../fonts/DMSans-Italic.ttf') format('ttf');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -100,6 +107,14 @@ button {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+  }
+
+  .content_list {
+    display: flex;
+  }
+
+  .content_item {
+    width: calc(100% / 4);
   }
 }
 
