@@ -15,7 +15,7 @@ closeModalBtn.addEventListener('click', closeModal);
 function openModal(event) {
   event.preventDefault();
   //   console.log(event.target.closest('li'));
-  if (!event.target.closest('li')) {
+  if (!event.target.closest('.content_book')) {
     return;
   } else {
     modalBook.classList.toggle('hidden');
