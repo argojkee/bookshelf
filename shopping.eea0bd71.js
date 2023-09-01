@@ -1,2 +1,0 @@
-!function(){document.querySelector(".container-books").addEventListener("click",(function(t){if(t.preventDefault(),!t.target.closest("li"))return;e.classList.toggle("hidden"),e.classList.toggle("active")}));var e=document.querySelector('[data-modal="1"]');document.querySelector(".modal-btn-close").addEventListener("click",(function(t){e.classList.toggle("hidden"),e.classList.toggle("active")}))}();
-//# sourceMappingURL=shopping.eea0bd71.js.map
