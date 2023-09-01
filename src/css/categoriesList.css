@@ -1,41 +1,49 @@
-.all-categories-container{
+.all-categories-container {
   min-width: 307px;
   height: 228px;
-  
+
   margin-top: 40px;
   margin-left: 24px;
   border: 2px solid tomato;
-
 }
 
 @media only screen and (min-width: 768px) {
   .all-categories-container {
-  width: 309px;
-  height: 472px;
-    
+    width: 309px;
+    height: 472px;
   }
 }
 
-@media only screen and (min-width: 1440px){
+@media only screen and (min-width: 1440px) {
   .all-categories-container {
-  width: 328px;
-  height: 472px;
-    
+    width: 328px;
+    height: 472px;
   }
 }
 
+.all-categoris-list:first-child {
+  margin-top: 0;
+}
+
+.all-categoris-list {
+  margin-top: 24px;
+
+}
+
+@media only screen and (min-width: 768px) {
+  .all-categoris-list {
+    margin-top: 32px;
+  }
+}
 
 .all-categoris-title {
-
   color: rgba(17, 17, 17, 0.6);
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.32px;
-  text-transform: uppercase;
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -52,7 +60,7 @@
 }
 
 .all-categories-box {
-  max-height: 200px;
+  max-height: 220px;
   overflow-y: scroll;
 
   border: transparent;
@@ -60,13 +68,11 @@
 
 @media only screen and (min-width: 768px) {
   .all-categories-box {
-    max-height: 444px;
-    
+    max-height: 472px;
   }
 }
 
-
-.all-categoris-list {
+.all-categoris-element {
   list-style: none;
 
   color: rgba(17, 17, 17, 0.6);
@@ -74,29 +80,34 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; 
+  line-height: 18px;
   letter-spacing: -0.32px;
-  margin-top: 24px;
-
+  
 }
 
 @media only screen and (min-width: 768px) {
-  .all-categoris-list {
+  .all-categoris-element {
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.36px;
-    margin-top: 32px;
+    
   }
 }
 
-.all-categoris-list:hover,
-.all-categoris-list:focus {
+.all-categoris-element:hover,
+.all-categoris-element:focus {
   color: var(--primary-stilization-color);
+}
+
+.current{
+  color: var(--primary-stilization-color);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 /* Clases for dark styles in "All categories" path*/
 
-.body.dark .categories-fonds-container {
+.body.dark .categories-fonds-container-dark{
   display: inline-block;
   background-color: var(--header-background-color-dark-theme);
 }
@@ -105,7 +116,7 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-.body.dark .all-categoris-list {
+.body.dark .all-categoris-element {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -114,7 +125,13 @@
   color: var(--secondary-stilization-color);
 }
 
-.body.dark .all-categoris-list:hover,
-.body.dark .all-categoris-list:focus {
+.body.dark .all-categoris-element:hover,
+.body.dark .all-categoris-element:focus {
   color: var(--secondary-stilization-color);
+}
+
+.body.dark .current{
+  color: var(--secondary-stilization-color);
+  text-transform: uppercase;
+  font-weight: 700;
 }
