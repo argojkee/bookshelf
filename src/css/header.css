@@ -73,7 +73,7 @@
   display: block;
 }
 
-.current {
+.header-nav .current {
   display: flex;
   padding: 8px 16px;
   align-items: flex-start;
