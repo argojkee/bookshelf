@@ -47,8 +47,8 @@ function createMarkup(array) {
 }
 
 function showCategoryBook() {
-  event.preventDefault(); 
-  
+  event.preventDefault();
+
   const clickedElement = event.target;
 
   if (!clickedElement.classList.contains('all-categoris-element') 
@@ -59,6 +59,7 @@ function showCategoryBook() {
   const categoryName = clickedElement.dataset.name;
   console.log(`Clicked on category: ${categoryName}`);
   changeCurrent(clickedElement);
+<<<<<<< HEAD
 
   
   // якщо вибрано категорію `All categories` 
@@ -73,22 +74,26 @@ function showCategoryBook() {
     getBooksFromCategories(categoryName);
   }
 
+=======
+>>>>>>> 19b950aa0103bd425daa9ee0839ee5f6eac4e966
 }
-  
-function changeCurrent(curentClic) {
 
-  const allCategoryListItems = document.querySelectorAll('.all-categoris-list a');
+function changeCurrent(curentClic) {
+  const allCategoryListItems = document.querySelectorAll(
+    '.all-categoris-list a'
+  );
   allCategoryListItems.forEach(item => {
     if (item.classList.contains('current')) {
-      elementHaveCurrent = item; 
+      elementHaveCurrent = item;
     }
   });
 
   if (curentClic !== elementHaveCurrent) {
     curentClic.classList.add('current');
     elementHaveCurrent.classList.remove('current');
-    } 
+  }
 }
+<<<<<<< HEAD
 
 function getBooksFromCategories(category) {
   fetchBooksByCategory(category)
@@ -125,3 +130,5 @@ function getBooksFromCategories(category) {
 //     containerBook.insertAdjacentHTML('beforeend', markup);
 // }
 // }
+=======
+>>>>>>> 19b950aa0103bd425daa9ee0839ee5f6eac4e966

@@ -28,7 +28,6 @@
 
 .all-categoris-list {
   margin-top: 24px;
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -83,7 +82,6 @@
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.32px;
-  
 }
 
 @media only screen and (min-width: 768px) {
@@ -91,7 +89,6 @@
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.36px;
-    
   }
 }
 
@@ -100,7 +97,7 @@
   color: var(--primary-stilization-color);
 }
 
-.current{
+.all-categories-container .current {
   color: var(--primary-stilization-color);
   text-transform: uppercase;
   font-weight: 700;
@@ -108,7 +105,7 @@
 
 /* Clases for dark styles in "All categories" path*/
 
-.body.dark .categories-fonds-container-dark{
+.body.dark .categories-fonds-container-dark {
   display: inline-block;
   background-color: var(--header-background-color-dark-theme);
 }
@@ -131,10 +128,13 @@
   color: var(--secondary-stilization-color);
 }
 
-.body.dark .current{
+.body.dark .current {
   color: var(--secondary-stilization-color);
   text-transform: uppercase;
   font-weight: 700;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 19b950aa0103bd425daa9ee0839ee5f6eac4e966
