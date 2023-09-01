@@ -2,17 +2,18 @@
   {
     "title": "Save the Children",
     "url": "https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",
-    "img": "/saveChildren.webp"
+
+    "img": "../images/fondsWebp/fonds-x1/saveChildren.webp"
   },
   {
     "title": "Project HOPE",
     "url": "https://www.projecthope.org/country/ukraine/",
-    "img": "/projectHope.b8af3964.webp"
+    "img": "./images/fondsWebp/fonds-x1/projectHope.webp"
   },
   {
     "title": "UNITED24",
     "url": "https://u24.gov.ua/uk",
-    "img": "/united24.dcb88234.webp"
+    "img": "united24.webp"
   },
   {
     "title": "International Medical Corps",
