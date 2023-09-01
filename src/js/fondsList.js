@@ -12,15 +12,13 @@ import '../images/fondsWebp/fonds-x1/worldVision.webp';
 
 const fundsMarkup = fondlist
   .map((fund, index) => {
-    const element = fund.img;
-
     return `
     <li class="fund-item">
       <a href="${fund.url}" target="_blank">
         <span class="fund-number">${(index + 1)
           .toString()
           .padStart(2, '0')}</span>
-          <img class="fund-image" src="${element}" alt=""/>
+          <img class="fund-image" src="${fund.img}" alt=""/>
       </a>
     </li>
 
