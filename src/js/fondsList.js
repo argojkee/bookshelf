@@ -12,7 +12,7 @@ import '../images/fondsWebp/fonds-x1/worldVision.webp';
 
 const fundsMarkup = fondlist
   .map((fund, index) => {
-    const element = fund.img;
+    const element = `../${fund.img}`;
 
     return `
     <li class="fund-item">
