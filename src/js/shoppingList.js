@@ -50,7 +50,9 @@ function createMarkup(books) {
                 <h3>${title}</h3>
                 <p>${list_name}</p>
                 <button type="button" class="shopping-list-delete-btn">
-                    Delete
+                    <svg class="delete-btn-icon">
+                        <use href="./images/sprite.svg#icon-trash">
+                    </svg>
                 </button>
             </div>
 

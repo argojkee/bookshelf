@@ -10,3 +10,8 @@
 .shopping-list-is-empty-message {
     text-align: center;
 }
+
+.delete-btn-icon {
+    stroke: black;
+    fill: black;
+}
