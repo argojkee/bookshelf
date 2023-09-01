@@ -12,23 +12,27 @@ let numberOfBooksShown = countTopBooks();
 //категорія, по кнопкі якій натиснули
 let selectedCategory = '';
 
-
 const HowManyBooksToLoad = 5;
 const containerBook = document.querySelector('.container-books');
 
 getTopBooks();
 
 function getTopBooks() {
-    fetchToAllBooks()
-        .then(response => {
-            return response
-        })
-        .then(renderData)
-        .catch(errorfetchData);
+  containerBook.innerHTML = '';
+  fetchToAllBooks()
+    .then(response => {
+      return response;
+    })
+    .then(renderData)
+    .catch(errorfetchData);
 }
 export function getTopBooks() {
-  fetchToAllBooks().then(result => { return result.data }).then(renderData).catch(errorfetchData);
-
+  fetchToAllBooks()
+    .then(result => {
+      return result.data;
+    })
+    .then(renderData)
+    .catch(errorfetchData);
 }
 
 function getBooksByCat(butElem, category) {
@@ -61,7 +65,7 @@ export function renderDataBycat(butElem, data) {
 
 //якщо дані витягуємо вдало, то кладемо їх в масив
 function renderData(data) {
-    containerBook.insertAdjacentHTML('beforeend', '');
+  containerBook.insertAdjacentHTML('beforeend', '');
   if (data.length === 0) {
     //немає книг, потрібно показати картинку про це');
     // let markup = renderError(data);

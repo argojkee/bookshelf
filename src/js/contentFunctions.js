@@ -10,7 +10,7 @@ export function renderMarkupTopBooks(array) {
                 <ul class="content_list_topBooks">${kategory.books
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
-                      return `<li id="${book._id}" class="content_book">
+                      return `<li data-id="${book._id}" class="content_book">
                           <a  href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
@@ -34,12 +34,10 @@ export function renderMarkupTopBooks(array) {
 
 // ф-ція приймає книги однієї категорії з бєкенду, вертає масив з книгами цієї категорії
 export function arrayBooksByCategory(array) {
-  return books = array.map(book => {
-    return book
-  })
-
+  return (books = array.map(book => {
+    return book;
+  }));
 }
-
 
 // визначаємо, кількість книг в одній категорії в залежності від розміру екрана
 export function countTopBooks() {
