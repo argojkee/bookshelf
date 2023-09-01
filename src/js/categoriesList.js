@@ -1,7 +1,7 @@
 import { fetchCategoriesList } from '../services/books-api';
 
 const refs = {
-  container: document.querySelector(`.categories-container`),
+  container: document.querySelector(`.all-categories-box`),
 };
 
 console.log(`privet`);
@@ -24,7 +24,7 @@ function createMarkup(array) {
     .map(
       categori =>
         `<ul>
-            <li class="list-category">${categori.list_name}</li>
+            <li class="all-categoris-list">${categori.list_name}</li>
         </ul> 
         `
     )
