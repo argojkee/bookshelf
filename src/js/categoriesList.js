@@ -37,33 +37,27 @@ function createMarkup(array) {
 }
 
 function showCategoryBook() {
-  event.preventDefault(); 
-  
+  event.preventDefault();
+
   const clickedElement = event.target;
 
   const categoryName = clickedElement.dataset.name;
   console.log(`Clicked on category: ${categoryName}`);
   changeCurrent(clickedElement);
-
-
-
-
-  
 }
-  
-function changeCurrent(curentClic) {
 
-  const allCategoryListItems = document.querySelectorAll('.all-categoris-list a');
+function changeCurrent(curentClic) {
+  const allCategoryListItems = document.querySelectorAll(
+    '.all-categoris-list a'
+  );
   allCategoryListItems.forEach(item => {
     if (item.classList.contains('current')) {
-      elementHaveCurrent = item; 
+      elementHaveCurrent = item;
     }
   });
 
   if (curentClic !== elementHaveCurrent) {
     curentClic.classList.add('current');
     elementHaveCurrent.classList.remove('current');
-    } 
+  }
 }
-
-
