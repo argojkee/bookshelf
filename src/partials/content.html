@@ -6,7 +6,7 @@
     <ul class="content_list_categories">    
       <li><span>імя категорії</span>
         <ul class="content_list_topBooks">
-            <li class="content_book  ${indexBook >= count ? 'hidden' : ''}">
+            <li id="${book._id}" class="content_book">
             <a  href="${book.book_image}" >
             <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
             </a>

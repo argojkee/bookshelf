@@ -8,8 +8,8 @@ export const fetchToAllBooks = () => {
   return fetch(`${BASE_URL}top-books`);
 };
 
-export const fetchBooksByCategory = categoryName => {
-  return fetch(`${BASE_URL}category?category=${categoryName}`);
+export const fetchBooksByCategory = async categoryName => {
+  return await fetch(`${BASE_URL}category?category=${categoryName}`);
 };
 
 export const fetchBookById = bookId => {

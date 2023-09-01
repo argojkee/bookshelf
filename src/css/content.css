@@ -9,7 +9,7 @@
 
 .content__image{
     width: 100%;
-    height: 485px;
+    /* height: 485px; */
 }
 .content-info{
     display: block;
@@ -39,12 +39,12 @@
 }
 /* кнопка SEE MORE */
 
-.content_container_btn{
-    display: block;
-     margin-left: auto;
-}
+
 
 .content_btnSeeMore{
+    display: block;
+    margin-left: auto;
+    margin-bottom: 40px;
     width: 124px;
     height: 46px;
     border-radius: 40px;
@@ -57,4 +57,13 @@
     width: 200px;
     height: 200px;
     background-color: red;
+}
+
+/* заголовок категорії */
+.content_category{
+    margin-bottom: 18px;
+}
+
+.content_list_topBooks{
+    margin-bottom: 10px;
 }

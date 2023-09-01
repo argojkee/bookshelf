@@ -103,14 +103,20 @@ button {
     width: 375px;
   }
   .content_image{
+    width: calc((100% / 3)- 4*32 );
     height: 316px;
   }
+
 }
 
 @media screen and (max-width: 767px) {
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .content_image{
+    width: calc((100% / 3)- 4*32 );
+    height: 316px;
   }
 }
 
@@ -136,13 +142,16 @@ button {
     background-size: cover;
     background-position: center;
 }
-.content__image{    
-    height: 316px;
-}
+
 
 .content_list_topBooks{
   display: flex;
   justify-content: flex-start;
+}
+
+.content__image{ 
+  width: calc((100% / 5) - (6*24)) ; 
+  height: 256px;
 }
 }
 
@@ -154,14 +163,16 @@ button {
   }
 
   .content{
-  width: 996px;
+  
   background-color: #eac645;
 }
 
 .content_list_topBooks{
   display: flex;
-  justify-content: flex-start;
-gap: 72px;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-around;
+
 }
 
 .content_book{
@@ -169,8 +180,5 @@ gap: 72px;
     height: 256px
     
 }
-.content__image{
-    height: 256px; 
-    
-}
+
 }
