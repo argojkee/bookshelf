@@ -1,0 +1,65 @@
+html {
+    /* for smooth scrolling "Up" by button */
+   scroll-behavior: smooth;
+}
+
+.buttonup-case {
+   position: fixed;
+   display: flex;
+
+   background-color: rgb(79, 46, 232, 0.3);
+   backdrop-filter: blur(2px);
+   border: none;
+   border-radius: 50%;
+
+   top: calc(100vw / 2);
+   right: 10px;
+
+   width: 64px;
+   height: 64px;
+   padding: 5px;
+   visibility: hidden;
+
+}
+
+.sec {
+   padding: 0 30px;
+}
+
+@keyframes animaUp {
+   50% {padding-bottom: 0;}
+   100% {padding-top: 0;
+      padding-bottom: 5px;}
+ }
+
+.buttonup {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background-color: rgb(79, 46, 232);
+   backdrop-filter: blur(2px);
+   border: none;
+   border-radius: 50%;
+
+   width: 54px;
+   height: 54px;
+   padding: 5px;
+}
+
+.anima-up {
+   animation-name: animaUp;
+   animation-duration: 400ms;
+   animation-iteration-count: 2;
+}
+
+.up-icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   align-items: center;
+   justify-content: center;
+   
+   color: white;
+}
