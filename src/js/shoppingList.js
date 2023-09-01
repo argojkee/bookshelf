@@ -111,3 +111,5 @@ function deleteItem(event) {
 
   createMarkup(filteredBooks);
 }
+
+console.log(lorem);
