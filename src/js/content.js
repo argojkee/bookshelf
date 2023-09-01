@@ -11,40 +11,30 @@ import {
 let numberOfBooksShown = countTopBooks();
 //категорія, по кнопкі якій натиснули
 let selectedCategory = '';
-//кі-сть книг, які будемо виводити після натисненя кнопки SEEMORE
-<<<<<<< Updated upstream
-const HowManyBooksToLoad = 3;
-=======
-const HowManyBooksToLoad = 5;
->>>>>>> Stashed changes
 
+
+const HowManyBooksToLoad = 5;
 const containerBook = document.querySelector('.container-books');
 
 getTopBooks();
 
-<<<<<<< Updated upstream
 function getTopBooks() {
-  fetchToAllBooks()
-    .then(response => {
-      return response.json();
-    })
-    .then(renderData)
-    .catch(errorfetchData);
-=======
+    fetchToAllBooks()
+        .then(response => {
+            return response
+        })
+        .then(renderData)
+        .catch(errorfetchData);
+}
 export function getTopBooks() {
   fetchToAllBooks().then(result => { return result.data }).then(renderData).catch(errorfetchData);
->>>>>>> Stashed changes
+
 }
 
 function getBooksByCat(butElem, category) {
   fetchBooksByCategory(category)
-<<<<<<< Updated upstream
-    .then(response => {
-      return response.json();
-=======
     .then(result => {
       return result.data;
->>>>>>> Stashed changes
     })
     .then(data => {
       renderDataBycat(butElem, data);
@@ -52,11 +42,7 @@ function getBooksByCat(butElem, category) {
     .catch(errorfetchData);
 }
 
-<<<<<<< Updated upstream
-function renderDataBycat(butElem, data) {
-=======
 export function renderDataBycat(butElem, data) {
->>>>>>> Stashed changes
   if (data.length === 0) {
     //немає книг, потрібно показати картинку про це');
     // let markup = renderError(data);
@@ -75,6 +61,7 @@ export function renderDataBycat(butElem, data) {
 
 //якщо дані витягуємо вдало, то кладемо їх в масив
 function renderData(data) {
+    containerBook.insertAdjacentHTML('beforeend', '');
   if (data.length === 0) {
     //немає книг, потрібно показати картинку про це');
     // let markup = renderError(data);
