@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const STORAGE_KEY = 'shopping-list';
 
 const refs = {
@@ -58,20 +60,25 @@ function createMarkup(books) {
           .join('');
 
         return `<li class="shopping-list-item" data-id="${_id}">
-        <img src="${book_image}" width="100" height="142">
-        <div>
-            <div>
-                <h3>${title}</h3>
-                <p>${list_name}</p>
-                <button type="button" class="shopping-list-delete-btn">
-                    Delete
-                </button>
-            </div>
+        <img class="shopping-list-item-img" src="${book_image}" width="100" height="142">
+            <div class="shopping-list-item-content-wrapper">
+                <div class="shopping-list-item-head">
+                    <div class="shopping-list-item-head-wrapper">
+                        <h3 class="shopping-list-item-title">${title}</h3>
+                        <p class="shopping-list-item-category">${list_name}</p>
+                    </div>
+                    <button type="button" class="shopping-list-delete-btn">
+                        <svg class="delete-btn-icon" width="16" height="16">
+                            <use href="./images/sprite.svg#icon-trash">
+                        </svg>
+                    </button>
+                </div>
+            
 
-            <p>${description}</p>
+                <p class="shopping-list-item-description">${description}</p>
 
-            <div>
-                <p>${author}</p>
+                <div class="shopping-list-item-bottom-wrapper">
+                    <p class="shopping-list-item-author">${author}</p>
 
                 <ul>${currentBuyLinks}</ul>
             </div>

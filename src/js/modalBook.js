@@ -1,7 +1,7 @@
 import { fetchBookById } from '../services/books-api';
 
 const BookContainer = document.querySelector('.container-books');
-BookContainer.addEventListener('click', openModal);
+BookContainer?.addEventListener('click', openModal);
 
 const modalBook = document.querySelector('[data-modal="1"]');
 
