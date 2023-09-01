@@ -11,11 +11,11 @@ function openModal(event) {
   //   console.log(event.target.closest('li'));
   if (!event.target.closest('li')) {
     return;
-  } else {
+  } 
     modalBook.classList.toggle('hidden');
     modalBook.classList.toggle('active');
     addModalBookMarkup();
-  }
+  
 }
 
 function closeModal(event) {

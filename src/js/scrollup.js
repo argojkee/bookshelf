@@ -6,9 +6,11 @@ const elementsSet = {
     upButton: document.querySelector('.buttonup'),
 };
 
+// event handler
 let upButVieW = (evt) => {
  
     switch(evt.type) {
+        // visibility/hidden scrolup button
         case 'scroll':
             if(Math.floor(window.scrollY) >= window.innerHeight / 2) { 
                 elementsSet.case.style.visibility = "visible";
@@ -19,6 +21,7 @@ let upButVieW = (evt) => {
                 elementsSet.upButton.classList.remove("anima-up");
             }
             break; 
+        // visibility/hidden border   
         case 'mouseover':
             elementsSet.case.style.outline = "2px solid grey";
         
@@ -27,6 +30,7 @@ let upButVieW = (evt) => {
             elementsSet.case.style.outline  = "none";
          
             break;
+        // scroll up
         case 'click':
             window.scrollTo(0,0);
             break; 
