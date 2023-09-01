@@ -3,6 +3,25 @@ html {
    scroll-behavior: smooth;
 }
 
+.buttonup-case {
+   position: fixed;
+   display: flex;
+
+   background-color: rgb(79, 46, 232, 0.3);
+   backdrop-filter: blur(2px);
+   border: none;
+   border-radius: 50%;
+
+   top: calc(100vw / 2);
+   right: 10px;
+
+   width: 64px;
+   height: 64px;
+   padding: 5px;
+   visibility: hidden;
+
+}
+
 .sec {
    padding: 0 30px;
 }
@@ -13,19 +32,19 @@ html {
       padding-bottom: 5px;}
  }
 
-.button-up {
-   position: fixed;
+.buttonup {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 
-   background: rgba(61, 61, 61, 0.3);
+   background-color: rgb(79, 46, 232);
    backdrop-filter: blur(2px);
    border: none;
-   border-radius: 6px;
+   border-radius: 50%;
 
-   top: calc(100vw / 2);
-   right: 10px;
-
+   width: 54px;
+   height: 54px;
    padding: 5px;
-   visibility: hidden;
 }
 
 .anima-up {
@@ -36,6 +55,8 @@ html {
 
 .up-icon {
    display: flex;
+   align-items: center;
+   justify-content: center;
    
    align-items: center;
    justify-content: center;
