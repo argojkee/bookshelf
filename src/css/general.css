@@ -123,10 +123,14 @@ button {
     padding-left: 20px;
     padding-right: 20px;
   }
+<<<<<<< Updated upstream
   .content_image{
     width: calc((100% / 3)- 4*32 );
     height: 316px;
   }
+=======
+
+>>>>>>> Stashed changes
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -135,6 +139,7 @@ button {
     padding-left: 32px;
     padding-right: 32px;
   }
+<<<<<<< Updated upstream
 
   .content_list {
     display: flex;
@@ -164,6 +169,8 @@ button {
   height: 256px;
 }
 
+=======
+>>>>>>> Stashed changes
 }
 
 @media screen and (min-width: 1440px) {

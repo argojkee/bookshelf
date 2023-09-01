@@ -1,5 +1,6 @@
 .content{
     /* width: 100%; */
+    background-color: yellow;
 }
 
 .content_item{
@@ -45,6 +46,10 @@
     display: block;
     margin-left: auto;
     margin-bottom: 40px;
+<<<<<<< Updated upstream
+=======
+    margin-top: 40px;
+>>>>>>> Stashed changes
     width: 124px;
     height: 46px;
     border-radius: 40px;
@@ -66,4 +71,52 @@
 
 .content_list_topBooks{
     margin-bottom: 10px;
+<<<<<<< Updated upstream
+=======
+}
+
+/* media */
+@media screen and (min-width: 374px){
+     .content_image{
+    height: 316px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+
+}
+
+@media screen and (max-width: 767px){
+       .content_image{
+    width: calc((100% / 3)- 4*32 );
+    height: 316px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px){
+    .content_list {
+    display: flex;
+  }
+
+  .content_item{
+    width: calc(100% / 3);
+}
+.content_book{
+    width: 218px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content_list_topBooks{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content__image{ 
+  width: calc((100% / 5) - (6*24)) ; 
+  height: 256px;
+}
+>>>>>>> Stashed changes
 }

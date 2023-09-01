@@ -5,9 +5,14 @@ export function renderMarkupTopBooks(array) {
   const markup = ` <h1 class="title-container-topBooks">Best sellers <span class="title_blue"> books </span></h1>
   <ul class="content_list_categories">${array
     .map(kategory => {
+<<<<<<< Updated upstream
       return `<li class="${kategory.list_name}" content_categoryItem"><span class="content_category">***********${
         kategory.list_name
       }</span>
+=======
+      return `<li class="content_categoryItem ${kategory.list_name}">
+      <span class="content_category">***********${kategory.list_name}</span>
+>>>>>>> Stashed changes
                 <ul class="content_list_topBooks">${kategory.books
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
@@ -22,8 +27,15 @@ export function renderMarkupTopBooks(array) {
                   })
                   .join('')}</ul>
           
+<<<<<<< Updated upstream
                 <button type="button" name="${kategory.list_name}" 
                 class="content_btnSeeMore" action="submit">SEE MORE</button>
+=======
+                <button class="content_btnSeeMore" type="button" name="${
+                  kategory.list_name
+                }" 
+                 action="submit">SEE MORE</button>
+>>>>>>> Stashed changes
          
           </li>`;
     })
@@ -34,9 +46,15 @@ export function renderMarkupTopBooks(array) {
 
 // ф-ція приймає книги однієї категорії з бєкенду, вертає масив з книгами цієї категорії
 export function arrayBooksByCategory(array) {
+<<<<<<< Updated upstream
   return books = array.map(book => {
     return book
   })
+=======
+  return (books = array.map(book => {
+    return book;
+  }));
+>>>>>>> Stashed changes
 }
 
 
