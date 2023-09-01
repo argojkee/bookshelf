@@ -1,5 +1,5 @@
 const BookContainer = document.querySelector('.container-books');
-BookContainer.addEventListener('click', openModal);
+BookContainer?.addEventListener('click', openModal);
 
 const modalBook = document.querySelector('[data-modal="1"]');
 
@@ -8,7 +8,7 @@ closeModalBtn.addEventListener('click', closeModal);
 
 function openModal(event) {
   event.preventDefault();
-//   console.log(event.target.closest('li'));
+  //   console.log(event.target.closest('li'));
   if (!event.target.closest('li')) {
     return;
   } else {
