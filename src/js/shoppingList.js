@@ -109,3 +109,5 @@ function deleteItem(event) {
 
     return;
 }
+
+console.log(lorem);
