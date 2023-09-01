@@ -1,6 +1,10 @@
 .funds-wrapper {
   width: 335px;
+<<<<<<< Updated upstream
   height: 474px;
+=======
+  height: 352px;
+>>>>>>> Stashed changes
   background-color: aqua;
 }
 
@@ -9,10 +13,20 @@
   align-items: center;
 }
 
+<<<<<<< Updated upstream
 /* .funds-title-text {
     color: var(
 } */
 
 .fund-image {
   filter: brightness(0) invert(1);
+=======
+.funds-title-text {
+  color: white;
+  margin-right: 10px;
+}
+
+.funds-icon {
+  fill: blue;
+>>>>>>> Stashed changes
 }

@@ -2,7 +2,11 @@
   {
     "title": "Save the Children",
     "url": "https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",
+<<<<<<< Updated upstream
     "img": "/saveChildren.d81fe5e8.webp"
+=======
+    "img": "../images/fonds-svg/save-children.svg"
+>>>>>>> Stashed changes
   },
   {
     "title": "Project HOPE",

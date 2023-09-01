@@ -1,5 +1,6 @@
 import fondlist from '../data/fonds.json';
 const fundsList = document.querySelector('.funds-list');
+<<<<<<< Updated upstream
 // import '../images/fondsWebp/fonds-x1/medicalCorps.webp';
 // import '../images/fondsWebp/fonds-x1/againstHunger.webp';
 // import '../images/fondsWebp/fonds-x1/pritula.webp';
@@ -26,4 +27,23 @@ const fundsMarkup = fondlist
   `
   )
   .join('');
+=======
+const fundsMarkup = fondlist
+  .map(
+    (fund, index) => `
+    
+  <li class="fund-item">
+    <a href="${fund.url}" target="_blank">
+    <img src="${fund.img}" alt="">
+      
+      <span class="fund-number">${(index + 1)
+        .toString()
+        .padStart(2, '0')}</span>
+    </a>
+  </li>
+`
+  )
+  .join('');
+
+>>>>>>> Stashed changes
 fundsList.innerHTML = fundsMarkup;
