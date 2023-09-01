@@ -1,0 +1,87 @@
+button.btn-home {
+  width: 72px;
+  height: 34px;
+  border: 2px solid inherit;
+  padding: 8px, 16px, 8px, 16px;
+  border-radius: 40px;
+  background-color: #eac645;
+
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.section-burger_shopingList {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: aliceblue;
+}
+
+button.section-burger_logOut {
+  width: 118px;
+  height: 48px;
+  border: 2px solid black;
+  padding: 8px, 16px, 8px, 16px;
+}
+
+.backdrop-burger {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-burger {
+  position: absolute;
+  z-index: 10;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  display: block;
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 375px;
+  height: 748px;
+  background: #ffffff;
+  background: linear-gradient(50deg, #4f2ee8 35%, #ffffff 100%);
+}
+
+ul.section-burger_list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+/* /* @media only screen and (max-width: 767px) {
+  .section-burger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    z-index: 100;
+
+    background-color: seagreen;
+   
+transform: translateX(100%); 
+  }
+} */
+
+/* @media only screen and (min-width: 768px) {
+  .section-burger {
+    display: none;
+  }
+} */
