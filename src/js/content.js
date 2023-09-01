@@ -17,16 +17,8 @@ const containerBook = document.querySelector('.container-books');
 
 getTopBooks();
 
-function getTopBooks() {
-  containerBook.innerHTML = '';
-  fetchToAllBooks()
-    .then(response => {
-      return response;
-    })
-    .then(renderData)
-    .catch(errorfetchData);
-}
 export function getTopBooks() {
+  containerBook.innerHTML = '';
   fetchToAllBooks()
     .then(result => {
       return result.data;
