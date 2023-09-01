@@ -1,3 +1,6 @@
+import './js/fondImages';
+import './js/bookMarkets';
+import './js/sprite';
 import './js/header';
 import './js/categoriesList';
 import './js/fondsList';
@@ -5,5 +8,4 @@ import './js/content';
 import './js/modalBook';
 import './js/burgerMenu';
 import './js/loginization';
-import './js/shoppingList';
 import './js/scrollup';
