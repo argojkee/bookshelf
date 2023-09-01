@@ -1,14 +1,14 @@
 import fondlist from '../data/fonds.json';
 const fundsList = document.querySelector('.funds-list');
-// import '../images/fondsWebp/fonds-x1/medicalCorps.webp';
-// import '../images/fondsWebp/fonds-x1/againstHunger.webp';
-// import '../images/fondsWebp/fonds-x1/pritula.webp';
-// import '../images/fondsWebp/fonds-x1/projectHope.webp';
-// import '../images/fondsWebp/fonds-x1/razom.webp';
-// import '../images/fondsWebp/fonds-x1/sansFrontieres.webp';
-// import '../images/fondsWebp/fonds-x1/saveChildren.webp';
-// import '../images/fondsWebp/fonds-x1/united24.webp';
-// import '../images/fondsWebp/fonds-x1/worldVision.webp';
+import '../images/fondsWebp/fonds-x1/medicalCorps.webp';
+import '../images/fondsWebp/fonds-x1/againstHunger.webp';
+import '../images/fondsWebp/fonds-x1/pritula.webp';
+import '../images/fondsWebp/fonds-x1/projectHope.webp';
+import '../images/fondsWebp/fonds-x1/razom.webp';
+import '../images/fondsWebp/fonds-x1/sansFrontieres.webp';
+import '../images/fondsWebp/fonds-x1/saveChildren.webp';
+import '../images/fondsWebp/fonds-x1/united24.webp';
+import '../images/fondsWebp/fonds-x1/worldVision.webp';
 
 const fundsMarkup = fondlist
   .map(
