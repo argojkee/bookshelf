@@ -1,0 +1,44 @@
+html {
+    /* for smooth scrolling "Up" by button */
+   scroll-behavior: smooth;
+}
+
+.sec {
+   padding: 0 30px;
+}
+
+@keyframes animaUp {
+   50% {padding-bottom: 0;}
+   100% {padding-top: 0;
+      padding-bottom: 5px;}
+ }
+
+.button-up {
+   position: fixed;
+
+   background: rgba(61, 61, 61, 0.3);
+   backdrop-filter: blur(2px);
+   border: none;
+   border-radius: 6px;
+
+   top: calc(100vw / 2);
+   right: 10px;
+
+   padding: 5px;
+   visibility: hidden;
+}
+
+.anima-up {
+   animation-name: animaUp;
+   animation-duration: 400ms;
+   animation-iteration-count: 2;
+}
+
+.up-icon {
+   display: flex;
+   
+   align-items: center;
+   justify-content: center;
+   
+   color: white;
+}
