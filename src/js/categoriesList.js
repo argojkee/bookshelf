@@ -59,7 +59,6 @@ function showCategoryBook() {
   const categoryName = clickedElement.dataset.name;
   console.log(`Clicked on category: ${categoryName}`);
   changeCurrent(clickedElement);
-<<<<<<< HEAD
 
   
   // якщо вибрано категорію `All categories` 
@@ -74,8 +73,6 @@ function showCategoryBook() {
     getBooksFromCategories(categoryName);
   }
 
-=======
->>>>>>> 19b950aa0103bd425daa9ee0839ee5f6eac4e966
 }
 
 function changeCurrent(curentClic) {
@@ -93,7 +90,6 @@ function changeCurrent(curentClic) {
     elementHaveCurrent.classList.remove('current');
   }
 }
-<<<<<<< HEAD
 
 function getBooksFromCategories(category) {
   fetchBooksByCategory(category)
@@ -107,28 +103,21 @@ function getBooksFromCategories(category) {
     });
 }
 
-// function renderDataBooks(booksData){
-//   const markup = booksData
-//     .map((katItem, index) => {
-//       const booksMarkup = katItem.books
-//         .map((book, indexBook) => {
-//           let count = countTopBooks(indexBook);
-//           return `<li class="content_book  ${
-//             indexBook >= count ? 'hidden' : ''
-//           }">
-//           <a  href="${book.book_image}" >
-//           <img class="content__image" src="${book.book_image}" alt="${
-//             book.title
-//           }" loading="lazy" />
-//           </a>
-//           <p id="content_book_name">${book.title}</p>
-//           <p id="content_book_author">${book.author}</p>
-//           </li>`;
-//         })
-//         .join('');
+function renderDataBooks(booksData){
+  const markup = booksData
+        .map((book, indexBook) => {
+          return `<li class="content_book" data-id=${book._id}>
+          <a  href="${book.book_image}" >
+          <img class="content__image" src="${book.book_image}" alt="${
+            book.title
+          }" loading="lazy" />
+          </a>
+          <p id="content_book_name">${book.title}</p>
+          <p id="content_book_author">${book.author}</p>
+          </li>`;
+        })
+          .join('');
+        const markupList = `<ul class="content_list_topBooks">${markup}</ul>`
+    containerBook.insertAdjacentHTML('beforeend', markupList);
+}
 
-//     containerBook.insertAdjacentHTML('beforeend', markup);
-// }
-// }
-=======
->>>>>>> 19b950aa0103bd425daa9ee0839ee5f6eac4e966
