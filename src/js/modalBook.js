@@ -7,12 +7,14 @@ const closeModalBtn = document.querySelector('.modal-btn-close');
 closeModalBtn.addEventListener('click', closeModal);
 
 function openModal(event) {
-  if (event.target.parentNode.nodeName !== 'LI') {
+  event.preventDefault();
+//   console.log(event.target.closest('li'));
+  if (!event.target.closest('li')) {
     return;
   } else {
     modalBook.classList.toggle('hidden');
     modalBook.classList.toggle('active');
-    addModalBookMurkup();
+    addModalBookMarkup();
   }
 }
 
@@ -21,6 +23,6 @@ function closeModal(event) {
   modalBook.classList.toggle('active');
 }
 
-function addModalBookMurkup() {
+function addModalBookMarkup() {
   //   console.log('add');
 }
