@@ -1,0 +1,202 @@
+.book-overlay {
+  /* backdrop  */
+  opacity: 0;
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.4);
+  z-index: 20;
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+/* styles for MODAL WINDOW */
+
+.modal-book {
+  /* Hide the window */
+  opacity: 0;
+  visibility: hidden;
+
+  /*  Set window width  */
+  width: 100%;
+  max-width: 335px;
+
+  /*  Centering and setting the z-index*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30; /* Should be higher than backdrop*/
+
+  /*  other style   */
+
+  padding: 40px 24px;
+  border-radius: 18px;
+  border: 2px solid #111;
+  background-color: #ffffff;
+  transition: all 250ms linear;
+}
+
+body.dark .modal-book {
+  background-color: #202024;
+}
+/* Styles for the Active Surface and Window Classes */
+
+.modal-book.active,
+.book-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 335px) {
+  .modal-book {
+    padding: 40px 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-book {
+    max-width: 579px;
+  }
+}
+
+/* Styles for the close button */
+
+.modal-btn-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  /* fill: var(--white-text-color, #f7f7f7); */
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-btn-close {
+    width: 28px;
+    height: 28px;
+    top: 24px;
+    right: 24px;
+  }
+}
+
+.modal-btn-close-icon {
+  stroke: var(--primary-color-text);
+}
+
+.modal-btn-close:hover .modal-btn-close-icon,
+.modal-btn-close:focus .modal-btn-close-icon {
+  stroke: var(--primary-stilization-color);
+}
+
+@media screen and (min-width: 768px) {
+  .modal-book-wrap {
+    display: flex;
+
+    gap: 24px;
+  }
+}
+
+.modal-book-img-wrap {
+  flex-shrink: 0;
+  width: 287px;
+  height: 408px;
+  border-radius: 8px;
+  border: 2px solid red; /* прибрати */
+}
+
+@media screen and (min-width: 768px) {
+  .modal-book-img-wrap {
+    width: 192px;
+    height: 281px;
+  }
+}
+
+.modal-book-img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-book-title {
+  color: var(--primary-color-text);
+  font-size: 16px;
+  line-height: 112.5%;
+  letter-spacing: -0.64px;
+  margin-top: 14px;
+}
+
+.modal-book-author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 116.667%;
+  letter-spacing: -0.48px;
+  margin-top: 4px;
+}
+
+.modal-book-review {
+  color: var(--primary-color-text);
+  font-size: 14px;
+
+  line-height: 128.571%;
+  letter-spacing: -0.56px;
+  margin-top: 18px;
+  overflow-y: scroll;
+  max-height: 170px;
+  width: 280px;
+}
+
+.modal-book-buy-list {
+  display: flex;
+  gap: 20px;
+  margin-top: 14px;
+}
+
+.modal-book-buy-list svg {
+  fill: red;
+  stroke: red;
+}
+
+.modal-btn-status {
+  display: block;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 2px solid var(--primary-stilization-color);
+  margin: 40px auto 0 auto;
+
+  color: var(--primary-color-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 128.571%;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  transition: all 250ms linear;
+}
+
+.modal-btn-status:hover,
+.modal-btn-status:focus {
+  background-color: var(--primary-stilization-color);
+  color: var(--primary-color-text-dark-theme);
+  cursor: pointer;
+}
+
+.modal-btn-status-text {
+  display: block;
+  margin: 8px auto 0;
+  width: 242px;
+  color: rgba(17, 17, 17, 0.5);
+  text-align: center;
+  font-size: 10px;
+
+  line-height: 120%; /* 120% */
+  letter-spacing: -0.4px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-btn-status-text {
+    width: 324px;
+  }
+}

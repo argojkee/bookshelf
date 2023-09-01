@@ -1,3 +1,6 @@
+import './js/fondImages';
+import './js/bookMarkets';
+import './js/sprite';
 import './js/header';
 import './js/categoriesList';
 import './js/fondsList';
