@@ -85,7 +85,7 @@ function createMarkup(books) {
                     </div>
                     <button type="button" class="shopping-list-delete-btn">
                         <svg class="delete-btn-icon" width="16" height="16">
-                            <use href="./images/sprite.svg#icon-trash">
+                            <use class="delete-btn-icon-use" xlink:href="#icon-trash">
                         </svg>
                     </button>
                 </div>
@@ -109,6 +109,7 @@ function createMarkup(books) {
 
 function deleteItem(event) {
   if (
+    event.target.classList.contains('delete-btn-icon-use') ||
     event.target.classList.contains('delete-btn-icon') ||
     event.target.nodeName === 'BUTTON'
   ) {
@@ -118,7 +119,13 @@ function deleteItem(event) {
     const filteredBooks = books.filter(({ _id }) => _id !== itemId);
     localStorage.removeItem(STORAGE_KEY);
     refs.shoppingListIsEmptyMessage.style.display = 'flex';
-    refs.title.style.marginBottom = '120px';
+
+    // refs.title.style.marginBottom = '120px';
+    if (document.documentElement.clientWidth < 768) {
+      refs.title.style.marginBottom = '120px';
+    } else {
+      refs.title.style.marginBottom = '140px';
+    }
 
     if (filteredBooks.length !== 0) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredBooks));
