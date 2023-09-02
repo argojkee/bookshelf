@@ -6,12 +6,12 @@ export function renderMarkupTopBooks(array) {
   <ul class="content_list_categories">${array
     .map(kategory => {
       return `<li class="content_categoryItem ${kategory.list_name}">
-      <span class="content_category">***********${kategory.list_name}</span>
+      <span class="content_category">${kategory.list_name}</span>
                 <ul class="content_list_topBooks">${kategory.books
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
-                      return `<li data-id="${book._id}" class="content_book">
-                          <a  href="${book.book_image}" >
+                      return `<li class="content_book">
+                          <a data-id={book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
                           <p id="content_book_name">${book.title}</p>
@@ -28,7 +28,7 @@ export function renderMarkupTopBooks(array) {
           </li>`;
     })
     .join('')}</ul>`;
-
+  // console.log(markup);
   return markup;
 }
 
@@ -45,10 +45,10 @@ export function countTopBooks() {
     return 1;
   } else if (
     document.documentElement.clientWidth > 767 &&
-    document.documentElement.clientWidth < 1440
+    document.documentElement.clientWidth < 1140
   ) {
     return 3;
-  } else if (document.documentElement.clientWidth > 1439) {
+  } else if (document.documentElement.clientWidth > 1139) {
     return 5;
   }
 }
