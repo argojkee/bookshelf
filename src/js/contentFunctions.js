@@ -11,11 +11,12 @@ export function renderMarkupTopBooks(array) {
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
                       return `<li class="content_book">
-                          <a data-id={book._id} href="${book.book_image}" >
+                          <a data-id=${book._id} href="$#" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
-                          </a>
+                         
                           <p id="content_book_name">${book.title}</p>
                           <p id="content_book_author">${book.author}</p>
+                           </a>
                           </li>`;
                     }
                   })
