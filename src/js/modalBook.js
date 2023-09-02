@@ -5,9 +5,8 @@ import amazonImage from '../images/bookMarkets/bookMarkets-x1/amazon.webp';
 import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp';
 import bookShopImage from '../images/bookMarkets/bookMarkets-x1/tradeBook3.webp';
 
-
-const BookContainer = document.querySelector('.container-books');
-BookContainer?.addEventListener('click', openModal);
+const bookCard = document.querySelector('.container-books');
+bookCard?.addEventListener('click', openModal);
 
 const modalBook = document.querySelector('[data-modal="1"]');
 
@@ -24,92 +23,93 @@ const booksStatusText = document.querySelector('.modal-btn-status-text');
 const bookSet = {
   bookID: '',
   do: false,
-  booksTemp: {title: '', list_name: '', description: '', book_image: '', author: '', _id: '', buy_links: ''},
+  booksTemp: {
+    title: '',
+    list_name: '',
+    description: '',
+    book_image: '',
+    author: '',
+    _id: '',
+    buy_links: [],
+  },
   bookExist: 0,
 };
 
 // load array of object from server
 const getBooks = () => {
-   
-  return getBase().then(array => {
-
-    return array;
-
-  }).catch(error => {
-
-    console.log(error.message);
-
-  });
-}
+  return getBase()
+    .then(array => {
+      return array;
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+};
 
 // change text button (one button add/remove)
-const changeBtText = (data) => {
-  
-    // print "remove..." if "id" book from server and select book match or no
-    if(data.some(element => element._id === bookSet.bookID)){
-      booksChangeBtn.textContent = "remove from shopping list";
-      booksStatusText.style.visibility = "hidden";
-      bookSet.do = true;
-    } else {
-      booksChangeBtn.textContent = "add to shopping list";
-      booksStatusText.style.visibility = "visible";
-      bookSet.do = false;
-    }
-
-}
+const changeBtText = data => {
+  // print "remove..." if "id" book from server and select book match or no
+  if (data.some(element => element._id === bookSet.bookID)) {
+    booksChangeBtn.textContent = 'remove from shopping list';
+    booksStatusText.style.visibility = 'hidden';
+    bookSet.do = true;
+  } else {
+    booksChangeBtn.textContent = 'add to shopping list';
+    booksStatusText.style.visibility = 'visible';
+    bookSet.do = false;
+  }
+};
 
 // add/remove books to server
 let booksChange = () => {
   // if there is no such book, add
-  if(!bookSet.do)
-  {
+  if (!bookSet.do) {
     bookSet.bookExist.push(bookSet.booksTemp);
     addBase(bookSet.bookExist);
+
     return;
-  } 
+  }
 
   // remove book
   addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
-  
 };
 
 // search user
 let existsUser = () => localStorage.getItem('bookshelId');
 
 let userBooks = () => {
-
   // search user
-  let getUserID = existsUser(); 
+  let getUserID = existsUser();
 
-  if(getUserID.length === 0) { //massage;
-    booksChangeBtn.style.visibility = "hidden";
-      return;
+  if (!getUserID) {
+    //massage;
+    booksChangeBtn.style.display = 'none';
+    booksChangeBtn.style.visibility = 'hidden';
+    return;
   }
-
-  booksChangeBtn.style.visibility = "visible";
+  booksChangeBtn.display.style = 'block';
+  booksChangeBtn.style.visibility = 'visible';
   // read book array data from LocalStorage
-  getBooks().then(responce => {
-    
-    bookSet.bookExist = responce;
-    // console.log(bookSet.bookID);
-    console.log(responce);
-    changeBtText(responce);
-
-  }).catch(() => {
-
-  });
+  getBooks()
+    .then(responce => {
+      bookSet.bookExist = responce;
+      // console.log(bookSet.bookID);
+      console.log(responce);
+      changeBtText(responce);
+    })
+    .catch(() => {});
 
   booksChangeBtn.addEventListener('click', booksChange);
-}
+};
 
 // відкриття модалки
 function openModal(event) {
   event.preventDefault();
   //   console.log(event.target.closest('li'));
-  if (!event.target.parentNode === 'a') {
+  if (!event.target.closest('.content_book')) {
     return;
   }
- 
+
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
   bookSet.bookID = event.target.parentNode.dataset.id;
@@ -123,7 +123,7 @@ function closeModal() {
   overlayBook.classList.toggle('active');
 }
 
-async function addModalBookMarkup(bookID) {
+function addModalBookMarkup(bookID) {
   fetchBookById(bookID)
     .then(renderBook)
     .catch(e => {
@@ -145,7 +145,6 @@ function renderBook(obj) {
   bookSet.booksTemp.book_image = book.book_image;
   bookSet.booksTemp._id = book._id;
   bookSet.booksTemp.buy_links = book.buy_links;
-
 
   document.querySelector('.modal-book-img-wrap').innerHTML = `<img src="${
     book.book_image || './images/shopping-list/Books.png'
@@ -181,5 +180,5 @@ function renderBook(obj) {
           </a>
         </li>
       </ul>`;
-      modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
+  modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
 }

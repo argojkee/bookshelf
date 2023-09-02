@@ -29,11 +29,13 @@ getBase()
         refs.title.style.marginBottom = '140px';
       }
     }
-  }).catch(error => console.log(error));
+  })
+  .catch(error => console.log(error));
 
 refs.ul.addEventListener('click', deleteItem);
 
 function createMarkup(books) {
+  console.log(books);
   const markup = books
     .map(
       ({
@@ -49,7 +51,8 @@ function createMarkup(books) {
           description = lorem;
         }
 
-        const currentBuyLinks = buy_links?.filter(
+        const currentBuyLinks = buy_links
+          ?.filter(
             ({ name }) =>
               name === 'Amazon' || name === 'Apple Books' || name === 'Bookshop'
           )
