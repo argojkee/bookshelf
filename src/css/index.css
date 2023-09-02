@@ -1,6 +1,7 @@
 /* @import './common'; */
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+@import './slick-slider.css';
 @import './general.css';
 @import './header.css';
 @import './categoriesList.css';

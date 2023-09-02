@@ -1,0 +1,36 @@
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/slick-carousel/slick/slick.css';
+/* .slick-prev {
+  display: none;
+} */
+.carousel__link {
+  width: 100%;
+}
+
+.slick-next {
+  background-color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-arrow.slick-next::before {
+  display: table;
+}
+
+.slick-slide {
+  transition: 250ms linear;
+}
+
+.slick-icon {
+  fill: var(--primary-stilization-color);
+  transform: rotate(180deg);
+}

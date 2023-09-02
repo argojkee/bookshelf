@@ -21,7 +21,9 @@
     "axios": "^1.5.0",
     "fetch": "^1.1.0",
     "firebase": "^10.3.1",
-    "modern-normalize": "^1.1.0"
+    "jquery": "^3.7.1",
+    "modern-normalize": "^1.1.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

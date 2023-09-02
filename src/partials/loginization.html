@@ -1,21 +1,50 @@
-<div class="bacdropLogIn">
-  <div class="modalLogIn">
-    <form
-      id="formUp"
-      class="logForm"
-      style="display: flex; flex-direction: column"
-    >
-      <label id="nameLabel"
-        ><input id="name" type="text" name="name" />name</label
-      >
-      <label><input id="email" type="email" name="email" />email</label>
-      <label><input id="pass" type="password" name="pass" />password</label>
-      <button class="btnLog" type="submit">
-        <span class="btnLog-text" style="background-color: red">LogUp</span>
+<div class="loginBacdropLogIn isHidden">
+  <div class="loginModal">
+    <button class="loginClose" type="button">
+      <svg class="loginCloseIcon" width="24" height="24">
+        <use href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <form id="formUp" class="loginForm">
+      <div class="nameCont">
+        <input
+          id="name"
+          class="loginInput"
+          type="text"
+          name="name"
+          placeholder="NAME"
+        />
+      </div>
+      <div class="loginInputCont">
+        <input
+          id="email"
+          class="loginInput"
+          type="email"
+          name="email"
+          placeholder="EMAIL"
+        />
+        <svg class="loginInputIcon" width="24" height="24">
+          <use href="./images/login-svg/login-sprite.svg#icon-mail-02"></use>
+        </svg>
+      </div>
+      <div class="loginInputCont">
+        <input
+          id="pass"
+          class="loginInput"
+          type="password"
+          name="pass"
+          placeholder="PASSWORD"
+        />
+        <svg class="loginInputIcon" width="24" height="24">
+          <use href="./images/login-svg/login-sprite.svg#icon-lock-02"></use>
+        </svg>
+      </div>
+      <button class="loginBtn" type="submit">
+        <span class="loginBtnText">SING UP</span>
       </button>
     </form>
-    <div>
-      <button class="sUpBtb" type="button">SING UP</button>
+    <div class="loginBottom">
+      <button class="sUpBtb active" type="button">SING UP</button>
       <button class="sInBtb" type="button">SING IN</button>
     </div>
   </div>

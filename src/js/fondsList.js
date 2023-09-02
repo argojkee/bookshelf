@@ -14,6 +14,7 @@ const fundsList = document.querySelector('.funds-list');
 const fundsMarkup = fondlist
   .map((fund, index) => {
     let currentImg = null;
+
     if (fund.title === 'Save the Children') {
       currentImg = saveChildren;
     } else if (fund.title === 'Project HOPE') {
@@ -35,8 +36,8 @@ const fundsMarkup = fondlist
     }
 
     return `
-    <li class="fund-item">
-      <a href="${fund.url}" target="_blank">
+    <li class="fund-item carousel__item">
+      <a href="${fund.url}" target="_blank" class="carousel__link fund-link">
         <span class="fund-number">${(index + 1)
           .toString()
           .padStart(2, '0')}</span>
