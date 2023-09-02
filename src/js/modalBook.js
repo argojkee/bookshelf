@@ -17,13 +17,12 @@ function openModal(event) {
   //   console.log(event.target.closest('li'));
   if (!event.target.closest('.content_book')) {
     return;
-  } else {
-    modalBook.classList.toggle('hidden');
-    modalBook.classList.toggle('active');
-    overlayBook.classList.toggle('active');
-    let BookId = '643282b1e85766588626a0dc';
-    addModalBookMarkup(BookId);
   }
+  modalBook.classList.toggle('hidden');
+  modalBook.classList.toggle('active');
+  overlayBook.classList.toggle('active');
+  let BookId = '643282b1e85766588626a0dc';
+  addModalBookMarkup(BookId);
 }
 
 //закриття модалки
