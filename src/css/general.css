@@ -79,12 +79,30 @@ button {
   border: none;
 }
 
+.main-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section-shopping-list {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.main-container {
+  display: flex;
+}
+
 .container {
   display: flex;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.categories-fonds-container {
+  display: flex;
 }
 
 @media screen and (min-width: 374px) {
@@ -104,9 +122,29 @@ button {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  .main-container {
+    row-gap: 40px;
+  }
+
+  .categories-fonds-container {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
   .content_image {
     width: calc((100% / 3)- 4 * 32);
     height: 316px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .shopping-fond-list-wrapper {
+    display: none;
   }
 }
 
@@ -115,6 +153,15 @@ button {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+  }
+
+  .main-container {
+    row-gap: 98px;
+  }
+
+  .categories-fonds-container {
+    flex-direction: row;
+    column-gap: 32px;
   }
 
   .content_list {
@@ -149,5 +196,14 @@ button {
     width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .main-container {
+    column-gap: 40px;
+  }
+
+  .categories-fonds-container {
+    flex-direction: column;
+    row-gap: 86px;
   }
 }

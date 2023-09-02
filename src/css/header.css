@@ -6,6 +6,9 @@
   padding-bottom: 18px;
 }
 
+/* .head-logged-btn,
+.head-signup-btn {display: none;} */
+
 @media screen and (min-width: 768px) {
   .header {
     max-height: 72px;
@@ -76,7 +79,7 @@
 .header-selected-page {
   display: flex;
   padding: 8px 16px;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   border-radius: 36px;
   background: #eac645;
@@ -153,9 +156,7 @@
   stroke: #111;
   display: block;
 }
-.header-switch-hidden {
-  display: none;
-}
+
 
 .js-cross-switch {
   margin-left: 14px;
@@ -266,6 +267,9 @@
 }
 
 
+.header-switch-hidden {
+  display: none;
+}
 
 body.dark {
   background-color: #111;
