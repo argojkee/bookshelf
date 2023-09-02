@@ -57,8 +57,7 @@ function createMarkup(books) {
           description = lorem;
         }
 
-        const currentBuyLinks = buy_links
-          .filter(
+        const currentBuyLinks = buy_links?.filter(
             ({ name }) =>
               name === 'Amazon' || name === 'Apple Books' || name === 'Bookshop'
           )
@@ -129,10 +128,8 @@ async function deleteItem(event) {
   ) {
     const itemId = event.target.closest('.shopping-list-item').dataset.id;
     const books = await getBase();
-    // const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-    const filteredBooks = books.filter(({ _id }) => _id !== itemId);
-    // localStorage.removeItem(STORAGE_KEY);
+    const filteredBooks = books?.filter(({ _id }) => _id !== itemId);
     addBase(filteredBooks);
     refs.shoppingListIsEmptyMessage.style.display = 'flex';
 
@@ -143,8 +140,6 @@ async function deleteItem(event) {
     }
 
     if (filteredBooks.length !== 0) {
-      // localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredBooks));
-      // addBase(filteredBooks);
       refs.shoppingListIsEmptyMessage.style.display = 'none';
       refs.title.style.marginBottom = '40px';
     }
@@ -154,3 +149,30 @@ async function deleteItem(event) {
 
   return;
 }
+
+// async function deleteItem(event) {
+//   if (
+//         !event.target.classList.contains('delete-btn-icon-use') ||
+//         !event.target.classList.contains('delete-btn-icon') ||
+//         !event.target.nodeName === 'BUTTON'
+//       ) {
+//         return;
+//       }
+
+//     const itemId = event.target.closest('.shopping-list-item').dataset.id;
+//     const books = await getBase();
+
+//     const filteredBooks = books.filter(({ _id }) => _id !== itemId);
+//     addBase(filteredBooks);
+//     createMarkup(filteredBooks);
+
+//     if (filteredBooks.length === 0) {
+//       refs.shoppingListIsEmptyMessage.style.display = 'flex';
+
+//       if (document.documentElement.clientWidth < 768) {
+//               refs.title.style.marginBottom = '120px';
+//             } else {
+//               refs.title.style.marginBottom = '140px';
+//             }
+//     }
+// }
