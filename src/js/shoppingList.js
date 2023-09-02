@@ -1,10 +1,8 @@
-// import axios from 'axios';
 import amazonImage from '../images/bookMarkets/bookMarkets-x1/amazon.webp';
 import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp';
 import bookshopImage from '../images/bookMarkets/bookMarkets-x1/tradeBook3.webp';
 import { getBase, addBase } from './loginApi';
 
-// const STORAGE_KEY = 'shopping-list';
 const lorem =
   'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ipsa possimus debitis dignissimos ipsum consequuntur voluptatibus facere vero itaque magni, vel veniam delectus provident molestiae id libero totam excepturi perferendis!';
 
@@ -15,13 +13,6 @@ const refs = {
   ),
   title: document.querySelector('.shopping-list-title'),
 };
-
-// axios.get(`https://books-backend.p.goit.global/books/category?category=Business Books&`).then(({data}) => {
-//     console.log(data);
-//     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-// });
-
-// const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
 getBase()
   .then(data => {
@@ -38,14 +29,7 @@ getBase()
         refs.title.style.marginBottom = '140px';
       }
     }
-  })
-  .catch(error => console.log(error));
-
-// if (books) {
-//   refs.shoppingListIsEmptyMessage.style.display = 'none';
-//   createMarkup(books);
-//   refs.title.style.marginBottom = '40px';
-// }
+  }).catch(error => console.log(error));
 
 refs.ul.addEventListener('click', deleteItem);
 
@@ -157,30 +141,3 @@ async function deleteItem(event) {
 
   return;
 }
-
-// async function deleteItem(event) {
-//   if (
-//         !event.target.classList.contains('delete-btn-icon-use') ||
-//         !event.target.classList.contains('delete-btn-icon') ||
-//         !event.target.nodeName === 'BUTTON'
-//       ) {
-//         return;
-//       }
-
-//     const itemId = event.target.closest('.shopping-list-item').dataset.id;
-//     const books = await getBase();
-
-//     const filteredBooks = books.filter(({ _id }) => _id !== itemId);
-//     addBase(filteredBooks);
-//     createMarkup(filteredBooks);
-
-//     if (filteredBooks.length === 0) {
-//       refs.shoppingListIsEmptyMessage.style.display = 'flex';
-
-//       if (document.documentElement.clientWidth < 768) {
-//               refs.title.style.marginBottom = '120px';
-//             } else {
-//               refs.title.style.marginBottom = '140px';
-//             }
-//     }
-// }
