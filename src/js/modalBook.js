@@ -1,5 +1,6 @@
 import { fetchBookById } from '../services/books-api';
 import { getBase, addBase } from '/src/js/loginApi.js';
+
 import amazonImage from '../images/bookMarkets/bookMarkets-x1/amazon.webp';
 import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp';
 import bookShopImage from '../images/bookMarkets/bookMarkets-x1/tradeBook3.webp';
@@ -23,24 +24,28 @@ const booksStatusText = document.querySelector('.modal-btn-status-text');
 const bookSet = {
   bookID: '',
   do: false,
-  booksArr: {title: '', list_name: '', description: '', book_image: '', author: '', _id: '', buy_links: ''},
+  booksTemp: {title: '', list_name: '', description: '', book_image: '', author: '', _id: '', buy_links: ''},
   bookExist: 0,
 };
 
+// load array of object from server
 const getBooks = () => {
    
   return getBase().then(array => {
 
     return array;
 
-  }).catch(() => {
+  }).catch(error => {
 
-      //message
+    console.log(error.message);
+
   });
 }
 
+// change text button (one button add/remove)
 const changeBtText = (data) => {
   
+    // print "remove..." if "id" book from server and select book match or no
     if(data.some(element => element._id === bookSet.bookID)){
       booksChangeBtn.textContent = "remove from shopping list";
       booksStatusText.style.visibility = "hidden";
@@ -53,15 +58,17 @@ const changeBtText = (data) => {
 
 }
 
+// add/remove books to server
 let booksChange = () => {
-
+  // if there is no such book, add
   if(!bookSet.do)
   {
-    bookSet.bookExist.push(bookSet.booksArr);
+    bookSet.bookExist.push(bookSet.booksTemp);
     addBase(bookSet.bookExist);
     return;
   } 
 
+  // remove book
   addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
   
 };
@@ -122,8 +129,8 @@ async function addModalBookMarkup(bookID) {
     .catch(e => {
       console.error(e);
     });
-  //   console.log('add');
 
+  //  console.log('add');
   userBooks();
 }
 
@@ -131,13 +138,13 @@ function renderBook(obj) {
   // console.log(obj);
   const book = obj.data;
 
-  bookSet.booksArr.title = book.title;
-  bookSet.booksArr.list_name = book.list_name;
-  bookSet.booksArr.author = book.author;
-  bookSet.booksArr.description = book.description;
-  bookSet.booksArr.book_image = book.book_image;
-  bookSet.booksArr._id = book._id;
-  bookSet.booksArr.buy_links = book.buy_links;
+  bookSet.booksTemp.title = book.title;
+  bookSet.booksTemp.list_name = book.list_name;
+  bookSet.booksTemp.author = book.author;
+  bookSet.booksTemp.description = book.description;
+  bookSet.booksTemp.book_image = book.book_image;
+  bookSet.booksTemp._id = book._id;
+  bookSet.booksTemp.buy_links = book.buy_links;
 
 
   document.querySelector('.modal-book-img-wrap').innerHTML = `<img src="${
