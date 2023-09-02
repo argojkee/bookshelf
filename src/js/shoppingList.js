@@ -29,6 +29,14 @@ getBase()
       refs.shoppingListIsEmptyMessage.style.display = 'none';
       createMarkup(data);
       refs.title.style.marginBottom = '40px';
+    } else {
+      refs.shoppingListIsEmptyMessage.style.display = 'flex';
+
+      if (document.documentElement.clientWidth < 768) {
+        refs.title.style.marginBottom = '120px';
+      } else {
+        refs.title.style.marginBottom = '140px';
+      }
     }
   })
   .catch(error => console.log(error));
