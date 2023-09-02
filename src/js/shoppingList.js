@@ -4,7 +4,7 @@ import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp
 import bookshopImage from '../images/bookMarkets/bookMarkets-x1/tradeBook3.webp';
 import { getBase, addBase } from './loginApi';
 
-const STORAGE_KEY = 'shopping-list';
+// const STORAGE_KEY = 'shopping-list';
 const lorem =
   'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ipsa possimus debitis dignissimos ipsum consequuntur voluptatibus facere vero itaque magni, vel veniam delectus provident molestiae id libero totam excepturi perferendis!';
 
@@ -133,6 +133,7 @@ async function deleteItem(event) {
 
     const filteredBooks = books.filter(({ _id }) => _id !== itemId);
     // localStorage.removeItem(STORAGE_KEY);
+    addBase(filteredBooks);
     refs.shoppingListIsEmptyMessage.style.display = 'flex';
 
     if (document.documentElement.clientWidth < 768) {
@@ -143,7 +144,7 @@ async function deleteItem(event) {
 
     if (filteredBooks.length !== 0) {
       // localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredBooks));
-      addBase(filteredBooks);
+      // addBase(filteredBooks);
       refs.shoppingListIsEmptyMessage.style.display = 'none';
       refs.title.style.marginBottom = '40px';
     }
