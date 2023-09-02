@@ -4,7 +4,7 @@ import './js/categoriesList';
 import './js/fondsList';
 import './js/slick-slider';
 import './js/content';
-import './js/modalBookDm';
+import './js/modalBook';
 import './js/burgerMenu';
 import './js/loginization';
 import './js/scrollup';
