@@ -8,6 +8,7 @@
   --primary-stilization-color: #4f2ee8;
   --secondary-stilization-color: #eac645;
   --content-count: 1;
+  --color-name-category: #B4AFAF;
 }
 
 @font-face {
@@ -86,36 +87,18 @@ button {
   padding-right: 20px;
 }
 
-.content_book{
-  margin-left: auto;
-  margin-right: auto;
-}
-.content{
-  width: 100%;
-  background-color: #eac645;
-}
+
+
 @media screen and (min-width: 374px) {
   .container {
     width: 100%;
   }
-
- 
-  .content_image{
-    height: 316px;
-  }
-
-
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .container {
     width: 375px;
   }
-  .content_image{
-    width: calc((100% / 3)- 4*32 );
-    height: 316px;
-  }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -172,24 +155,4 @@ button {
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  .content{
-  
-  background-color: #eac645;
-}
-
-.content_list_topBooks{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: space-around;
-
-}
-
-.content_book{
-    width: 180px;
-    height: 256px
-    
-}
-
 }
