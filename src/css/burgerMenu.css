@@ -23,8 +23,9 @@ button.btn-home {
 button.section-burger_logOut {
   width: 118px;
   height: 48px;
-  border: 2px solid black;
-  padding: 8px, 16px, 8px, 16px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
 }
 
 .backdrop-burger {
@@ -51,8 +52,16 @@ button.section-burger_logOut {
   padding-top: 40px;
   width: 375px;
   height: 748px;
-  background: #ffffff;
-  background: linear-gradient(50deg, #4f2ee8 35%, #ffffff 100%);
+  background-color: #fff;
+  background-image: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%
+    ),
+    url('../images/burger-imeg/background-burger.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 ul.section-burger_list {
@@ -62,6 +71,7 @@ ul.section-burger_list {
   justify-content: center;
   /* align-items: center; */
   flex-direction: column;
+  row-gap: 16px;
 }
 /* /* @media only screen and (max-width: 767px) {
   .section-burger {
@@ -80,8 +90,8 @@ transform: translateX(100%);
   }
 } */
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .section-burger {
     display: none;
   }
-} */
+}
