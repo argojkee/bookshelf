@@ -8,7 +8,7 @@
   --primary-stilization-color: #4f2ee8;
   --secondary-stilization-color: #eac645;
   --content-count: 1;
-  --color-name-category: #B4AFAF;
+  --color-name-category: #b4afaf;
 }
 
 @font-face {
@@ -79,6 +79,20 @@ button {
   border: none;
 }
 
+.main-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section-shopping-list {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.main-container {
+  display: flex;
+}
+
 .container {
   display: flex;
   margin-left: auto;
@@ -87,7 +101,9 @@ button {
   padding-right: 20px;
 }
 
-
+.categories-fonds-container {
+  display: flex;
+}
 
 @media screen and (min-width: 374px) {
   .container {
@@ -106,9 +122,29 @@ button {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .content_image{
-    width: calc((100% / 3)- 4*32 );
+
+  .main-container {
+    row-gap: 40px;
+  }
+
+  .categories-fonds-container {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .content_image {
+    width: calc((100% / 3)- 4 * 32);
     height: 316px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .shopping-fond-list-wrapper {
+    display: none;
   }
 }
 
@@ -119,34 +155,40 @@ button {
     padding-right: 32px;
   }
 
+  .main-container {
+    row-gap: 98px;
+  }
+
+  .categories-fonds-container {
+    flex-direction: row;
+    column-gap: 32px;
+  }
+
   .content_list {
     display: flex;
   }
 
-  
-  .content_item{
+  .content_item {
     width: calc(100% / 3);
-}
+  }
 
-.content_book{
+  .content_book {
     width: 218px;
 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+  }
 
+  .content_list_topBooks {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-.content_list_topBooks{
-  display: flex;
-  justify-content: flex-start;
-}
-
-.content__image{ 
-  width: calc((100% / 5) - (6*24)) ; 
-  height: 256px;
-}
-
+  .content__image {
+    width: calc((100% / 5) - (6 * 24));
+    height: 256px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -154,5 +196,14 @@ button {
     width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .main-container {
+    column-gap: 40px;
+  }
+
+  .categories-fonds-container {
+    flex-direction: column;
+    row-gap: 86px;
   }
 }
