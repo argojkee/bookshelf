@@ -1,6 +1,7 @@
 /* @import './common'; */
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+@import './slick-slider.css';
 @import './general.css';
 @import './header.css';
 @import './categoriesList.css';
@@ -10,3 +11,4 @@
 @import './burgerMenu.css';
 @import './loginization.css';
 @import './shoppingList.css';
+@import './scrollUP.css';

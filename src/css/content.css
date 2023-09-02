@@ -1,58 +1,159 @@
-.content{
-    /* width: 100%; */
+/* для темної теми */
+body.dark .title_theme{
+  color: var(--primary-color-text-dark-theme);
 }
 
-.content_item{
-    width: 100%;
+body.dark .content_textname{
+  color: var(--primary-color-text-dark-theme);
 }
 
-.content__image{
-    width: 100px;
-}
-.content-info{
-    display: block;
+body.dark .content_btnSeeMore{
+  color: var(--primary-color-text-dark-theme);
 }
 
+/* ******************** */
+
+
+
+.content {
+  width: 100%;
+  /* background-color: yellow; */
+}
+
+/* кнопка */
+.content_btnSeeMore {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 40px;
+
+  width: 124px;
+  height: 46px;
+  border-radius: 40px;
+  border: 2px solid var(--primary-stilization-color);
+  padding: 14px, 28px, 14px, 28px;
+  /* background-color: red; */
+}
+
+.hidden{
+    display: none;
+}
+
+/* картинка помилка, якщо книги не загруаються */
+.content-error{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 198px;
+  width: 265px;
+  height: 198px;
+}
 /* заголовок */
 .title-container-topBooks{
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
-/* синя частина заголовка*/
+.content_category{
+  color: var(--color-name-category);
+  font-weight: 400px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  
+}
+
+.content_list_topBooks{ 
+  margin-top: 18px;
+}
+
+.content_book{
+  margin-bottom: 8px;
+}
 .title_blue{
-    color: var(--primary-stilization-color);
+  color: var(--primary-stilization-color);
 }
 
-/* категорія книг */
-.content_kategory_name{
-    margin-bottom: 18px;
+.content_textname{
+  font-style: DM Sans;
+  font-weight: 700px;
+  font-weight: 16px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
 }
 
-.hidden{
-    display: none;
+.content_textauthor{
+  font-style: italic;
+  font-weight: 400px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.2em;
 }
 
-.hidden{
-    display: none;
-}
-/* кнопка SEE MORE */
-
-.content_container_btn{
-    display: block;
-     margin-left: auto;
+.content_textname{
+color: var(--primary-color-text);
 }
 
-.content_btnSeeMore{
-    width: 124px;
-    height: 46px;
-    border-radius: 40px;
-    border: 2px solid var(--primary-stilization-color);
-    padding: 14px, 28px, 14px, 28px;
-    /* background-color: red; */
+.content_textauthor{
+ font-weight: 400px;
+   font-size: 12px;
+   line-height: 14px;
+   
+   color: var(--color-name-category);
+  letter-spacing: 0.02em; 
+}
+/* картинка книги */
+.content__image {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+
+/* tablet styles * для планшетів */
+@media (min-width: 768px) {
+  .content_book {
+    width: calc((100% - 50px) / 3);
+    /* width: 100%; */
+    margin-bottom: 20px;
+  }
+
+  .content_list_topBooks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content-error{
+    width: 322px;
+    height: 241px;
+  }
+  
+}
+
+/* для більших за планшет */
+@media (min-width: 1148px) {
+  .content_book {
+    width: calc((100% - 72px) / 5);
+    margin-bottom: 32px;
+  }
+  .content_list_topBooks {
+    display: flex;
+    
+    /* flex-wrap: wrap; */
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    column-gap: 15px;
+  }
+
+.content__image{
+  height: 256px;
 }
 
 .content-error{
-    width: 200px;
-    height: 200px;
-    background-color: red;
+    width: 322px;
+    height: 241px;
+    margin-top: 300px;
+  }
+
+ 
 }
+

@@ -1,5 +1,9 @@
-.shopping-section {
+.shopping-body {
     background-color: var(--main-background-color);
+}
+
+.shopping-list-wrapper {
+    width: 100%;
 }
 
 .shopping-list-title {
@@ -169,6 +173,14 @@
     display: block;
 }
 
+.shopping-list-buy-link-img {
+    filter: grayscale(100%);
+}
+
+.shopping-list-buy-link-img:hover, .shopping-list-buy-link-img:focus {
+    filter: drop-shadow(0px 3px 3px rgba(0,0,0,.35));
+}
+
 @media screen and (max-width: 374px) {
     .shopping-list-item {
         width: 100%;
@@ -241,7 +253,17 @@
         gap: 16px;
     }
 
-    .shopping-list-buy-link-img {
+    .shopping-list-buy-link-img.amazon {
+        width: 48px;
+        height: 15px;
+    }
+
+    .shopping-list-buy-link-img.apple-book {
+        width: 28px;
+        height: 27px;
+    }
+
+    .shopping-list-buy-link-img.bookshop {
         width: 32px;
         height: 30px;
     }
@@ -261,4 +283,47 @@
     .shopping-list-item-description {
         width: 808px;
     }
+
+    .shopping-list-wrapper {
+        margin-left: 40px;
+    }
+}
+
+body.dark {
+    background-color: var(--main-background-color-dark-theme);
+}
+
+body.dark .shopping-list-title {
+    color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .shopping-list-is-empty-text {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+
+body.dark .shopping-list-item {
+    border: 2px solid rgba(79, 46, 232, 0.40);
+    background-color: var(--header-background-color-dark-theme);
+}
+
+body.dark .shopping-list-item-title {
+    color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .shopping-list-item-description {
+    color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .shopping-list-buy-link-img {
+    filter: grayscale(100%);
+}
+
+body.dark .shopping-list-buy-link-img.amazon {
+    filter: brightness(0) invert(1);
+}
+
+body.dark .shopping-list-buy-link-img:hover,
+body.dark .shopping-list-buy-link-img:focus {
+    filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }

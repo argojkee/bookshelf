@@ -1,0 +1,178 @@
+/* Dark theme for .loginModal */
+
+.loginBacdropLogIn.isHidden {
+  display: none;
+}
+.loginBacdropLogIn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 0 20px;
+  /* background-color: #4f2ee8; */
+  background: linear-gradient(to bottom right, #7152fd, #4f2ee8);
+}
+
+.loginModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  max-width: 335px;
+  height: 384px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  top: 40px;
+  background-color: #f6f6f6;
+  border-radius: 18px;
+}
+
+body.dark .loginModal {
+  background-color: #202024;
+  border: 2px solid #f6f6f6;
+}
+
+.loginClose {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+}
+.loginCloseIcon {
+  stroke: var(--primary-color-text);
+}
+
+body.dark .loginCloseIcon {
+  stroke: #f6f6f6;
+}
+
+.loginClose:hover .loginCloseIcon,
+.loginClose:focus .loginCloseIcon {
+  stroke: var(--primary-stilization-color);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.loginInputCont {
+  position: relative;
+}
+.loginInputIcon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 16px;
+  right: 24px;
+  stroke: #111111;
+  fill: #f3f3f3;
+}
+body.dark .loginInputIcon {
+  stroke: #f6f6f6;
+  fill: #202024;
+}
+
+.loginInput {
+  width: 100%;
+  height: 50px;
+  padding: 16px 24px;
+  font-size: 16px;
+  border-radius: 40px;
+  color: #111111;
+}
+
+body.dark .loginInput {
+  background-color: #202024;
+  color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+}
+
+.loginBtn {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 16px;
+  border-radius: 40px;
+  background-color: #111111;
+  color: #f3f3f3;
+  cursor: pointer;
+}
+.loginBtn:focus,
+.loginBtn:hover {
+  /* transform: scale(1.01); */
+  box-shadow: 3px 3px 5px #808084;
+}
+
+body.dark .loginBtn {
+  background-color: #f6f6f6;
+  color: #202024;
+}
+
+.loginBottom {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.sInBtb,
+.sUpBtb {
+  color: #111111;
+  cursor: pointer;
+}
+
+body.dark .sInBtb,
+body.dark .sUpBtb {
+  color: #f6f6f6;
+}
+
+.sUpBtb.active {
+  color: #4f2ee8;
+  text-decoration: underline;
+}
+.sInBtb.active {
+  color: #4f2ee8;
+  text-decoration: underline;
+}
+body.dark .sUpBtb.active,
+body.dark .sInBtb.active {
+  color: #4f2ee8;
+}
+
+@media (min-width: 768px) {
+  .loginModal {
+    max-width: 580px;
+    height: 516px;
+    padding: 80px 40px 40px;
+  }
+
+  .loginClose {
+    width: 28px;
+    height: 28px;
+    top: 24px;
+    right: 24px;
+  }
+  .loginCloseIcon {
+    width: 32px;
+    height: 32px;
+  }
+  .loginForm {
+    gap: 28px;
+  }
+  .loginInput,
+  .loginBtn {
+    height: 64px;
+  }
+  .loginBtn {
+    margin-top: 12px;
+  }
+
+  .loginInputIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
