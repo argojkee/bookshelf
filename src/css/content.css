@@ -31,7 +31,13 @@ body.dark .content_btnSeeMore{
   border-radius: 40px;
   border: 2px solid var(--primary-stilization-color);
   padding: 14px, 28px, 14px, 28px;
-  /* background-color: red; */
+  
+ transition: all 2s ease;
+}
+
+.content_btnSeeMore:focus,
+.content_btnSeeMore:hover {
+  transform:  scale(1.1);
 }
 
 .hidden{
@@ -59,6 +65,24 @@ body.dark .content_btnSeeMore{
   line-height: 18px;
   letter-spacing: 0.02em;
   
+  
+}
+
+.contend_categoryMove{
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .contend_categoryMove{
