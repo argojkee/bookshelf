@@ -8,6 +8,7 @@
   --primary-stilization-color: #4f2ee8;
   --secondary-stilization-color: #eac645;
   --content-count: 1;
+  --color-name-category: #B4AFAF;
 }
 
 @font-face {
@@ -86,36 +87,18 @@ button {
   padding-right: 20px;
 }
 
-.content_book{
-  margin-left: auto;
-  margin-right: auto;
-}
-.content{
-  width: 100%;
-  background-color: #eac645;
-}
+
+
 @media screen and (min-width: 374px) {
   .container {
     width: 100%;
   }
-
- 
-  .content_image{
-    height: 316px;
-  }
-
-
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .container {
     width: 375px;
   }
-  .content_image{
-    width: calc((100% / 3)- 4*32 );
-    height: 316px;
-  }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -123,14 +106,6 @@ button {
     padding-left: 20px;
     padding-right: 20px;
   }
-<<<<<<< Updated upstream
-  .content_image{
-    width: calc((100% / 3)- 4*32 );
-    height: 316px;
-  }
-=======
-
->>>>>>> Stashed changes
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -139,38 +114,6 @@ button {
     padding-left: 32px;
     padding-right: 32px;
   }
-<<<<<<< Updated upstream
-
-  .content_list {
-    display: flex;
-  }
-
-  
-  .content_item{
-    width: calc(100% / 3);
-}
-
-.content_book{
-    width: 218px;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-
-.content_list_topBooks{
-  display: flex;
-  justify-content: flex-start;
-}
-
-.content__image{ 
-  width: calc((100% / 5) - (6*24)) ; 
-  height: 256px;
-}
-
-=======
->>>>>>> Stashed changes
 }
 
 @media screen and (min-width: 1440px) {
@@ -179,24 +122,4 @@ button {
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  .content{
-  
-  background-color: #eac645;
-}
-
-.content_list_topBooks{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  justify-content: space-around;
-
-}
-
-.content_book{
-    width: 180px;
-    height: 256px
-    
-}
-
 }

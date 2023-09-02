@@ -13,7 +13,7 @@ let numberOfBooksShown = countTopBooks();
 let selectedCategory = '';
 
 
-const HowManyBooksToLoad = 5;
+const HowManyBooksToLoad = 3;
 const containerBook = document.querySelector('.container-books');
 
 getTopBooks();
@@ -50,9 +50,9 @@ export function renderDataBycat(butElem, data) {
     return;
   }
   const beforeSeeMore = document.querySelector('.content_btnSeeMore');
-  let markup = createMarkupWithFiveBooks(data);
+  let markup = createMarkupWithFiveBooks(butElem,data);
   const ulElem = butElem.previousElementSibling;
-  console.log(ulElem);
+  
   // beforeSeeMore.insertAdjacentHTML('beforebegin', markup);
   butElem.previousElementSibling.insertAdjacentHTML('beforeend', markup);
 
@@ -109,24 +109,19 @@ function deleteFiveElementsFromArray() {
     }
   }
 }
-//якщо користувач натиснув на нову категорыю, скидаємо параметри
-function reset() {
-  //кі-сть загружених книг однієї категорії після того, як користувач натиснув на кнопку SEEMORE
-  numberOfBooksShown = countTopBooks();
-  //ко-сть книг в категории
-  numberBooks = 0;
-  //категорія, по кнопкі якій натиснули
-  selectedCategory = '';
-  //очищаємо массив книг однієї категорії
-  arrayBooks = [];
-}
 
-function createMarkupWithFiveBooks(arrayBooks) {
+function createMarkupWithFiveBooks(elem, arrayBooks) {
   let counter = 0;
   let markup = arrayBooks
     .map((book, index) => {
+      
       if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
         counter += 1;
+        
+        //якщо загрузили останню книгу, то видаляємл кнопку
+        if (index + 1 === arrayBooks.length) {
+          hiddenBtnSeeMore(elem);
+        }
         return `<li id="${book._id}"class="content_book">
                           <a  href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
@@ -138,5 +133,10 @@ function createMarkupWithFiveBooks(arrayBooks) {
     })
     .join('');
   numberOfBooksShown += HowManyBooksToLoad;
+  console.log();
   return markup;
+}
+
+function hiddenBtnSeeMore(elem) {
+  elem.classList.add("hidden");
 }
