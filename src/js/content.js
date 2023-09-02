@@ -23,13 +23,13 @@ getTopBooks();
 
 export function getTopBooks() {
   containerBook.innerHTML = '';
+  containerBook.innerHTML = '';
   fetchToAllBooks()
     .then(result => {
       return result.data;
     })
-    .then(data => (containerBook.innerHTML = renderMarkupTopBooks(data)))    
+    .then(data => (containerBook.innerHTML = renderMarkupTopBooks(data)));
 }
-
 
 function getBooksByCat(butElem, category) {
   fetchBooksByCategory(category)
@@ -49,7 +49,6 @@ export function renderDataBycat(butElem, data) {
 
 const test = document.querySelector('.container-books');
 test.addEventListener('click', handleSumitSeeMore);
-
 
 function handleSumitSeeMore(e) {
   e.preventDefault();
@@ -78,11 +77,13 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
       if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
         counter += 1;
         loaded += 1;
+        loaded += 1;
         //якщо загрузили останню книгу, то видаляємл кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
           elem.parentNode.nextSibling.firstElementChild.classList.add(
-            'contend_categoryMove');
+            'contend_categoryMove'
+          );
           Notiflix.Notify.info('this is all. Check out other category books');
         }
         return `<li class="content_book">
@@ -97,13 +98,15 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
     .join('');
   numberOfBooksShown += loaded;
   loaded = 0;
+  numberOfBooksShown += loaded;
+  loaded = 0;
   return markup;
 }
 
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');
+  // categoryItem.classList.add('contend_categoryMove');
 }
-
 
 //налаштування для Notflix
 Notiflix.Notify.init({
