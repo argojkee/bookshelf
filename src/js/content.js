@@ -23,6 +23,7 @@ getTopBooks();
 
 export function getTopBooks() {
   containerBook.innerHTML = '';
+  containerBook.innerHTML = '';
   fetchToAllBooks()
     .then(result => {
       return result.data;
@@ -67,13 +68,15 @@ function handleSumitSeeMore(e) {
 //ці перші книги не загружає, догружає ще декілька(HowManyBooksToLoad).
 //Коли доходе до кінця, видаляє кнопку.
 function createMarkupWithFiveBooks(elem, arrayBooks) {
-  console.log(elem.parentNode.nextSibling.firstElementChild);
+  //перший син нижнього сусіда батька
+  // console.log(elem.parentNode.nextSibling.firstElementChild);
   let counter = 0;
   let loaded = 0;
   let markup = arrayBooks
     .map((book, index) => {
       if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
         counter += 1;
+        loaded += 1;
         loaded += 1;
         //якщо загрузили останню книгу, то видаляємл кнопку
         if (index + 1 === arrayBooks.length) {
@@ -84,7 +87,7 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
           Notiflix.Notify.info('this is all. Check out other category books');
         }
         return `<li class="content_book">
-                          <a  href="${book.book_image}" data-id="${book._id}" >
+                          <a data-id=${book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
                           <span class="content_textname"><p id="content_book_name">${book.title}</p></span>
@@ -95,11 +98,14 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
     .join('');
   numberOfBooksShown += loaded;
   loaded = 0;
+  numberOfBooksShown += loaded;
+  loaded = 0;
   return markup;
 }
 
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');
+  // categoryItem.classList.add('contend_categoryMove');
 }
 
 //налаштування для Notflix
