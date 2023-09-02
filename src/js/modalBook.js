@@ -112,8 +112,9 @@ function openModal(event) {
 
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
-  bookSet.bookID = event.target.parentNode.dataset.id;
+  bookSet.bookID = event.target.closest('a').dataset.id;
   addModalBookMarkup(bookSet.bookID);
+  modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
 }
 
 //закриття модалки
@@ -162,23 +163,22 @@ function renderBook(obj) {
           <a href="${
             book.buy_links.find(link => link.name === 'Amazon').url
           }" target="_blank"
-            ><img class="modal-book-amazon" src="${amazonImage}"> 
+            ><img class="modal-book-amazon shopping-list-buy-link-img" src="${amazonImage}"> 
           </a>
         </li>
         <li>
           <a href="${
             book.buy_links.find(link => link.name === 'Apple Books').url
           }" target="_blank"
-            ><img class="modal-book-apple" src="${appleBookImage}">
+            ><img class="modal-book-apple shopping-list-buy-link-img" src="${appleBookImage}">
           </a>
         </li>
         <li>
           <a href="${
             book.buy_links.find(link => link.name === 'Bookshop').url
           }" target="_blank"
-            ><img class="modal-book-shop" src="${bookShopImage}">
+            ><img class="modal-book-shop shopping-list-buy-link-img" src="${bookShopImage}">
           </a>
         </li>
       </ul>`;
-  modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
 }
