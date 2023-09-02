@@ -87,7 +87,7 @@ let userBooks = () => {
     booksChangeBtn.style.visibility = 'hidden';
     return;
   }
-  booksChangeBtn.display.style = 'block';
+  booksChangeBtn.style.display = 'block';
   booksChangeBtn.style.visibility = 'visible';
   // read book array data from LocalStorage
   getBooks()
