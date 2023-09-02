@@ -8,7 +8,7 @@
   --primary-stilization-color: #4f2ee8;
   --secondary-stilization-color: #eac645;
   --content-count: 1;
-  --color-name-category: #B4AFAF;
+  --color-name-category: #b4afaf;
 }
 
 @font-face {
@@ -87,8 +87,6 @@ button {
   padding-right: 20px;
 }
 
-
-
 @media screen and (min-width: 374px) {
   .container {
     width: 100%;
@@ -106,8 +104,8 @@ button {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .content_image{
-    width: calc((100% / 3)- 4*32 );
+  .content_image {
+    width: calc((100% / 3)- 4 * 32);
     height: 316px;
   }
 }
@@ -123,30 +121,27 @@ button {
     display: flex;
   }
 
-  
-  .content_item{
+  .content_item {
     width: calc(100% / 3);
-}
+  }
 
-.content_book{
+  .content_book {
     width: 218px;
 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+  }
 
+  .content_list_topBooks {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-.content_list_topBooks{
-  display: flex;
-  justify-content: flex-start;
-}
-
-.content__image{ 
-  width: calc((100% / 5) - (6*24)) ; 
-  height: 256px;
-}
-
+  .content__image {
+    width: calc((100% / 5) - (6 * 24));
+    height: 256px;
+  }
 }
 
 @media screen and (min-width: 1440px) {

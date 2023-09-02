@@ -1,9 +1,8 @@
-import './js/fondImages';
-import './js/bookMarkets';
 import './js/sprite';
 import './js/header';
 import './js/categoriesList';
 import './js/fondsList';
+import './js/slick-slider';
 import './js/content';
 import './js/modalBookDm';
 import './js/burgerMenu';

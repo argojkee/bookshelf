@@ -1,4 +1,4 @@
-
+  // Dark theme for local storage
 document.querySelector('.themetoggle').addEventListener('click', (event) => {
   event.preventDefault();
   if (localStorage.getItem('theme') === 'dark') {
@@ -7,24 +7,23 @@ document.querySelector('.themetoggle').addEventListener('click', (event) => {
   else {
     localStorage.setItem('theme', 'dark')
   }
-  addDarkClassToHTML()
+  switchToDarkTheme()
 });
 
-function addDarkClassToHTML() {
+function switchToDarkTheme() {
   try {
     if (localStorage.getItem('theme') === 'dark') {
       document.querySelector('body').classList.add('dark');
-      // document.querySelector('.themetoggle').textContent = 'dark';
     }
     else {
       document.querySelector('body').classList.remove('dark');
-      // document.querySelector('.themetoggle').textContent = 'Light';
     }
   } catch (err) { }
 }
 
-addDarkClassToHTML();
+switchToDarkTheme();
 
+  // Burger button
   const burgerSwitch = document.querySelector('.burger-head');
   const burgerCross = document.querySelector('.burger-cross');
 
@@ -34,3 +33,19 @@ addDarkClassToHTML();
     burgerSwitch.classList.toggle("header-switch-hidden");
     burgerCross.classList.toggle("header-switch-hidden");
   });
+
+  // Highlighting selected page in header with yellow color
+
+    const shoppListBtn = document.querySelector(".js-shop-btn");
+    const headHomeBtn = document.querySelector(".header-home");
+
+    shoppListBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      shoppListBtn.classList.add("header-selected-page");
+      headHomeBtn.classList.remove("header-selected-page");
+    });
+
+    // Button Switcher
+
+    
