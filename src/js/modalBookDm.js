@@ -1,12 +1,13 @@
-import { getBase, addBase } from '/src/js/loginApi.js';
+import { getBase, addBase } from './loginApi';
 
 const elementSet = {
     
     backdropBook: document.querySelector('[data-modal-backdrop]'),
     modalStatusButton: document.querySelector('[dat-modal-to]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
-    BookContainer: document.querySelector('.content_book'), 
-    
+    BookContainer: document.querySelector('.container-books'), 
+    modalBookContainer: document.querySelector('[data-modal-container]'), 
+
 };
 
 const getBooks = () => {
@@ -27,24 +28,26 @@ let existsUser = () => JSON.parse(localStorage.getItem('bookshelId'));
 
 function openModal(event) {
 
-  event.preventDefault();
-
+  if (!event.target.closest('a')) {
+    return;
+  } 
   // remove status buttom event
   elementSet.modalStatusButton.removeEventListener('click', changeBookList);
 
   // need classes !!!
-  if (!event.target.closest('li')) {
-    return;
-  } 
-    // open modal window
-    backdropBook.classList.toggle('hidden');
+    
+  // open modal window
+  elementSet.backdropBook.classList.toggle('hidden');
 
-    mainBook();
+  mainBook();
+  
 }
 
 function mainBook() {
   // search user
   let getUserID = existsUser();
+
+  // console.log(getUserID);
 
   if(getUserID.length === 0); //massage;
     return;
