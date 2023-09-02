@@ -1,10 +1,7 @@
-
 .all-categories-container {
   min-width: 307px;
   height: 228px;
 
-  margin-top: 40px;
-  margin-left: 24px;
   border: 2px solid tomato;
 }
 
@@ -133,5 +130,3 @@ body.dark .all-categories-container .current {
   text-transform: uppercase;
   font-weight: 700;
 }
-
-
