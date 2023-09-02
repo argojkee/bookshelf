@@ -31,7 +31,13 @@ body.dark .content_btnSeeMore{
   border-radius: 40px;
   border: 2px solid var(--primary-stilization-color);
   padding: 14px, 28px, 14px, 28px;
-  /* background-color: red; */
+  
+ transition: all 2s ease;
+}
+
+.content_btnSeeMore:focus,
+.content_btnSeeMore:hover {
+  transform:  scale(1.1);
 }
 
 .hidden{

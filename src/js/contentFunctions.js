@@ -29,7 +29,6 @@ export function renderMarkupTopBooks(array) {
           </li>`;
     })
     .join('')}</ul>`;
-  // console.log(markup);
   return markup;
 }
 
@@ -53,23 +52,3 @@ export function countTopBooks() {
     return 5;
   }
 }
-<<<<<<< Updated upstream
-
-// export function renderError(error) {
-//   return `<div class="content-error">
-//          ERROR
-//     </div>`;
-// }
-export function renderError() {
-  return `<div class="content-error"> 
-              <img 
-              src="${path}"
-              alt="error"
-              width="400"
-              height="400"
-              class="content_imgError"/>
-         </div>`;
-  // document.querySelector('.container-books').innerHTML = 'jasjdaj';
-}
-=======
->>>>>>> Stashed changes

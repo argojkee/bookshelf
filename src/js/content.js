@@ -69,7 +69,8 @@ function handleSumitSeeMore(e) {
 //ці перші книги не загружає, догружає ще декілька(HowManyBooksToLoad).
 //Коли доходе до кінця, видаляє кнопку.
 function createMarkupWithFiveBooks(elem, arrayBooks) {
-  console.log(elem.parentNode.nextSibling.firstElementChild);
+  //перший син нижнього сусіда батька
+  // console.log(elem.parentNode.nextSibling.firstElementChild);
   let counter = 0;
   let loaded = 0;
   let markup = arrayBooks
@@ -85,7 +86,7 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
           Notiflix.Notify.info('this is all. Check out other category books');
         }
         return `<li class="content_book">
-                          <a  href="${book.book_image}" >
+                          <a data-id=${book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
                           <span class="content_textname"><p id="content_book_name">${book.title}</p></span>
