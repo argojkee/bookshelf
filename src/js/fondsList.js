@@ -9,11 +9,14 @@ import saveChildren from '../images/fondsWebp/fonds-x1/saveChildren.webp';
 import united24 from '../images/fondsWebp/fonds-x1/united24.webp';
 import worldVision from '../images/fondsWebp/fonds-x1/worldVision.webp';
 
+console.log(united24);
+
 const fundsList = document.querySelector('.funds-list');
 
 const fundsMarkup = fondlist
   .map((fund, index) => {
     let currentImg = null;
+
     if (fund.title === 'Save the Children') {
       currentImg = saveChildren;
     } else if (fund.title === 'Project HOPE') {
