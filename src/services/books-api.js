@@ -10,6 +10,7 @@ export const fetchToAllBooks = () => {
   return axios.get(`${BASE_URL}top-books`);
 };
 
+
 export const fetchBooksByCategory = categoryName => {
   return axios.get(`${BASE_URL}category?category=${categoryName}`);
 };

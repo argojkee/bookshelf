@@ -1,0 +1,14 @@
+.funds-wrapper {
+  width: 335px;
+  height: 474px;
+  background-color: aqua;
+}
+
+.funds-title {
+  display: flex;
+  align-items: center;
+}
+
+.fund-image {
+  filter: brightness(0) invert(1);
+}
