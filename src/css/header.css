@@ -73,7 +73,7 @@
   display: block;
 }
 
-.header-nav .current {
+.header-selected-page {
   display: flex;
   padding: 8px 16px;
   align-items: flex-start;
@@ -85,7 +85,7 @@
 @media screen and (max-width: 768px) {
   .header-home,
   .hideshopcard,
-  .current {
+  .header-selected-page {
     display: none;
   }
 }
@@ -177,7 +177,6 @@
     align-items: center;
 
     margin-left: 24px;
-    margin-right: 4px;
 
     background-image: url('../images/head-images/Stiven-face.webp');
     background-repeat: no-repeat;
@@ -197,6 +196,7 @@
   line-height: normal;
   letter-spacing: -0.44px;
   margin-left: 58px;
+  margin-right: 4px;
 }
 
 @media screen and (max-width: 768px) {
@@ -212,7 +212,6 @@
     height: 48px;
 
     margin-left: 24px;
-    margin-right: 4px;
 
     border-radius: 18px;
     border: 1.5px solid #111;
@@ -227,13 +226,53 @@
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.56px;
+
+  margin-left: 14px;
+  margin-right: 90px;
 }
+
+@media screen and (max-width: 768px) {
+  .head-loggedup-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .head-loggedup-btn {
+    display: flex;
+    align-items: center;
+    width: 184px;
+    height: 48px;
+
+    margin-left: 24px;
+
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background-color: #FFF;
+  }
+}
+
+.head-loggedup-span{
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+
+    margin-left: 14px;
+    margin-right: 90px;
+}
+
+
 
 body.dark {
   background-color: #111;
   color: #fff;
 }
 
+body.dark .header-home{color: #FFF;}
 body.dark header {
   border: 1.5px solid #fff;
 }
