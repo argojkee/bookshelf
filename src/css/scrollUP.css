@@ -12,7 +12,7 @@ html {
    border: none;
    border-radius: 50%;
 
-   top: calc(100vw / 2);
+   top: calc(100vh / 2);
    right: 10px;
 
    width: 64px;
