@@ -1,3 +1,4 @@
+
 import { fetchToAllBooks, fetchBooksByCategory } from '../services/books-api';
 import {
   renderMarkupTopBooks,
@@ -15,6 +16,15 @@ let selectedCategory = '';
 
 const HowManyBooksToLoad = 3;
 const containerBook = document.querySelector('.container-books');
+const content = document.querySelector('.content');
+const categoryItem = document.querySelector('.content_category');
+
+containerBook.innerHTML = `<div class="content-error"> 
+              <img 
+              src="${require('../images/shopping-list/Books.png')}"
+              alt="error"
+              class="content_imgError"/>
+         </div>`;
 
 getTopBooks();
 
@@ -27,8 +37,17 @@ function getTopBooks() {
         .catch(errorfetchData);
 }
 export function getTopBooks() {
+<<<<<<< Updated upstream
   fetchToAllBooks().then(result => { return result.data }).then(renderData).catch(errorfetchData);
 
+=======
+  console.log(fetchToAllBooks);
+  fetchToAllBooks()
+    .then(result => {
+      return result.data;
+    })
+    .then(renderData);
+>>>>>>> Stashed changes
 }
 
 function getBooksByCat(butElem, category) {
@@ -39,7 +58,7 @@ function getBooksByCat(butElem, category) {
     .then(data => {
       renderDataBycat(butElem, data);
     })
-    .catch(errorfetchData);
+    .catch();
 }
 
 export function renderDataBycat(butElem, data) {
@@ -50,9 +69,9 @@ export function renderDataBycat(butElem, data) {
     return;
   }
   const beforeSeeMore = document.querySelector('.content_btnSeeMore');
-  let markup = createMarkupWithFiveBooks(butElem,data);
+  let markup = createMarkupWithFiveBooks(butElem, data);
   const ulElem = butElem.previousElementSibling;
-  
+
   // beforeSeeMore.insertAdjacentHTML('beforebegin', markup);
   butElem.previousElementSibling.insertAdjacentHTML('beforeend', markup);
 
@@ -61,7 +80,13 @@ export function renderDataBycat(butElem, data) {
 
 //якщо дані витягуємо вдало, то кладемо їх в масив
 function renderData(data) {
+<<<<<<< Updated upstream
     containerBook.insertAdjacentHTML('beforeend', '');
+=======
+  containerBook.innerHTML = '';
+  console.log('!!!!!!!!!!!!!!!!!');
+  // containerBook.insertAdjacentHTML('beforeend', '');
+>>>>>>> Stashed changes
   if (data.length === 0) {
     //немає книг, потрібно показати картинку про це');
     // let markup = renderError(data);
@@ -70,13 +95,15 @@ function renderData(data) {
   }
 
   let markup = renderMarkupTopBooks(data);
-  containerBook.insertAdjacentHTML('beforeend', markup);
+  // containerBook.insertAdjacentHTML('beforeend', markup);
+  containerBook.innerHTML = markup;
 }
 
 //якщо помилка, то оброблюємо помилку
 function errorfetchData(error) {
+  console.log('sdasda');
   let markup = renderError(error);
-  containerBook.insertAdjacentHTML('beforeend', markup);
+  content.innerHTML = markup;
 }
 
 const test = document.querySelector('.container-books');
@@ -114,10 +141,9 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
   let counter = 0;
   let markup = arrayBooks
     .map((book, index) => {
-      
       if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
         counter += 1;
-        
+
         //якщо загрузили останню книгу, то видаляємл кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
@@ -126,8 +152,8 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
                           <a  href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
-                          <p id="content_book_name">${book.title}</p>
-                          <p id="content_book_author">${book.author}</p>
+                          <span class="content_textname"><p id="content_book_name">${book.title}</p></span>
+                          <span class="content_textauthor"><p id="content_book_author">${book.author}</p></span>
                 </li>`;
       }
     })
@@ -138,5 +164,10 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
 }
 
 function hiddenBtnSeeMore(elem) {
+<<<<<<< Updated upstream
   elem.classList.add("hidden");
 }
+=======
+  elem.classList.add('hidden');
+}
+>>>>>>> Stashed changes
