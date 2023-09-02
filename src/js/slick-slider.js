@@ -3,7 +3,7 @@ import 'slick-carousel';
 
 $('.carousel').slick({
   // dots: true, //pagination
-  slidesToShow: 6,
+  slidesToShow: window.screen.availWidth < 768 ? 4 : 6,
   vertical: true,
   // autoplay: true,
   autoplaySpeed: 1000,
