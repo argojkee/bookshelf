@@ -9,8 +9,6 @@ import saveChildren from '../images/fondsWebp/fonds-x1/saveChildren.webp';
 import united24 from '../images/fondsWebp/fonds-x1/united24.webp';
 import worldVision from '../images/fondsWebp/fonds-x1/worldVision.webp';
 
-console.log(united24);
-
 const fundsList = document.querySelector('.funds-list');
 
 const fundsMarkup = fondlist
@@ -38,8 +36,8 @@ const fundsMarkup = fondlist
     }
 
     return `
-    <li class="fund-item">
-      <a href="${fund.url}" target="_blank">
+    <li class="fund-item carousel__item">
+      <a href="${fund.url}" target="_blank" class="carousel__link fund-link">
         <span class="fund-number">${(index + 1)
           .toString()
           .padStart(2, '0')}</span>

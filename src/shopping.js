@@ -1,5 +1,4 @@
-import './js/fondImages';
-import './js/bookMarkets';
+import './js/slick-slider';
 import './js/sprite';
 import './js/header';
 import './js/fondsList';
