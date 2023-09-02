@@ -23,13 +23,15 @@ const refs = {
 
 // const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-getBase().then(data => {
-  if(data.length !== 0) {
-    refs.shoppingListIsEmptyMessage.style.display = 'none';
-    createMarkup(data);
-    refs.title.style.marginBottom = '40px';
-  }
-}).catch(error => console.log(error));
+getBase()
+  .then(data => {
+    if (data.length !== 0) {
+      refs.shoppingListIsEmptyMessage.style.display = 'none';
+      createMarkup(data);
+      refs.title.style.marginBottom = '40px';
+    }
+  })
+  .catch(error => console.log(error));
 
 // if (books) {
 //   refs.shoppingListIsEmptyMessage.style.display = 'none';
@@ -123,7 +125,7 @@ async function deleteItem(event) {
   if (
     event.target.classList.contains('delete-btn-icon-use') ||
     event.target.classList.contains('delete-btn-icon') ||
-    event.target.nodeName === 'BUTTON' 
+    event.target.nodeName === 'BUTTON'
   ) {
     const itemId = event.target.closest('.shopping-list-item').dataset.id;
     const books = await getBase();
@@ -132,7 +134,6 @@ async function deleteItem(event) {
     const filteredBooks = books.filter(({ _id }) => _id !== itemId);
     // localStorage.removeItem(STORAGE_KEY);
     refs.shoppingListIsEmptyMessage.style.display = 'flex';
-
 
     if (document.documentElement.clientWidth < 768) {
       refs.title.style.marginBottom = '120px';
