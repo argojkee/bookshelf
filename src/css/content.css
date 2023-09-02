@@ -1,6 +1,23 @@
+/* для темної теми */
+body.dark .title_theme{
+  color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .content_textname{
+  color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .content_btnSeeMore{
+  color: var(--primary-color-text-dark-theme);
+}
+
+/* ******************** */
+
+
+
 .content {
   width: 100%;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 /* кнопка */
@@ -8,7 +25,6 @@
   display: block;
   margin-left: auto;
   margin-bottom: 40px;
-  margin-top: 40px;
 
   width: 124px;
   height: 46px;
@@ -22,6 +38,15 @@
     display: none;
 }
 
+/* картинка помилка, якщо книги не загруаються */
+.content-error{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 198px;
+  width: 265px;
+  height: 198px;
+}
 /* заголовок */
 .title-container-topBooks{
   margin-bottom: 40px;
@@ -40,24 +65,40 @@
   margin-top: 18px;
 }
 
+.content_book{
+  margin-bottom: 8px;
+}
 .title_blue{
   color: var(--primary-stilization-color);
 }
 
-.content_book_name{
+.content_textname{
+  font-style: DM Sans;
   font-weight: 700px;
-font-weight: 16px;
-line-height: 18px;
-/* -4 */
-letter-spacing: 0.02em;
-margin-bottom: 4px;
+  font-weight: 16px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
 }
 
-.content_book_author{
-   font-weight: 400px;
+.content_textauthor{
+  font-style: italic;
+  font-weight: 400px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.2em;
+}
+
+.content_textname{
+color: var(--primary-color-text);
+}
+
+.content_textauthor{
+ font-weight: 400px;
    font-size: 12px;
    line-height: 14px;
-   /* -4 */
+   
+   color: var(--color-name-category);
   letter-spacing: 0.02em; 
 }
 /* картинка книги */
@@ -72,6 +113,7 @@ margin-bottom: 4px;
   .content_book {
     width: calc((100% - 50px) / 3);
     /* width: 100%; */
+    margin-bottom: 20px;
   }
 
   .content_list_topBooks {
@@ -79,22 +121,39 @@ margin-bottom: 4px;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  .content-error{
+    width: 322px;
+    height: 241px;
+  }
+  
 }
 
 /* для більших за планшет */
 @media (min-width: 1148px) {
   .content_book {
     width: calc((100% - 72px) / 5);
+    margin-bottom: 32px;
   }
   .content_list_topBooks {
     display: flex;
+    
     /* flex-wrap: wrap; */
-     justify-content:flex-start;
-  flex-wrap: wrap;
-  column-gap: 15px;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    column-gap: 15px;
   }
 
-.content_list_topBooks{ 
-  
+.content__image{
+  height: 256px;
 }
+
+.content-error{
+    width: 322px;
+    height: 241px;
+    margin-top: 300px;
+  }
+
+ 
 }
+

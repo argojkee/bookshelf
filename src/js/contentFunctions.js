@@ -2,7 +2,7 @@
 
 //ф-ція для створення розмітки, яка видає топ книг
 export function renderMarkupTopBooks(array) {
-  const markup = ` <h1 class="title-container-topBooks">Best sellers <span class="title_blue"> books </span></h1>
+  const markup = ` <h1 class="title-container-topBooks"><span class="title_theme">Best sellers</span> <span class="title_blue"> books </span></h1>
   <ul class="content_list_categories">${array
     .map(kategory => {
       return `<li class="content_categoryItem ${kategory.list_name}">
@@ -11,11 +11,11 @@ export function renderMarkupTopBooks(array) {
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
                       return `<li class="content_book">
-                          <a data-id=${book._id} href="$#" >
+                          <a data-id=${book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                          
-                          <p id="content_book_name">${book.title}</p>
-                          <p id="content_book_author">${book.author}</p>
+                          <span class="content_textname"><p id="content_book_name">${book.title}</p><span>
+                          <span class="content_textauthor"><p id="content_book_author">${book.author}</p>
                            </a>
                           </li>`;
                     }
@@ -58,4 +58,15 @@ export function renderError(error) {
   return `<div class="content-error">
          ERROR
     </div>`;
+}
+export function renderError() {
+  return `<div class="content-error"> 
+              <img 
+              src="${path}"
+              alt="error"
+              width="400"
+              height="400"
+              class="content_imgError"/>
+         </div>`;
+  // document.querySelector('.container-books').innerHTML = 'jasjdaj';
 }

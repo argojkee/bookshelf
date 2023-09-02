@@ -74,6 +74,6 @@ export function headBtnAuthorization() {
   }
 
 
-  headBtnAuthorization();
+headBtnAuthorization();
 
 window.addEventListener('resize', headBtnAuthorization);
