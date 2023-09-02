@@ -272,6 +272,7 @@ body.dark {
   color: #fff;
 }
 
+body.dark .header-home{color: #FFF;}
 body.dark header {
   border: 1.5px solid #fff;
 }
