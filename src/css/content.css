@@ -52,13 +52,36 @@ body.dark .content_btnSeeMore{
   margin-bottom: 40px;
 }
 
-.content_category{
+.content_category {
   color: var(--color-name-category);
   font-weight: 400px;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
   
+}
+
+.contend_categoryMove{
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 100%;
+    width: 300%;
+    
+  }
+
+  50% {
+    margin-left: 0%;
+    width: 100%;
+    font-size: 34px;
+    color: black;
+  }
+  100% {
+     font-size: 14px;
+  }
 }
 
 .content_list_topBooks{ 
@@ -119,7 +142,8 @@ color: var(--primary-color-text);
   .content_list_topBooks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap:25px;
   }
 
   .content-error{
