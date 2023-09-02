@@ -54,14 +54,14 @@ export function countTopBooks() {
   }
 }
 
-export function renderError(error) {
-  return `<div class="content-error">
-         ERROR
-    </div>`;
-}
+// export function renderError(error) {
+//   return `<div class="content-error">
+//          ERROR
+//     </div>`;
+// }
 export function renderError() {
-  return `<div class="content-error"> 
-              <img 
+  return `<div class="content-error">
+              <img
               src="${path}"
               alt="error"
               width="400"

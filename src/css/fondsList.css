@@ -1,8 +1,8 @@
 .funds-wrapper {
   width: 335px;
+  overflow-y: hidden;
   height: 352px;
   padding: 24px 40px;
-  overflow-y: auto;
   border-radius: 16px;
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
@@ -21,7 +21,7 @@
 .funds-title {
   display: flex;
   align-items: center;
-  margin-bottom: 44px;
+  margin-bottom: 20px;
 }
 
 .funds-title-text {
