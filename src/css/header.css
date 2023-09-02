@@ -4,8 +4,11 @@
   border: 1.5px solid #111;
   padding-top: 18px;
   padding-bottom: 18px;
-  background-color: red;
+
 }
+
+/* .head-logged-btn,
+.head-signup-btn {display: none;} */
 
 @media screen and (min-width: 768px) {
   .header {
@@ -154,9 +157,7 @@
   stroke: #111;
   display: block;
 }
-.header-switch-hidden {
-  display: none;
-}
+
 
 .js-cross-switch {
   margin-left: 14px;
@@ -264,6 +265,11 @@
 
   margin-left: 14px;
   margin-right: 90px;
+}
+
+
+.header-switch-hidden {
+  display: none;
 }
 
 body.dark {
