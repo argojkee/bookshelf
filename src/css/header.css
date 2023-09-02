@@ -6,6 +6,9 @@
   padding-bottom: 18px;
 }
 
+/* .head-logged-btn,
+.head-signup-btn {display: none;} */
+
 @media screen and (min-width: 768px) {
   .header {
     max-height: 72px;
@@ -153,9 +156,6 @@
   stroke: #111;
   display: block;
 }
-.header-switch-hidden {
-  display: none;
-}
 
 .js-cross-switch {
   margin-left: 14px;
@@ -263,6 +263,10 @@
 
   margin-left: 14px;
   margin-right: 90px;
+}
+
+.header-switch-hidden {
+  display: none;
 }
 
 body.dark {

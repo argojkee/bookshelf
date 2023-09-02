@@ -61,8 +61,8 @@ export function countTopBooks() {
 //     </div>`;
 // }
 export function renderError() {
-  return `<div class="content-error"> 
-              <img 
+  return `<div class="content-error">
+              <img
               src="${path}"
               alt="error"
               width="400"

@@ -9,11 +9,10 @@
 
 .slick-next {
   background-color: white;
-  width: 38px;
-  height: 38px;
+  bottom: -48px;
   border-radius: 50%;
   position: absolute;
-  bottom: 0;
+
   left: 50%;
   transform: translate(-50%);
   cursor: pointer;
@@ -33,4 +32,27 @@
 .slick-icon {
   fill: var(--primary-stilization-color);
   transform: rotate(180deg);
+}
+
+.slick-slide {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .slick-next {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .slick-next {
+    width: 38px;
+    height: 38px;
+  }
+
+  .slick-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
