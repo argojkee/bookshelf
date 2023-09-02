@@ -27,9 +27,8 @@ export function getTopBooks() {
     .then(result => {
       return result.data;
     })
-    .then(data => (containerBook.innerHTML = renderMarkupTopBooks(data)))    
+    .then(data => (containerBook.innerHTML = renderMarkupTopBooks(data)));
 }
-
 
 function getBooksByCat(butElem, category) {
   fetchBooksByCategory(category)
@@ -49,7 +48,6 @@ export function renderDataBycat(butElem, data) {
 
 const test = document.querySelector('.container-books');
 test.addEventListener('click', handleSumitSeeMore);
-
 
 function handleSumitSeeMore(e) {
   e.preventDefault();
@@ -81,11 +79,12 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
           elem.parentNode.nextSibling.firstElementChild.classList.add(
-            'contend_categoryMove');
+            'contend_categoryMove'
+          );
           Notiflix.Notify.info('this is all. Check out other category books');
         }
         return `<li class="content_book">
-                          <a  href="${book.book_image}" >
+                          <a  href="${book.book_image}" data-id="${book._id}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
                           <span class="content_textname"><p id="content_book_name">${book.title}</p></span>
@@ -102,7 +101,6 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');
 }
-
 
 //налаштування для Notflix
 Notiflix.Notify.init({
