@@ -1,10 +1,8 @@
-// import axios from 'axios';
 import amazonImage from '../images/bookMarkets/bookMarkets-x1/amazon.webp';
 import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp';
 import bookshopImage from '../images/bookMarkets/bookMarkets-x1/tradeBook3.webp';
 import { getBase, addBase } from './loginApi';
 
-// const STORAGE_KEY = 'shopping-list';
 const lorem =
   'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ipsa possimus debitis dignissimos ipsum consequuntur voluptatibus facere vero itaque magni, vel veniam delectus provident molestiae id libero totam excepturi perferendis!';
 
@@ -16,32 +14,28 @@ const refs = {
   title: document.querySelector('.shopping-list-title'),
 };
 
-// axios.get(`https://books-backend.p.goit.global/books/category?category=Business Books&`).then(({data}) => {
-//     console.log(data);
-//     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-// });
-
-// const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
 getBase()
   .then(data => {
     if (data.length !== 0) {
       refs.shoppingListIsEmptyMessage.style.display = 'none';
       createMarkup(data);
       refs.title.style.marginBottom = '40px';
+    } else {
+      refs.shoppingListIsEmptyMessage.style.display = 'flex';
+
+      if (document.documentElement.clientWidth < 768) {
+        refs.title.style.marginBottom = '120px';
+      } else {
+        refs.title.style.marginBottom = '140px';
+      }
     }
   })
   .catch(error => console.log(error));
 
-// if (books) {
-//   refs.shoppingListIsEmptyMessage.style.display = 'none';
-//   createMarkup(books);
-//   refs.title.style.marginBottom = '40px';
-// }
-
 refs.ul.addEventListener('click', deleteItem);
 
 function createMarkup(books) {
+  console.log(books);
   const markup = books
     .map(
       ({
@@ -58,7 +52,7 @@ function createMarkup(books) {
         }
 
         const currentBuyLinks = buy_links
-          .filter(
+          ?.filter(
             ({ name }) =>
               name === 'Amazon' || name === 'Apple Books' || name === 'Bookshop'
           )
@@ -129,10 +123,8 @@ async function deleteItem(event) {
   ) {
     const itemId = event.target.closest('.shopping-list-item').dataset.id;
     const books = await getBase();
-    // const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-    const filteredBooks = books.filter(({ _id }) => _id !== itemId);
-    // localStorage.removeItem(STORAGE_KEY);
+    const filteredBooks = books?.filter(({ _id }) => _id !== itemId);
     addBase(filteredBooks);
     refs.shoppingListIsEmptyMessage.style.display = 'flex';
 
@@ -143,8 +135,6 @@ async function deleteItem(event) {
     }
 
     if (filteredBooks.length !== 0) {
-      // localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredBooks));
-      // addBase(filteredBooks);
       refs.shoppingListIsEmptyMessage.style.display = 'none';
       refs.title.style.marginBottom = '40px';
     }

@@ -1,11 +1,6 @@
+import Notiflix from 'notiflix';
 import { fetchToAllBooks, fetchBooksByCategory } from '../services/books-api';
-import {
-  renderMarkupTopBooks,
-  createMarkupBooksByCategory,
-  countTopBooks,
-  renderError,
-  arrayBooksByCategory,
-} from './contentFunctions';
+import { renderMarkupTopBooks, countTopBooks } from './contentFunctions';
 
 //кі-сть загружених книг однієї категорії після того, як користувач натиснув на кнопку SEEMORE
 let numberOfBooksShown = countTopBooks();
@@ -28,13 +23,12 @@ getTopBooks();
 
 export function getTopBooks() {
   containerBook.innerHTML = '';
-
+  containerBook.innerHTML = '';
   fetchToAllBooks()
     .then(result => {
       return result.data;
     })
-    .then(renderData)
-    .catch(errorfetchData);
+    .then(data => (containerBook.innerHTML = renderMarkupTopBooks(data)));
 }
 
 function getBooksByCat(butElem, category) {
@@ -49,47 +43,8 @@ function getBooksByCat(butElem, category) {
 }
 
 export function renderDataBycat(butElem, data) {
-  if (data.length === 0) {
-    //немає книг, потрібно показати картинку про це');
-    // let markup = renderError(data);
-    // containerBook.insertAdjacentHTML('beforeend', markup);
-    return;
-  }
-  const beforeSeeMore = document.querySelector('.content_btnSeeMore');
   let markup = createMarkupWithFiveBooks(butElem, data);
-  const ulElem = butElem.previousElementSibling;
-
-  // beforeSeeMore.insertAdjacentHTML('beforebegin', markup);
   butElem.previousElementSibling.insertAdjacentHTML('beforeend', markup);
-
-  //на елемент повішати маркуп!!!!!!!!!!
-}
-
-//якщо дані витягуємо вдало, то кладемо їх в масив
-function renderData(data) {
-  containerBook.insertAdjacentHTML('beforeend', '');
-
-  containerBook.innerHTML = '';
-  console.log('!!!!!!!!!!!!!!!!!');
-  // containerBook.insertAdjacentHTML('beforeend', '');
-
-  if (data.length === 0) {
-    //немає книг, потрібно показати картинку про це');
-    // let markup = renderError(data);
-    // containerBook.insertAdjacentHTML('beforeend', markup);
-    return;
-  }
-
-  let markup = renderMarkupTopBooks(data);
-  // containerBook.insertAdjacentHTML('beforeend', markup);
-  containerBook.innerHTML = markup;
-}
-
-//якщо помилка, то оброблюємо помилку
-function errorfetchData(error) {
-  console.log('sdasda');
-  let markup = renderError(error);
-  content.innerHTML = markup;
 }
 
 const test = document.querySelector('.container-books');
@@ -105,37 +60,34 @@ function handleSumitSeeMore(e) {
   if (e.target.name !== selectedCategory) {
     numberOfBooksShown = countTopBooks();
   }
-
   selectedCategory = e.target.name;
   getBooksByCat(e.target, selectedCategory);
-
-  //ТУТ З МАСИВОМ НЕ ПОТРІБНО ПРАЦЮВАТИ!!!
 }
 
-//видаляємо з масиву перші пять елементів
-function deleteFiveElementsFromArray() {
-  for (let i = 1; i === arrayBooks.length; i++) {
-    if (i <= HowManyBooksToLoad) {
-      arrayBooks.shift();
-    } else {
-      return;
-    }
-  }
-}
-
+//створюється розмітка при натисненні кнопки SeeMore. Т к декілька книг вже загружено, то
+//ці перші книги не загружає, догружає ще декілька(HowManyBooksToLoad).
+//Коли доходе до кінця, видаляє кнопку.
 function createMarkupWithFiveBooks(elem, arrayBooks) {
+  //перший син нижнього сусіда батька
+  // console.log(elem.parentNode.nextSibling.firstElementChild);
   let counter = 0;
+  let loaded = 0;
   let markup = arrayBooks
     .map((book, index) => {
       if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
         counter += 1;
-
+        loaded += 1;
+        loaded += 1;
         //якщо загрузили останню книгу, то видаляємл кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
+          elem.parentNode.nextSibling.firstElementChild.classList.add(
+            'contend_categoryMove'
+          );
+          Notiflix.Notify.info('this is all. Check out other category books');
         }
-        return `<li id="${book._id}"class="content_book">
-                          <a  href="${book.book_image}" >
+        return `<li class="content_book">
+                          <a data-id=${book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           </a>
                           <span class="content_textname"><p id="content_book_name">${book.title}</p></span>
@@ -144,11 +96,26 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
       }
     })
     .join('');
-  numberOfBooksShown += HowManyBooksToLoad;
-  console.log();
+  numberOfBooksShown += loaded;
+  loaded = 0;
+  numberOfBooksShown += loaded;
+  loaded = 0;
   return markup;
 }
 
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');
+  // categoryItem.classList.add('contend_categoryMove');
 }
+
+//налаштування для Notflix
+Notiflix.Notify.init({
+  width: '480px',
+  position: 'right-bottom',
+  distance: '10px',
+  opacity: 1,
+  fontSize: '20px',
+  clickToClose: true,
+  timeout: 3000,
+  background: '#4f2ee8',
+});

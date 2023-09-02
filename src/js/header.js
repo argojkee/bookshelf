@@ -47,21 +47,10 @@ if (document.location.href.includes('shopping')) {
   headHomeBtn.classList.add('header-selected-page');
 }
 
-// shoppListBtn.addEventListener('click', event => {
-
-//   shoppListBtn.classList.add('header-selected-page');
-//   headHomeBtn.classList.remove('header-selected-page');
-// });
-
-// headHomeBtn.addEventListener('click', event => {
-
-//   shoppListBtn.classList.remove('header-selected-page');
-//   headHomeBtn.classList.add('header-selected-page');
-// });
 
 // Hiding and showing Signing up BTN and logging out BTN
 
-function headBtnAuthorization() {
+export function headBtnAuthorization() {
   if (window.screen.availWidth < 768) {
     document.getElementById('head-logged-steven').style.display = 'none';
     document.getElementById('head-signup-btn').style.display = 'none';
@@ -71,11 +60,19 @@ function headBtnAuthorization() {
   } else if (!localStorage.getItem('bookshelId')) {
     document.getElementById('head-logged-steven').style.display = 'none';
     document.getElementById('head-signup-btn').style.display = 'flex';
-
-    // shoppListBtn.style.display = "none"
-    // headHomeBtn.style.display = "none"
   }
+
+  hideHomeAndShop();
 }
+
+  // Showing an hiding home and shopping
+  function hideHomeAndShop() {
+  if (!localStorage.getItem('bookshelId')) {
+    shoppListBtn.style.display = "none";
+    headHomeBtn.style.display = "none";
+    }
+  }
+
 
 headBtnAuthorization();
 
