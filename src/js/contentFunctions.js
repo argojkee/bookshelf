@@ -53,7 +53,6 @@ export function countTopBooks() {
     return 5;
   }
 }
-<<<<<<< Updated upstream
 
 // export function renderError(error) {
 //   return `<div class="content-error">
@@ -71,5 +70,3 @@ export function renderError() {
          </div>`;
   // document.querySelector('.container-books').innerHTML = 'jasjdaj';
 }
-=======
->>>>>>> Stashed changes
