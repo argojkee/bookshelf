@@ -111,7 +111,7 @@ function deleteItem(event) {
   if (
     event.target.classList.contains('delete-btn-icon-use') ||
     event.target.classList.contains('delete-btn-icon') ||
-    event.target.nodeName === 'BUTTON'
+    event.target.nodeName === 'BUTTON' 
   ) {
     const itemId = event.target.closest('.shopping-list-item').dataset.id;
     const books = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -120,7 +120,7 @@ function deleteItem(event) {
     localStorage.removeItem(STORAGE_KEY);
     refs.shoppingListIsEmptyMessage.style.display = 'flex';
 
-    // refs.title.style.marginBottom = '120px';
+
     if (document.documentElement.clientWidth < 768) {
       refs.title.style.marginBottom = '120px';
     } else {
