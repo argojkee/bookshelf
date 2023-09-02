@@ -54,10 +54,7 @@ const createUserInfo = async (nameValue, userCredential) => {
     await setDoc(doc(db, userCredential.user.uid, 'name'), {
       name: nameValue,
     });
-    addBase([
-      { test: 'test', some: 'some' },
-      { test: 'test2', some: 'some2' },
-    ]);
+    addBase([]);
   } catch (e) {
     console.error('Error adding document: ', e);
   }
@@ -72,13 +69,13 @@ export const addBase = array => {
 export const getBase = async () => {
   const uid = localStorage.getItem('bookshelId');
   const data = await getDoc(doc(db, uid, 'shopBase'));
-  console.log(data.data());
-  return data.data();
+  // console.log(data.data().shopBase);
+  return data.data().shopBase;
 };
 
 export const getName = async () => {
   const uid = localStorage.getItem('bookshelId');
   const name = await getDoc(doc(db, uid, 'name'));
-  console.log(name.data());
-  return name.data();
+  // console.log(name.data().name);
+  return name.data().name;
 };
