@@ -1,3 +1,5 @@
+import { getName } from './loginApi.js';
+
   // Dark theme for local storage
 document.querySelector('.themetoggle').addEventListener('click', (event) => {
   event.preventDefault();
@@ -46,6 +48,30 @@ switchToDarkTheme();
       headHomeBtn.classList.remove("header-selected-page");
     });
 
-    // Button Switcher
+    headHomeBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      shoppListBtn.classList.remove("header-selected-page");
+      headHomeBtn.classList.add("header-selected-page");
+    })
+      
+    // Hiding and showing Signing up BTN and logging out BTN
+
+  function headBtnAuthorization() {
+    if (localStorage.getItem('bookshelId') && window.screen.availWidth >= 768) {
+      document.getElementById("head-logged-steven").style.display = "flex";
+      document.getElementById("head-signup-btn").style.display = "none";
+    }
+    else if(!localStorage.getItem('bookshelId') && window.screen.availWidth >= 768) {
+      document.getElementById("head-logged-steven").style.display = "none";
+      document.getElementById("head-signup-btn").style.display = "flex";
+
+      // shoppListBtn.style.display = "none"
+      // headHomeBtn.style.display = "none"
 
     
+    }
+  }
+
+
+  headBtnAuthorization();
