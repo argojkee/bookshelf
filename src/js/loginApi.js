@@ -39,7 +39,8 @@ export const logIn = (emailValue, passValue) => {
 const saveUser = userCredential => {
   const user = userCredential.user;
   localStorage.setItem('bookshelId', user.uid);
-  console.log(user);
+  document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
+  // console.log(user);
 };
 
 const errorAlert = error => {
@@ -48,9 +49,6 @@ const errorAlert = error => {
 
 const createUserInfo = async (nameValue, userCredential) => {
   try {
-    // await setDoc(doc(db, userCredential.user.uid, 'name'), {
-    //   name,
-    // });
     await setDoc(doc(db, userCredential.user.uid, 'name'), {
       name: nameValue,
     });
