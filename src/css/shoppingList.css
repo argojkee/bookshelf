@@ -1,4 +1,4 @@
-.shopping-section {
+.shopping-body {
     background-color: var(--main-background-color);
 }
 
@@ -261,4 +261,30 @@
     .shopping-list-item-description {
         width: 808px;
     }
+}
+
+body.dark {
+    background-color: var(--main-background-color-dark-theme);
+}
+
+body.dark .shopping-list-title {
+    color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .shopping-list-is-empty-text {
+    color: rgba(255, 255, 255, 0.60);
+}
+
+
+body.dark .shopping-list-item {
+    border: 2px solid rgba(79, 46, 232, 0.40);
+    background-color: var(--header-background-color-dark-theme);
+}
+
+body.dark .shopping-list-item-title {
+    color: var(--primary-color-text-dark-theme);
+}
+
+body.dark .shopping-list-item-description {
+    color: var(--primary-color-text-dark-theme);
 }
