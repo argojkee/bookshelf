@@ -8,3 +8,4 @@ import './js/modalBook';
 import './js/burgerMenu';
 import './js/loginization';
 import './js/scrollup';
+import './js/footer';

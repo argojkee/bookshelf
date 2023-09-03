@@ -1,0 +1,53 @@
+.team-gallery {
+   
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.developer{
+    
+    background-color: rgb(206, 206, 206);
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-cover {
+    position: relative;
+    bottom: -70px; 
+
+    /* bottom: 70px;
+    z-index: 5; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100vw;
+
+    background-color: rgb(175, 175, 175);
+    backdrop-filter: blur(2px);
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-button {
+
+    width: 130px;
+    height: 40px;
+    border: 2px solid rgb(79, 46, 232);
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.hidden {
+    opacity: 0;
+}
