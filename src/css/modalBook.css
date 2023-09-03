@@ -59,6 +59,20 @@
   .modal-book {
     max-width: 579px;
   }
+
+  @media screen and (max-height: 490px) {
+    .modal-book {
+      height: calc(100% - 16px);
+      overflow: scroll;
+    }
+  }
+}
+
+@media screen and (max-height: 700px) and (max-width: 767px) {
+  .modal-book {
+    height: calc(100% - 16px);
+    overflow: scroll;
+  }
 }
 
 /* Styles for the close button */
