@@ -136,6 +136,9 @@ let userBooks = () => {
     return;
   }
 
+  booksChangeBtn.style.display = 'block';
+  booksChangeBtn.style.visibility = 'visible';
+  booksStatusText.classList.remove('.unlogin');
   booksChangeBtn.style.visibility = 'visible';
 
   // read book array data from LocalStorage

@@ -164,7 +164,7 @@ function onLogoutClick() {
   hideBtnWhenNotAuth();
   logOutBtn.classList.add('isHidden');
   if (window.location.href.includes('shopping')) {
-    window.location.pathname = '/index.html';
+    window.location.pathname = '/bookshelf/index.html';
   }
 }
 
@@ -180,5 +180,3 @@ const switchingUserName = async () => {
   headBtnAuthorization();
 };
 switchingUserName();
-
-const gg = 'afkdskjgslkfsklf';
