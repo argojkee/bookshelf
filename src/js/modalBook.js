@@ -72,36 +72,35 @@ const changeBtText = (data) => {
 
 }
 
-// add/remove books to server
+// add/remove books to/from server
 let booksChange = () => {
 
   booksChangeBtn.disabled = true;
   // if there is no such book, add
   if(!bookSet.do)
   {
-    // booksChangeBtn.disabled = true,
-    // console.log("!");
     // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
-    // send book to server
-    addBase(bookSet.bookExist).then(
-      booksChangeBtn.disabled = false,
-    );
-
-    // read book array data from LocalStorage
-    // getBooks().then( 
-
-      
-     
-    // );
-    // return;
-  } else {
-    // remove book
-    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID)).then(responce => { 
-      if(responce) booksChangeBtn.disabled = false; 
+    // send book to server // remove book if 'OK' then 'responce' = true
+    addBase(bookSet.bookExist).then(responce => {
+      booksChangeBtn.disabled = !responce;
+      booksChangeBtn.textContent = "remove from shopping list";
+      booksStatusText.style.visibility = "visible";
+      bookSet.do = true;
     });
 
-    // getBooks()
+  } else {
+    // remove book if 'OK' then 'responce' = true
+    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID)).then(responce => { 
+      //rewrite 
+      bookSet.bookExist = bookSet.bookExist.filter(element => element._id !== bookSet.bookID);
+
+      booksChangeBtn.disabled = !responce; 
+      booksChangeBtn.textContent = "add to shopping list";
+      booksStatusText.style.visibility = "hidden";
+      bookSet.do = false;
+    });
+
   }
  
 };
