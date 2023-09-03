@@ -32,8 +32,11 @@ const bookSet = {
 const getBooks = () => {
    
   return getBase().then(array => {
-
-    return array;
+    bookSet.bookExist = array;
+    // console.log(bookSet.bookID);
+    console.log(array);
+    changeBtText(array);
+    // return array;
 
   }).catch(error => {
 
@@ -44,7 +47,7 @@ const getBooks = () => {
 
 // change text button (one button add/remove)
 const changeBtText = (data) => {
-  
+    
     // print "remove..." if "id" book from server and select book match or no
     if(data.some(element => element._id === bookSet.bookID)){
       booksChangeBtn.textContent = "remove from shopping list";
@@ -60,14 +63,26 @@ const changeBtText = (data) => {
 
 // add/remove books to server
 let booksChange = () => {
+
+  booksChangeBtn.disabled = false;
   // if there is no such book, add
   if(!bookSet.do)
   {
+    booksChangeBtn.disabled = false,
+    // console.log("!");
+    // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
-    addBase(bookSet.bookExist);
+    // send book to server
+    addBase(bookSet.bookExist).then( 
+      booksChangeBtn.disabled = false,
+
+      // read book array data from LocalStorage
+      getBooks(),
+    
+    );
     return;
   } 
-
+  
   // remove book
   addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
   
@@ -87,17 +102,9 @@ let userBooks = () => {
   }
 
   booksChangeBtn.style.visibility = "visible";
+
   // read book array data from LocalStorage
-  getBooks().then(responce => {
-    
-    bookSet.bookExist = responce;
-    // console.log(bookSet.bookID);
-    console.log(responce);
-    changeBtText(responce);
-
-  }).catch(() => {
-
-  });
+  getBooks();
 
   booksChangeBtn.addEventListener('click', booksChange);
 }
@@ -123,7 +130,7 @@ function closeModal() {
   overlayBook.classList.toggle('active');
 }
 
-async function addModalBookMarkup(bookID) {
+function addModalBookMarkup(bookID) {
   fetchBookById(bookID)
     .then(renderBook)
     .catch(e => {
