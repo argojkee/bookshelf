@@ -4,9 +4,11 @@ import { getName } from './loginApi.js';
 const regBtn = document.getElementById('head-signup-btn');
 const infoUserBtn = document.getElementById('head-logged-steven');
 const logOutBtn = document.querySelector('.head-loggedup-btn');
+const spanUserName = document.querySelector('.head-username');
+const themetoggleEl = document.querySelector('.themetoggle');
 
 // Dark theme for local storage
-document.querySelector('.themetoggle').addEventListener('click', event => {
+themetoggleEl.addEventListener('click', event => {
   event.preventDefault();
   if (localStorage.getItem('theme') === 'dark') {
     localStorage.removeItem('theme');
@@ -57,39 +59,40 @@ if (document.location.href.includes('shopping')) {
 export function headBtnAuthorization() {
   if (window.screen.availWidth < 768) {
     hideHomeAndShop();
-    regBtn.style.display = 'none';
-    infoUserBtn.style.display = 'none';
+    regBtn.classList.add('isHidden');
+    infoUserBtn.classList.add('isHidden');
   } else {
     checkOnLogin();
+    themetoggleEl.classList.remove('isHidden');
   }
+
+  logOutBtn.classList.remove('deleted');
 }
 
-//Отображение нопок авторизации когда авторизирован
+//Отображение кнопок авторизации когда авторизирован
 export function showBtnWhenAuth() {
-  infoUserBtn.style.display = 'flex';
-  regBtn.style.display = 'none';
+  infoUserBtn.classList.remove('isHidden');
+  regBtn.classList.add('isHidden');
 }
 
-//Отображение нопок авторизации когда не авторизирован
+//Отображение кнопок авторизации когда не авторизирован
 
 function hideBtnWhenNotAuth() {
-  infoUserBtn.style.display = 'none';
-  regBtn.style.display = 'flex';
+  infoUserBtn.classList.add('isHidden');
+  regBtn.classList.remove('isHidden');
 }
 
 //Показываем Хом и Шоп
 export function showHomeAndShop() {
-  shoppListBtn.style.display = 'flex';
-  headHomeBtn.style.display = 'block';
+  shoppListBtn.classList.remove('isHidden');
+  headHomeBtn.classList.remove('isHidden');
 }
 
 // Скрываем Хом и Шоп
 function hideHomeAndShop() {
-  shoppListBtn.style.display = 'none';
-  headHomeBtn.style.display = 'none';
+  shoppListBtn.classList.add('isHidden');
+  headHomeBtn.classList.add('isHidden');
 }
-
-headBtnAuthorization();
 
 //Правильное отображение кнопок, когда играешься вьюпортом
 window.addEventListener('resize', headBtnAuthorization);
@@ -102,7 +105,17 @@ regBtn.addEventListener('click', onRegBtnClick);
 
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
+  document.addEventListener('keydown', forEscape);
+  document.body.style.overflow = 'hidden';
 }
+
+const forEscape = ({ key }) => {
+  if (key === 'Escape') {
+    registerModal.classList.add('isHidden');
+    document.removeEventListener('keydown', forEscape);
+    //
+  }
+};
 
 //Логика функции при закрытии модального окна регистрации
 
@@ -154,3 +167,18 @@ function onLogoutClick() {
     window.location.pathname = '/index.html';
   }
 }
+
+// Switching  UserName in a Header UserButton
+const switchingUserName = async () => {
+  if (localStorage.getItem('bookshelId')) {
+    let headerUserName = await getName();
+    spanUserName.textContent =
+      headerUserName.length > 6
+        ? `${headerUserName.slice(0, 6)}...`
+        : headerUserName;
+  }
+  headBtnAuthorization();
+};
+switchingUserName();
+
+const gg = 'afkdskjgslkfsklf';
