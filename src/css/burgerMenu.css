@@ -66,7 +66,7 @@ button.section-burger_logOut {
   width: 100vw;
   height: 100vh;
   overflow: scroll;
-  /* display: none; */
+  display: none;
 
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
