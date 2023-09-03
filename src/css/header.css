@@ -2,14 +2,53 @@
   box-sizing: content-box;
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
 }
 
+@media screen and (min-width: 375px) {
+  .header {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    min-height: 72px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.head-logged-btn.isHidden,
+.head-signup-btn.isHidden,
+.js-shop-btn.isHidden,
+.header-home.isHidden {
+  display: none;
+}
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 375px) {
+  .header-container {
+    width: 100%;
+  }
 }
 
 .buttons-container {
@@ -18,18 +57,23 @@
   position: relative;
 }
 
+/* @media screen and (min-width: 768px) {
+  .buttons-container {
+    width: 248px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .buttons-container {
+    width: 248px;
+  }
+} */
+
 .themetoggle {
   cursor: pointer;
 }
 
-/* .head-logged-btn,
-.head-signup-btn {display: none;} */
 
-@media screen and (min-width: 768px) {
-  .header {
-    max-height: 72px;
-  }
-}
 .header-container {
   box-sizing: border-box;
   display: flex;
@@ -70,14 +114,15 @@
 
 @media screen and (min-width: 768px) {
   .li-header-margin {
-    margin-right: 40px;
-    margin-left: 24px;
+    margin-right: 16px;
+    margin-left: 40px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .li-header-margin {
-    margin-right: 76px;
+    margin-left: 76px;
+    margin-left: 24px;
   }
 }
 
@@ -109,8 +154,6 @@
   }
 }
 
-@media screen and (min-width: 375px) and (max-width: 768px) {
-}
 .themetoggle {
   position: relative;
   width: 40px;
@@ -123,6 +166,10 @@
   transition-duration: 350ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 5ms;
+}
+
+.themetoggle.isHidden {
+  display: none;
 }
 
 .themetoggleswitch {
@@ -278,6 +325,9 @@
   right: 0;
   top: 50%;
 }
+.head-loggedup-btn.deleted {
+  display: none;
+}
 
 .head-loggedup-span {
   color: #111;
@@ -338,7 +388,7 @@ body.dark .burger-cross:focus {
   stroke: #4f2ee8;
 }
 
-@media screen and (min-width: 1439px) {
+/* @media screen and (min-width: 1439px) {
   .head-loggedup-btn {
   }
-}
+} */

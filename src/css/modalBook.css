@@ -282,3 +282,15 @@ body.dark .modal-btn-status {
 body.dark .modal-btn-status-text {
   color: rgba(255, 255, 255, 0.5);
 }
+
+@media screen and (max-width: 286px) {
+  .modal-book-img-wrap {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 279px) {
+  .modal-book-review {
+    width: 100%;
+  }
+}

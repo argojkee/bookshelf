@@ -4,10 +4,10 @@ import Notiflix from 'notiflix';
 // import bodyScrollLock  from '/node_modules/body-scroll-lock/lib/bodyScrollLock.min';
 
 const bodyScrollLock = require('body-scroll-lock');
+const body = document.querySelector('body');
 
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
 
 import amazonImage from '../images/bookMarkets/bookMarkets-x1/amazon.webp';
 import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp';
@@ -30,15 +30,6 @@ const booksChangeBtn = document.querySelector('.modal-btn-status');
 
 const booksStatusText = document.querySelector('.modal-btn-status-text');
 
-document.addEventListener("keydown",(event) => {
-   
-    if (event.key === "Escape") {
-      closeModal();
-      return;
-    }
-    
-});
-
 const bookSet = {
   bookID: '',
   do: false,
@@ -56,82 +47,76 @@ const bookSet = {
 
 // load array of object from server
 const getBooks = () => {
-   
-  return getBase().then(array => {
-    bookSet.bookExist = array;
-    
-    // console.log(array);
-    changeBtText(array);
-  
+  return getBase()
+    .then(array => {
+      bookSet.bookExist = array;
 
-  }).catch(error => {
-
-    console.log(error.message);
-
-  });
-}
+      // console.log(array);
+      changeBtText(array);
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+};
 
 // change text button (one button add/remove)
-const changeBtText = (data) => {
-    
-    // print "remove..." if "id" book from server and select book match or no
-    if(data.some(element => element._id === bookSet.bookID)){
-
-      booksChangeBtn.textContent = "remove from shopping list";
-      booksStatusText.style.visibility = "visible";
-      // key for sned/remove mode
-      bookSet.do = true;
-      
-    } else {
-
-      booksChangeBtn.textContent = "add to shopping list";
-      booksStatusText.style.visibility = "hidden";
-      // key for sned/remove mode
-      bookSet.do = false;
-      
-    }
-
-}
+const changeBtText = data => {
+  // print "remove..." if "id" book from server and select book match or no
+  if (data.some(element => element._id === bookSet.bookID)) {
+    booksChangeBtn.textContent = 'remove from shopping list';
+    booksStatusText.style.visibility = 'visible';
+    // key for sned/remove mode
+    bookSet.do = true;
+  } else {
+    booksChangeBtn.textContent = 'add to shopping list';
+    booksStatusText.style.visibility = 'hidden';
+    // key for sned/remove mode
+    bookSet.do = false;
+  }
+};
 
 // add/remove books to/from server
 let booksChange = () => {
-
   booksChangeBtn.disabled = true;
   // if there is no such book, add
-  if(!bookSet.do)
-  {
+  if (!bookSet.do) {
     // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
     // send book to server // remove book if 'OK' then 'responce' = true
     addBase(bookSet.bookExist).then(responce => {
       booksChangeBtn.disabled = !responce;
-      booksChangeBtn.textContent = "remove from shopping list";
-      booksStatusText.style.visibility = "visible";
+      booksChangeBtn.textContent = 'remove from shopping list';
+      booksStatusText.style.visibility = 'visible';
       // key for sned/remove mode
       bookSet.do = true;
-  
-      Notiflix.Notify.info("The book has been successfully added to the book list ;)",{width: '360px',},);
 
+      Notiflix.Notify.info(
+        'The book has been successfully added to the book list ;)',
+        { width: '360px' }
+      );
     });
-
   } else {
     // remove book if 'OK' then 'responce' = true
-    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID)).then(responce => { 
-      //rewrite 
-      bookSet.bookExist = bookSet.bookExist.filter(element => element._id !== bookSet.bookID);
+    addBase(
+      bookSet.bookExist.filter(element => element._id !== bookSet.bookID)
+    ).then(responce => {
+      //rewrite
+      bookSet.bookExist = bookSet.bookExist.filter(
+        element => element._id !== bookSet.bookID
+      );
 
-      booksChangeBtn.disabled = !responce; 
-      booksChangeBtn.textContent = "add to shopping list";
-      booksStatusText.style.visibility = "hidden";
+      booksChangeBtn.disabled = !responce;
+      booksChangeBtn.textContent = 'add to shopping list';
+      booksStatusText.style.visibility = 'hidden';
       // key for sned/remove mode
       bookSet.do = false;
 
-      Notiflix.Notify.info("The book has been successfully remove from the book list ;)",{width: '360px',},);
-
+      Notiflix.Notify.info(
+        'The book has been successfully remove from the book list ;)',
+        { width: '360px' }
+      );
     });
-
   }
- 
 };
 
 // search user
@@ -146,11 +131,15 @@ let userBooks = () => {
     booksChangeBtn.style.display = 'none';
     booksChangeBtn.style.visibility = 'hidden';
     booksStatusText.classList.add('.unlogin');
-    booksStatusText.textContent = "Please, 'LogIn' if you want to add book to book list!";
+    booksStatusText.textContent =
+      "Please, 'LogIn' if you want to add book to book list!";
     return;
   }
 
-  booksChangeBtn.style.visibility = "visible";
+  booksChangeBtn.style.display = 'block';
+  booksChangeBtn.style.visibility = 'visible';
+  booksStatusText.classList.remove('.unlogin');
+  booksChangeBtn.style.visibility = 'visible';
 
   // read book array data from LocalStorage
   getBooks();
@@ -159,14 +148,28 @@ let userBooks = () => {
   booksChangeBtn.addEventListener('click', booksChange);
 };
 
+const jumpingEl = document.querySelectorAll('.jump-block');
+
 // відкриття модалки
 function openModal(event) {
+  console.log(event.target);
   event.preventDefault();
-
- //   console.log(event.target.closest('li'));
   if (!event.target.closest('.content_book')) {
     return;
   }
+  document.addEventListener('keydown', onEsc);
+
+  let paddingOffSet = window.innerWidth - document.body.offsetWidth + 'px';
+
+  body.style.paddingRight = paddingOffSet;
+  jumpingEl.forEach(el => {
+    el.style.paddingRight = paddingOffSet;
+  });
+
+  // 'body' scroll off
+  disableBodyScroll(targetModal);
+
+  //   console.log(event.target.closest('li'));
 
   // 'body' scroll off
   disableBodyScroll(targetModal);
@@ -179,9 +182,16 @@ function openModal(event) {
 
 //закриття модалки
 function closeModal() {
-
   // 'body' scroll on
   enableBodyScroll(targetModal);
+  document.removeEventListener('keydown', onEsc);
+
+  const paddingOffSet = window.innerWidth - document.body.offsetWidth + 'px';
+
+  body.style.paddingRight = '0px';
+  jumpingEl.forEach(el => {
+    el.style.paddingRight = '0px';
+  });
 
   modalBook.classList.toggle('hidden');
   modalBook.classList.toggle('active');
@@ -197,7 +207,7 @@ function addModalBookMarkup(bookID) {
     .catch(e => {
       console.error(e);
     });
-  // main work function of actions    
+  // main work function of actions
   userBooks();
 }
 
@@ -208,7 +218,8 @@ function renderBook(obj) {
   bookSet.booksTemp.title = book.title;
   bookSet.booksTemp.list_name = book.list_name;
   bookSet.booksTemp.author = book.author;
-  bookSet.booksTemp.description = book.description || 'description will be added soon...';
+  bookSet.booksTemp.description =
+    book.description || 'description will be added soon...';
   bookSet.booksTemp.book_image = book.book_image;
   bookSet.booksTemp._id = book._id;
   bookSet.booksTemp.buy_links = book.buy_links;
@@ -248,4 +259,12 @@ function renderBook(obj) {
         </li>
       </ul>`;
   modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
+}
+
+function onEsc(e) {
+  if (e.code !== 'Escape') {
+    return;
+  }
+
+  closeModal();
 }

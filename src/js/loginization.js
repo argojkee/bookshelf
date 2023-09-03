@@ -1,8 +1,6 @@
 import { logUp, logIn } from './loginApi';
 
 import { checkButtonsOnCloseModal } from './header';
-import { showBtnWhenAuth } from './header';
-import { showHomeAndShop } from './header';
 
 const form = document.getElementById('formUp');
 const bUp = document.querySelector('.sUpBtb');
@@ -14,11 +12,18 @@ const nameLabel = document.querySelector('.nameCont');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const pass = document.getElementById('pass');
+// const submit = document.querySelector('.loginBtn');
+
+const backDrop = document.querySelector('.loginBacdropLogIn');
+backDrop.addEventListener('click', e => {
+  if (e.target === backDrop) backDrop.classList.add('isHidden');
+});
 
 let logIs = true;
 
 loginClose.addEventListener('click', () => {
-  document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
+  backDrop.classList.add('isHidden');
+  document.body.style.overflow = 'scroll';
   checkButtonsOnCloseModal();
 });
 
@@ -39,17 +44,16 @@ bIn.addEventListener('click', () => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-
   sing();
+
   form.reset();
-  showBtnWhenAuth();
-  showHomeAndShop();
 });
 
 function sing() {
   if (logIs) {
-    logUp(name.value, email.value, pass.value);
+    if (name.value.trim() && email.value.trim() && pass.value.trim())
+      logUp(name.value, email.value, pass.value);
   } else {
-    logIn(email.value, pass.value);
+    if (email.value.trim() && pass.value.trim()) logIn(email.value, pass.value);
   }
 }

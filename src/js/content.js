@@ -28,22 +28,38 @@ export function getTopBooks() {
     .then(result => {
       return result.data;
     })
-    .then(data => (containerBook.innerHTML = renderMarkupTopBooks(data)));
+    .then(data => {
+      content.classList.remove('content-loader');
+      containerBook.innerHTML = renderMarkupTopBooks(data);
+    });
 }
 
 function getBooksByCat(butElem, category) {
+  // hideButton(butElem);
+  // butElem.classList.add('loader');
+
   fetchBooksByCategory(category)
     .then(result => {
+      butElem.classList.remove('loader');
       return result.data;
     })
     .then(data => {
       renderDataBycat(butElem, data);
+
+      butElem.innerHTML = 'SEE MORE';
     })
     .catch();
 }
 
+//ховаємо кнопку
+function hideButton(butElem) {
+  butElem.hidden = true;
+  butElem.innerHTML = '';
+}
+
 export function renderDataBycat(butElem, data) {
   let markup = createMarkupWithFiveBooks(butElem, data);
+  butElem.classList.remove('loader');
   butElem.previousElementSibling.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -68,8 +84,6 @@ function handleSumitSeeMore(e) {
 //ці перші книги не загружає, догружає ще декілька(HowManyBooksToLoad).
 //Коли доходе до кінця, видаляє кнопку.
 function createMarkupWithFiveBooks(elem, arrayBooks) {
-  //перший син нижнього сусіда батька
-  // console.log(elem.parentNode.nextSibling.firstElementChild);
   let counter = 0;
   let loaded = 0;
   let markup = arrayBooks
@@ -81,13 +95,17 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
         //якщо загрузили останню книгу, то видаляємл кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
-          elem.parentNode.nextSibling.firstElementChild.classList.add(
-            'contend_categoryMove'
-          );
+          if (elem.parentNode.nextSibling != null) {
+            elem.parentNode.nextSibling.firstElementChild.classList.add(
+              'contend_categoryMove'
+            );
+          }
+            
           Notiflix.Notify.info('this is all. Check out other category books');
         }
+        
         return `<li class="content_book">
-                          <a data-id=${book._id} href="${book.book_image}" >
+                          <a data-id=${book._id} href="${book.book_image}" class="content-book-link" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           
                           <span class="content_textname" id="content_book_name">${book.title}</span>
@@ -101,6 +119,7 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
   loaded = 0;
   return markup;
 }
+
 
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');
