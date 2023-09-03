@@ -105,13 +105,13 @@ regBtn.addEventListener('click', onRegBtnClick);
 
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
-  document.addEventListener('keypress', forEscape);
+  document.addEventListener('keydown', forEscape);
 }
 
 const forEscape = ({ key }) => {
   if (key === 'Escape') {
     registerModal.classList.add('isHidden');
-    document.removeEventListener('keypress', forEscape);
+    document.removeEventListener('keydown', forEscape);
   }
 };
 
