@@ -155,6 +155,10 @@ function paginatePages(arr) {
   if(lengthOfArr < options.page * 3 - 2) {
     options.page -= 1;
   }
+
+  if(lengthOfArr === 0 || lengthOfArr < 4) {
+    refs.container.style.display = 'none';
+  }
   
   const pagination = new Pagination(refs.container, options);
 
