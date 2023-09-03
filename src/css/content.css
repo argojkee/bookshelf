@@ -36,6 +36,11 @@ body.dark .content_btnSeeMore {
   transition: all 2s ease;
 }
 
+.content_list_categories{
+  display: flex;
+  flex-direction: column;
+}
+
 .content_btnSeeMore:focus,
 .content_btnSeeMore:hover {
   transform: scale(1.1);
@@ -156,8 +161,6 @@ body.dark .content_btnSeeMore {
 @media (min-width: 768px) {
   .content_book {
     width: calc((100% - 50px) / 3);
-    /* width: 100%; */
-    margin-bottom: 20px;
   }
 
   .content_list_topBooks {
@@ -174,14 +177,12 @@ body.dark .content_btnSeeMore {
 }
 
 /* для більших за планшет */
-@media (min-width: 1148px) {
+@media (min-width: 1440px) {
   .content_book {
     width: calc((100% - 72px) / 5);
-    margin-bottom: 32px;
   }
   .content_list_topBooks {
     display: flex;
-
     /* flex-wrap: wrap; */
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -196,5 +197,36 @@ body.dark .content_btnSeeMore {
     width: 322px;
     height: 241px;
     margin-top: 300px;
+  }
+}
+
+/* loader для контента (список книг) */
+.content-loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin:200px auto;
+  position: relative;
+  color: #7b7474;
+  box-sizing: border-box;
+  animation: content-animloader 2s linear infinite;
+}
+
+@keyframes content-animloader {
+  0% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+  25% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+  }
+  50% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+  }
+  75% {
+    box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+  100% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
   }
 }
