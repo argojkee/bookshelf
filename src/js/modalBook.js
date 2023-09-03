@@ -163,13 +163,13 @@ let userBooks = () => {
 function openModal(event) {
   event.preventDefault();
 
-  // 'body' scroll off
-  disableBodyScroll(targetModal);
-
-  //   console.log(event.target.closest('li'));
+ //   console.log(event.target.closest('li'));
   if (!event.target.closest('.content_book')) {
     return;
   }
+
+  // 'body' scroll off
+  disableBodyScroll(targetModal);
 
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
