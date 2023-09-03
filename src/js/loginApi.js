@@ -7,8 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 // import { headBtnAuthorization } from './header';
-import { showBtnWhenAuth } from './header';
-import { showHomeAndShop } from './header';
+import { headBtnAuthorization } from './header';
 
 const userNameEl = document.querySelector('.head-username');
 const checkLog = document.querySelector('.loginCheck');
@@ -39,8 +38,7 @@ export const logUp = (name, emailValue, passValue) => {
     .then(resp => {
       userNameEl.textContent =
         name.length > 6 ? `${name.slice(0, 6)}...` : name;
-      showBtnWhenAuth();
-      showHomeAndShop();
+      headBtnAuthorization();
     })
     .catch(error => errorAlert(error));
 };
@@ -53,11 +51,9 @@ export const logIn = (emailValue, passValue) => {
       getName(localStorage.getItem('bookshelId')).then(name => {
         userNameEl.textContent =
           name.length > 6 ? `${name.slice(0, 6)}...` : name;
-        showBtnWhenAuth();
-        showHomeAndShop();
+        headBtnAuthorization();
       });
     })
-    .catch(err => console.log(err))
     .catch(error => errorAlert(error));
 };
 
@@ -84,7 +80,7 @@ const createUserInfo = async (nameValue, userCredential) => {
     });
     addBase([]);
   } catch (e) {
-    console.error('Error adding document: ', e);
+    errorAlert(e);
   }
 };
 
