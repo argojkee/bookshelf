@@ -57,15 +57,17 @@ const changeBtText = (data) => {
     
     // print "remove..." if "id" book from server and select book match or no
     if(data.some(element => element._id === bookSet.bookID)){
+
       booksChangeBtn.textContent = "remove from shopping list";
       booksStatusText.style.visibility = "visible";
       bookSet.do = true;
-      console.log("!");
+      
     } else {
+
       booksChangeBtn.textContent = "add to shopping list";
       booksStatusText.style.visibility = "hidden";
       bookSet.do = false;
-      console.log("?");
+      
     }
 
 }
@@ -82,13 +84,13 @@ let booksChange = () => {
     // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
     // send book to server
-    addBase(bookSet.bookExist)
+    addBase(bookSet.bookExist);
 
     // read book array data from LocalStorage
     getBooks().then( 
 
       booksChangeBtn.disabled = false,
-  
+     
     );
     // return;
   } else {
