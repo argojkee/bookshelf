@@ -146,15 +146,11 @@ function onUserBtnClick() {
 logOutBtn.addEventListener('click', onLogoutClick);
 
 function onLogoutClick() {
-  if (localStorage.getItem('bookshelId')) {
-    localStorage.removeItem('bookshelId');
-    hideHomeAndShop();
-    hideBtnWhenNotAuth();
-    logOutBtn.classList.add('isHidden');
-    if (window.location.href.includes('shopping')) {
-      window.location.pathname = '/index.html';
-    }
-  } else {
-    Notify.failure('Sorry, something wrong. Please, reload page and try again');
+  localStorage.removeItem('bookshelId');
+  hideHomeAndShop();
+  hideBtnWhenNotAuth();
+  logOutBtn.classList.add('isHidden');
+  if (window.location.href.includes('shopping')) {
+    window.location.pathname = '/index.html';
   }
 }

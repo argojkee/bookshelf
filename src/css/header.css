@@ -18,6 +18,10 @@
   position: relative;
 }
 
+.themetoggle {
+  cursor: pointer;
+}
+
 /* .head-logged-btn,
 .head-signup-btn {display: none;} */
 
@@ -180,7 +184,7 @@
   .head-logged-btn {
     display: flex;
     align-items: center;
-
+    cursor: pointer;
     margin-left: 24px;
 
     background-image: url('../images/head-images/Stiven-face.webp');
@@ -215,7 +219,7 @@
     align-items: center;
     width: 184px;
     height: 48px;
-
+    cursor: pointer;
     margin-left: 24px;
 
     border-radius: 18px;
@@ -244,6 +248,7 @@
 
 @media screen and (min-width: 768px) {
   .head-loggedup-btn {
+    cursor: pointer;
     display: flex;
     align-items: center;
     border-radius: 18px;
