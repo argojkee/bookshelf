@@ -84,24 +84,24 @@ let booksChange = () => {
     // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
     // send book to server
-    addBase(bookSet.bookExist);
+    addBase(bookSet.bookExist).then(
+      booksChangeBtn.disabled = false,
+    );
 
     // read book array data from LocalStorage
-    getBooks().then( 
+    // getBooks().then( 
 
-      booksChangeBtn.disabled = false,
+      
      
-    );
+    // );
     // return;
   } else {
     // remove book
-    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
+    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID)).then(responce => { 
+      if(responce) booksChangeBtn.disabled = false; 
+    });
 
-    getBooks().then( 
-
-      booksChangeBtn.disabled = false,
-
-    );
+    // getBooks()
   }
  
 };
