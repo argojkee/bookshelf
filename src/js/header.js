@@ -106,6 +106,7 @@ regBtn.addEventListener('click', onRegBtnClick);
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
   document.addEventListener('keydown', forEscape);
+  document.body.style.overflow = 'hidden';
 }
 
 const forEscape = ({ key }) => {
