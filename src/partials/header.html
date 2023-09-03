@@ -1,72 +1,67 @@
-<header class="header">
-  <div class="container header-container">
-    <nav class="section-one">
-      <ul class="header-nav">
-        <li>
-          <a href="./index.html" class="logo-block">
-            <svg width="24" height="24">
-              <use href="./images/sprite.svg#icon-logotype"></use>
-            </svg>
-            <span class="header-link">Bookshelf</span>
-          </a>
-        </li>
-        <li class="li-header-margin">
-          <a class="header-home header-selected-page" href="./index.html"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="./shopping.html" class="logo-block hideshopcard js-shop-btn">
-            <span class="header-shopping link">Shopping list</span>
-            <svg width="20" height="20" class="svg-cart">
-              <use href="./images/sprite.svg#icon-cart"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="buttons-container">
-      <button type="button" class="themetoggle">
-        <div class="themetoggleswitch"></div>
-      </button>
+<div class="container header-container">
+  <nav class="section-one">
+    <ul class="header-nav">
+      <li>
+        <a href="./index.html" class="logo-block">
+          <svg width="24" height="24">
+            <use href="./images/sprite.svg#icon-logotype"></use>
+          </svg>
+          <span class="header-link">Bookshelf</span>
+        </a>
+      </li>
+      <li class="li-header-margin">
+        <a class="header-home header-selected-page isHidden" href="./index.html"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="./shopping.html"
+          class="logo-block hideshopcard js-shop-btn isHidden"
+        >
+          <span class="header-shopping link">Shopping list</span>
+          <svg width="20" height="20" class="svg-cart">
+            <use href="./images/sprite.svg#icon-cart"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="buttons-container">
+    <button type="button" class="themetoggle isHidden">
+      <div class="themetoggleswitch"></div>
+    </button>
 
-      <button type="button" class="js-cross-switch">
-        <svg width="28" height="28" class="burger-head">
-          <use href="./images/sprite.svg#icon-burger"></use>
-        </svg>
-        <svg width="28" height="28" class="burger-cross header-switch-hidden">
-          <use href="./images/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
+    <button type="button" class="js-cross-switch">
+      <svg width="28" height="28" class="burger-head">
+        <use href="./images/sprite.svg#icon-burger"></use>
+      </svg>
+      <svg width="28" height="28" class="burger-cross header-switch-hidden">
+        <use href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
 
-      <button
-        type="button"
-        class="head-logged-btn"
-        id="head-logged-steven"
-        style="display: none"
-      >
-        <span class="head-username">Stephen</span>
-        <svg width="23" height="26">
-          <use href="./images/sprite.svg#icon-header-arrow"></use>
-        </svg>
-      </button>
-      <button
-        type="button"
-        class="head-signup-btn"
-        id="head-signup-btn"
-        style="display: none"
-      >
-        <span class="head-signup-span">Sign up</span>
-        <svg width="20" height="20">
-          <use href="./images/sprite.svg#icon-arrow-login"></use>
-        </svg>
-      </button>
-      <button type="button" class="head-loggedup-btn isHidden">
-        <span class="head-loggedup-span">Log out</span>
-        <svg width="20" height="20">
-          <use href="./images/sprite.svg#icon-arrow-login"></use>
-        </svg>
-      </button>
-    </div>
+    <button
+      type="button"
+      class="head-logged-btn isHidden"
+      id="head-logged-steven"
+    >
+      <span class="head-username"></span>
+      <svg width="23" height="26">
+        <use href="./images/sprite.svg#icon-header-arrow"></use>
+      </svg>
+    </button>
+    <button type="button" class="head-signup-btn isHidden" id="head-signup-btn">
+      <span class="head-signup-span">Sign up</span>
+      <svg width="20" height="20">
+        <use href="./images/sprite.svg#icon-arrow-login"></use>
+      </svg>
+    </button>
+    <button type="button" class="head-loggedup-btn deleted isHidden">
+      <span class="head-loggedup-span">Log out</span>
+      <svg width="20" height="20">
+        <use href="./images/sprite.svg#icon-arrow-login"></use>
+      </svg>
+    </button>
   </div>
-</header>
+</div>

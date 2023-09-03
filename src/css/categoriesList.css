@@ -1,20 +1,50 @@
-.all-categories-container {
-  min-width: 307px;
-  height: 228px;
-
-  border: 2px solid tomato;
+@media screen and (max-width: 767px) {
+  .all-categories-container {
+    width: 100%;
+  }
 }
 
+.all-categories-container {
+  height: 228px;
+  overflow-y: scroll;
+}
+
+.all-categories-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.all-categories-container::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  border: 8px solid #e0e0e0; /* отступ вокруг бегунка */
+  height: 300px;
+}
+
+body.dark .all-categories-container::-webkit-scrollbar-thumb {
+  border-color: rgba(17, 17, 17, 0.6);
+}
+
+@media screen and (max-width: 767px) {
+  .all-categories-container::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    border: 8px solid #e0e0e0;
+    height: 114px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .all-categories-container::-webkit-scrollbar-thumb {
+    height: 167px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .all-categories-container {
-    width: 309px;
+    width: 337px;
     height: 472px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .all-categories-container {
-    width: 328px;
+    width: 337px;
     height: 472px;
   }
 }
@@ -58,7 +88,6 @@
 
 .all-categories-box {
   max-height: 220px;
-  overflow-y: scroll;
 
   border: transparent;
 }
@@ -98,6 +127,7 @@
   color: var(--primary-stilization-color);
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 15px;
 }
 
 /* Clases for dark styles in "All categories" path*/

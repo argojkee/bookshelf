@@ -18,7 +18,11 @@ body.dark .content_btnSeeMore {
   /* background-color: yellow; */
 }
 
-.content_textname{
+.content-book-link {
+  display: block;
+}
+
+.content_textname {
   display: block;
 }
 /* кнопка */

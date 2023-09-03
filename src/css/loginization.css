@@ -112,6 +112,12 @@ body.dark .loginBtn {
   color: #202024;
 }
 
+.loginCheck {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .loginBottom {
   display: flex;
   justify-content: center;

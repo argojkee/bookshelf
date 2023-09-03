@@ -1,4 +1,3 @@
-
 //ф-ція для створення розмітки, яка видає топ книг
 export function renderMarkupTopBooks(array) {
   const markup = ` <h1 class="title-container-topBooks"><span class="title_theme">Best sellers</span> <span class="title_blue"> books </span></h1>
@@ -10,8 +9,8 @@ export function renderMarkupTopBooks(array) {
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
                       return `<li class="content_book">
-                          <a data-id=${book._id} href="${book.book_image}" >
-                          <a data-id=${book._id} href="${book.book_image}" >
+                          <a data-id=${book._id} href="${book.book_image}"  class="content-book-link" >
+                        
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                          
                          <span class="content_textname" id="content_book_name">${book.title}</span>

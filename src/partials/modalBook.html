@@ -1,8 +1,8 @@
 <!-- Modal windows -->
 <!-- Overlay for Modal windows -->
-<div class="book-overlay js-book-overlay-modal" data-modal></div>
+<div class="book-overlay js-book-overlay-modal block-jump" data-modal></div>
 <!-- ModalBook window -->
-<div class="modal-book hidden" data-modal="1">
+<div class="modal-book hidden block-jump" data-modal="1">
   <button type="button" class="modal-btn-close js-modal-close" data-modal-close>
     <svg class="modal-btn-close-icon" width="24" height="24">
       <use href="./images/sprite.svg#icon-close"></use>
@@ -47,7 +47,9 @@
     </div>
   </div>
 
-  <button type="submit" class="modal-btn-status hidden">add to shopping list</button>
+  <button type="submit" class="modal-btn-status hidden">
+    add to shopping list
+  </button>
   <span class="modal-btn-status-text">
     Сongratulations! You have added the book to the shopping list. To delete,
     press the button “Remove from the shopping list”.

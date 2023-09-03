@@ -3,18 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <link rel="icon" type="image/svg+xml" href="./public/bookshelf.svg" />
+    <meta name="description" content="The best bookstore in your city" />
+    <title>Bookshelf</title>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <a href="./shopping.html">To shopping List</a>
-
     <!-- SVG Sprite  -->
     <include src="./partials/sprite.html"></include>
 
     <!-- Alexey Melnichenko -->
-    <include src="./partials/header.html"></include>
+    <header class="header">
+      <include src="./partials/header.html"></include>
 
+      <!-- Yuriy Vovk -->
+      <include src="./partials/burgerMenu.html"></include>
+    </header>
     <main>
       <section class="main-section">
         <div class="container main-container">
@@ -38,9 +42,6 @@
 
     <!-- Elena Peredruy / Dmitriy Shevchenko-->
     <include src="./partials/modalBook.html"></include>
-
-    <!-- Yuriy Vovk -->
-    <include src="./partials/burgerMenu.html"></include>
 
     <!-- Maksym Osovik -->
     <include src="./partials/loginization.html"></include>
