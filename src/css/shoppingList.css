@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.shopping-list {
+    margin-bottom: 20px;
+}
+
 .shopping-list-title {
     color: var(--primary-color-text);
     font-size: 32px;
@@ -204,6 +208,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .shopping-list {
+        margin-bottom: 40px;
+    }
+
     .shopping-list-title {
         font-size: 48px;
         line-height: 108.333%;
