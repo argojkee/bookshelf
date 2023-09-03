@@ -18,7 +18,7 @@ let logIs = true;
 
 loginClose.addEventListener('click', () => {
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
-  document.body.style.overflowY = 'scroll';
+  document.body.style.overflow = 'scroll';
   checkButtonsOnCloseModal();
 });
 
