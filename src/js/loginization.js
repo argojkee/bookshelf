@@ -12,12 +12,17 @@ const nameLabel = document.querySelector('.nameCont');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const pass = document.getElementById('pass');
-const submit = document.querySelector('.loginBtn');
+// const submit = document.querySelector('.loginBtn');
+
+const backDrop = document.querySelector('.loginBacdropLogIn');
+backDrop.addEventListener('click', e => {
+  if (e.target === backDrop) backDrop.classList.add('isHidden');
+});
 
 let logIs = true;
 
 loginClose.addEventListener('click', () => {
-  document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
+  backDrop.classList.add('isHidden');
   document.body.style.overflow = 'scroll';
   checkButtonsOnCloseModal();
 });
