@@ -87,7 +87,7 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
           Notiflix.Notify.info('this is all. Check out other category books');
         }
         return `<li class="content_book">
-                          <a data-id=${book._id} href="${book.book_image}" >
+                          <a data-id=${book._id} href="${book.book_image}" class="content-book-link" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           
                           <span class="content_textname" id="content_book_name">${book.title}</span>

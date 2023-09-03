@@ -149,6 +149,7 @@ const jumpingEl = document.querySelectorAll('.jump-block');
 
 // відкриття модалки
 function openModal(event) {
+  console.log(event.target);
   event.preventDefault();
   if (!event.target.closest('.content_book')) {
     return;
