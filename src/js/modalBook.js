@@ -1,9 +1,19 @@
 import { fetchBookById } from '../services/books-api';
 import { getBase, addBase } from '/src/js/loginApi.js';
+import Notiflix from 'notiflix';
+// import bodyScrollLock  from '/node_modules/body-scroll-lock/lib/bodyScrollLock.min';
+
+const bodyScrollLock = require('body-scroll-lock');
+
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
 
 import amazonImage from '../images/bookMarkets/bookMarkets-x1/amazon.webp';
 import appleBookImage from '../images/bookMarkets/bookMarkets-x1/tradeBook2.webp';
 import bookShopImage from '../images/bookMarkets/bookMarkets-x1/tradeBook3.webp';
+
+const targetModal = document.querySelector('.modal-book');
 
 const bookCard = document.querySelector('.container-books');
 bookCard?.addEventListener('click', openModal);
@@ -19,6 +29,15 @@ closeModalBtn.addEventListener('click', closeModal);
 const booksChangeBtn = document.querySelector('.modal-btn-status');
 
 const booksStatusText = document.querySelector('.modal-btn-status-text');
+
+document.addEventListener("keydown",(event) => {
+   
+    if (event.key === "Escape") {
+      closeModal();
+      return;
+    }
+    
+});
 
 const bookSet = {
   bookID: '',
@@ -37,41 +56,82 @@ const bookSet = {
 
 // load array of object from server
 const getBooks = () => {
-  return getBase()
-    .then(array => {
-      return array;
-    })
-    .catch(error => {
-      console.log(error.message);
-    });
-};
+   
+  return getBase().then(array => {
+    bookSet.bookExist = array;
+    
+    // console.log(array);
+    changeBtText(array);
+  
+
+  }).catch(error => {
+
+    console.log(error.message);
+
+  });
+}
 
 // change text button (one button add/remove)
-const changeBtText = data => {
-  // print "remove..." if "id" book from server and select book match or no
-  if (data.some(element => element._id === bookSet.bookID)) {
-    booksChangeBtn.textContent = 'remove from shopping list';
-    booksStatusText.style.visibility = 'hidden';
-    bookSet.do = true;
-  } else {
-    booksChangeBtn.textContent = 'add to shopping list';
-    booksStatusText.style.visibility = 'visible';
-    bookSet.do = false;
-  }
-};
+const changeBtText = (data) => {
+    
+    // print "remove..." if "id" book from server and select book match or no
+    if(data.some(element => element._id === bookSet.bookID)){
 
-// add/remove books to server
+      booksChangeBtn.textContent = "remove from shopping list";
+      booksStatusText.style.visibility = "visible";
+      // key for sned/remove mode
+      bookSet.do = true;
+      
+    } else {
+
+      booksChangeBtn.textContent = "add to shopping list";
+      booksStatusText.style.visibility = "hidden";
+      // key for sned/remove mode
+      bookSet.do = false;
+      
+    }
+
+}
+
+// add/remove books to/from server
 let booksChange = () => {
+
+  booksChangeBtn.disabled = true;
   // if there is no such book, add
-  if (!bookSet.do) {
+  if(!bookSet.do)
+  {
+    // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
-    addBase(bookSet.bookExist);
+    // send book to server // remove book if 'OK' then 'responce' = true
+    addBase(bookSet.bookExist).then(responce => {
+      booksChangeBtn.disabled = !responce;
+      booksChangeBtn.textContent = "remove from shopping list";
+      booksStatusText.style.visibility = "visible";
+      // key for sned/remove mode
+      bookSet.do = true;
+  
+      Notiflix.Notify.info("The book has been successfully added to the book list ;)",{width: '360px',},);
 
-    return;
+    });
+
+  } else {
+    // remove book if 'OK' then 'responce' = true
+    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID)).then(responce => { 
+      //rewrite 
+      bookSet.bookExist = bookSet.bookExist.filter(element => element._id !== bookSet.bookID);
+
+      booksChangeBtn.disabled = !responce; 
+      booksChangeBtn.textContent = "add to shopping list";
+      booksStatusText.style.visibility = "hidden";
+      // key for sned/remove mode
+      bookSet.do = false;
+
+      Notiflix.Notify.info("The book has been successfully remove from the book list ;)",{width: '360px',},);
+
+    });
+
   }
-
-  // remove book
-  addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
+ 
 };
 
 // search user
@@ -85,26 +145,27 @@ let userBooks = () => {
     //massage;
     booksChangeBtn.style.display = 'none';
     booksChangeBtn.style.visibility = 'hidden';
+    booksStatusText.classList.add('.unlogin');
+    booksStatusText.textContent = "Please, 'LogIn' if you want to add book to book list!";
     return;
   }
-  booksChangeBtn.style.display = 'block';
-  booksChangeBtn.style.visibility = 'visible';
-  // read book array data from LocalStorage
-  getBooks()
-    .then(responce => {
-      bookSet.bookExist = responce;
-      // console.log(bookSet.bookID);
-      console.log(responce);
-      changeBtText(responce);
-    })
-    .catch(() => {});
 
+  booksChangeBtn.style.visibility = "visible";
+
+  // read book array data from LocalStorage
+  getBooks();
+
+  //add event handler
   booksChangeBtn.addEventListener('click', booksChange);
 };
 
 // відкриття модалки
 function openModal(event) {
   event.preventDefault();
+
+  // 'body' scroll off
+  disableBodyScroll(targetModal);
+
   //   console.log(event.target.closest('li'));
   if (!event.target.closest('.content_book')) {
     return;
@@ -118,9 +179,16 @@ function openModal(event) {
 
 //закриття модалки
 function closeModal() {
+
+  // 'body' scroll on
+  enableBodyScroll(targetModal);
+
   modalBook.classList.toggle('hidden');
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
+
+  //remove event handler
+  booksChangeBtn.removeEventListener('click', booksChange);
 }
 
 function addModalBookMarkup(bookID) {
@@ -129,8 +197,7 @@ function addModalBookMarkup(bookID) {
     .catch(e => {
       console.error(e);
     });
-
-  //  console.log('add');
+  // main work function of actions    
   userBooks();
 }
 
