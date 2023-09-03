@@ -7,6 +7,32 @@
   align-items: center;
 }
 
+@media screen and (min-width: 375px) {
+  .header {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    min-height: 72px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
 .head-logged-btn.isHidden,
 .head-signup-btn.isHidden,
 .js-shop-btn.isHidden,
@@ -47,11 +73,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
-  .header {
-    min-height: 72px;
-  }
-}
+
 .header-container {
   box-sizing: border-box;
   display: flex;
