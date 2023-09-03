@@ -77,7 +77,7 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
       if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
         counter += 1;
         loaded += 1;
-        
+
         //якщо загрузили останню книгу, то видаляємл кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
@@ -89,9 +89,10 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
         return `<li class="content_book">
                           <a data-id=${book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
-                          </a>
+                          
                           <span class="content_textname" id="content_book_name">${book.title}</span>
                           <span class="content_textauthor" id="content_book_author">${book.author}</span>
+                          </a>
                 </li>`;
       }
     })

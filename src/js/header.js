@@ -151,6 +151,9 @@ function onLogoutClick() {
     hideHomeAndShop();
     hideBtnWhenNotAuth();
     logOutBtn.classList.add('isHidden');
+    if (window.location.href.includes('shopping')) {
+      window.location.pathname = '/index.html';
+    }
   } else {
     Notify.failure('Sorry, something wrong. Please, reload page and try again');
   }
