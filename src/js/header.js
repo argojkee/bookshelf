@@ -112,6 +112,7 @@ const forEscape = ({ key }) => {
   if (key === 'Escape') {
     registerModal.classList.add('isHidden');
     document.removeEventListener('keydown', forEscape);
+    //
   }
 };
 
