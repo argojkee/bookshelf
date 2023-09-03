@@ -105,7 +105,17 @@ regBtn.addEventListener('click', onRegBtnClick);
 
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
+  document.addEventListener('keydown', forEscape);
+  document.body.style.overflow = 'hidden';
 }
+
+const forEscape = ({ key }) => {
+  if (key === 'Escape') {
+    registerModal.classList.add('isHidden');
+    document.removeEventListener('keydown', forEscape);
+    //
+  }
+};
 
 //Логика функции при закрытии модального окна регистрации
 
