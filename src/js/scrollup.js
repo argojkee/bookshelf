@@ -1,5 +1,3 @@
-import '../css/scrollUP.css';
-
 //get button element
 const elementsSet = {
   case: document.querySelector('.buttonup-case'),

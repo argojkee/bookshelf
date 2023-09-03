@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://goitacademy.github.io/parcel-project-template",
   "scripts": {
-    "start": "parcel src/*.html",
+    "start": "npx parcel src/index.html",
     "build": "parcel build src/*.html --public-url /bookshelf/"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "firebase": "^10.3.1",
     "jquery": "^3.7.1",
     "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

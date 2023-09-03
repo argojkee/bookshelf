@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { headBtnAuthorization } from './header';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA7-4KyX1RYgBEpGnLc5cIem7b-B1uXswI',
@@ -53,6 +54,8 @@ const createUserInfo = async (nameValue, userCredential) => {
       name: nameValue,
     });
     addBase([]);
+    headBtnAuthorization();
+    document.querySelector('.loginBacdropLogIn').classList.remove('isHidden');
   } catch (e) {
     console.error('Error adding document: ', e);
   }

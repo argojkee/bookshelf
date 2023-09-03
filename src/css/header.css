@@ -6,6 +6,25 @@
   padding-bottom: 18px;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.themetoggle {
+  cursor: pointer;
+}
+
+/* .head-logged-btn,
+.head-signup-btn {display: none;} */
+
 @media screen and (min-width: 768px) {
   .header {
     max-height: 72px;
@@ -76,7 +95,7 @@
 .header-selected-page {
   display: flex;
   padding: 8px 16px;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   border-radius: 36px;
   background: #eac645;
@@ -90,14 +109,7 @@
   }
 }
 
-.themetoggle {
-  margin-left: auto;
-}
-
 @media screen and (min-width: 375px) and (max-width: 768px) {
-  .themetoggle {
-    margin-left: 144px;
-  }
 }
 .themetoggle {
   position: relative;
@@ -153,9 +165,6 @@
   stroke: #111;
   display: block;
 }
-.header-switch-hidden {
-  display: none;
-}
 
 .js-cross-switch {
   margin-left: 14px;
@@ -175,7 +184,7 @@
   .head-logged-btn {
     display: flex;
     align-items: center;
-
+    cursor: pointer;
     margin-left: 24px;
 
     background-image: url('../images/head-images/Stiven-face.webp');
@@ -210,7 +219,7 @@
     align-items: center;
     width: 184px;
     height: 48px;
-
+    cursor: pointer;
     margin-left: 24px;
 
     border-radius: 18px;
@@ -239,40 +248,59 @@
 
 @media screen and (min-width: 768px) {
   .head-loggedup-btn {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    width: 184px;
-    height: 48px;
-
-    margin-left: 24px;
-
     border-radius: 18px;
     border: 1.5px solid #111;
-    background-color: #FFF;
+    background-color: #fff;
+    height: 48px;
+    justify-content: space-between;
+    position: absolute;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 184px;
+    margin-left: 24px;
+    transition: linear 250ms;
+    top: 100%;
+    right: 0;
   }
 }
 
-.head-loggedup-span{
-    color: #111;
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.28;
-    letter-spacing: -0.56px;
-
-    margin-left: 14px;
-    margin-right: 90px;
+.head-loggedup-btn.isHidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(0, -50%);
+  right: 0;
+  top: 50%;
 }
 
+.head-loggedup-span {
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+}
 
+.header-switch-hidden {
+  display: none;
+}
 
 body.dark {
   background-color: #111;
   color: #fff;
 }
 
-body.dark .header-home{color: #FFF;}
+body.dark .header-home {
+  color: #fff;
+}
 body.dark header {
   border: 1.5px solid #fff;
 }
@@ -308,4 +336,9 @@ body.dark .burger-cross:hover {
 }
 body.dark .burger-cross:focus {
   stroke: #4f2ee8;
+}
+
+@media screen and (min-width: 1439px) {
+  .head-loggedup-btn {
+  }
 }
