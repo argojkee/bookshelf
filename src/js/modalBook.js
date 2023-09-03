@@ -167,6 +167,9 @@ function openModal(event) {
 
   //   console.log(event.target.closest('li'));
 
+  // 'body' scroll off
+  disableBodyScroll(targetModal);
+
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
   bookSet.bookID = event.target.closest('a').dataset.id;
@@ -211,7 +214,8 @@ function renderBook(obj) {
   bookSet.booksTemp.title = book.title;
   bookSet.booksTemp.list_name = book.list_name;
   bookSet.booksTemp.author = book.author;
-  bookSet.booksTemp.description = book.description;
+  bookSet.booksTemp.description =
+    book.description || 'description will be added soon...';
   bookSet.booksTemp.book_image = book.book_image;
   bookSet.booksTemp._id = book._id;
   bookSet.booksTemp.buy_links = book.buy_links;
