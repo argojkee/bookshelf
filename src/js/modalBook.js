@@ -58,12 +58,14 @@ const changeBtText = (data) => {
     // print "remove..." if "id" book from server and select book match or no
     if(data.some(element => element._id === bookSet.bookID)){
       booksChangeBtn.textContent = "remove from shopping list";
-      booksStatusText.style.visibility = "hidden";
+      booksStatusText.style.visibility = "visible";
       bookSet.do = true;
+      console.log("!");
     } else {
       booksChangeBtn.textContent = "add to shopping list";
-      booksStatusText.style.visibility = "visible";
+      booksStatusText.style.visibility = "hidden";
       bookSet.do = false;
+      console.log("?");
     }
 
 }
@@ -71,27 +73,35 @@ const changeBtText = (data) => {
 // add/remove books to server
 let booksChange = () => {
 
-  booksChangeBtn.disabled = false;
+  booksChangeBtn.disabled = true;
   // if there is no such book, add
   if(!bookSet.do)
   {
-    booksChangeBtn.disabled = false,
+    // booksChangeBtn.disabled = true,
     // console.log("!");
     // add book to srray
     bookSet.bookExist.push(bookSet.booksTemp);
     // send book to server
-    addBase(bookSet.bookExist).then( 
+    addBase(bookSet.bookExist)
+
+    // read book array data from LocalStorage
+    getBooks().then( 
+
+      booksChangeBtn.disabled = false,
+  
+    );
+    // return;
+  } else {
+    // remove book
+    addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
+
+    getBooks().then( 
+
       booksChangeBtn.disabled = false,
 
-      // read book array data from LocalStorage
-      getBooks(),
-    
     );
-    return;
-  } 
-  
-  // remove book
-  addBase(bookSet.bookExist.filter(element => element._id !== bookSet.bookID));
+  }
+ 
 };
 
 // search user
