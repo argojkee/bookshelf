@@ -65,7 +65,7 @@ const saveUser = userCredential => {
   const user = userCredential.user;
   localStorage.setItem('bookshelId', user.uid);
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
-  loginForm.disable = false;
+  // loginForm.disable = false;
   checkLog.textContent = '';
 
   document.body.style.overflowY = 'scroll';
@@ -74,6 +74,7 @@ const saveUser = userCredential => {
 
 const errorAlert = error => {
   window.alert(error);
+  checkLog.textContent = '';
 };
 
 const createUserInfo = async (nameValue, userCredential) => {
