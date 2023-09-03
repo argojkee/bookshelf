@@ -1,5 +1,9 @@
 import { logUp, logIn } from './loginApi';
 
+import { checkButtonsOnCloseModal } from './header';
+import { showBtnWhenAuth } from './header';
+import { showHomeAndShop } from './header';
+
 const form = document.getElementById('formUp');
 const bUp = document.querySelector('.sUpBtb');
 const bIn = document.querySelector('.sInBtb');
@@ -15,6 +19,7 @@ let logIs = true;
 
 loginClose.addEventListener('click', () => {
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
+  checkButtonsOnCloseModal();
 });
 
 bUp.addEventListener('click', () => {
@@ -34,8 +39,11 @@ bIn.addEventListener('click', () => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+
   sing();
   form.reset();
+  showBtnWhenAuth();
+  showHomeAndShop();
 });
 
 function sing() {

@@ -1,4 +1,3 @@
-// export const category_books = [];
 
 //ф-ція для створення розмітки, яка видає топ книг
 export function renderMarkupTopBooks(array) {
@@ -15,8 +14,8 @@ export function renderMarkupTopBooks(array) {
                           <a data-id=${book._id} href="${book.book_image}" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                          
-                          <span class="content_textname"><p id="content_book_name">${book.title}</p><span>
-                          <span class="content_textauthor"><p id="content_book_author">${book.author}</p>
+                         <span class="content_textname" id="content_book_name">${book.title}</span>
+                         <span class="content_textauthor" id="content_book_name">${book.author}</span>
                            </a>
                           </li>`;
                     }

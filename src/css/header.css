@@ -6,6 +6,18 @@
   padding-bottom: 18px;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 /* .head-logged-btn,
 .head-signup-btn {display: none;} */
 
@@ -93,14 +105,7 @@
   }
 }
 
-.themetoggle {
-  margin-left: auto;
-}
-
 @media screen and (min-width: 375px) and (max-width: 768px) {
-  .themetoggle {
-    margin-left: 144px;
-  }
 }
 .themetoggle {
   position: relative;
@@ -241,15 +246,32 @@
   .head-loggedup-btn {
     display: flex;
     align-items: center;
-    width: 184px;
-    height: 48px;
-
-    margin-left: 24px;
-
     border-radius: 18px;
     border: 1.5px solid #111;
     background-color: #fff;
+    height: 48px;
+    justify-content: space-between;
+    position: absolute;
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 184px;
+    margin-left: 24px;
+    transition: linear 250ms;
+    top: 100%;
+    right: 0;
   }
+}
+
+.head-loggedup-btn.isHidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(0, -50%);
+  right: 0;
+  top: 50%;
 }
 
 .head-loggedup-span {
@@ -260,9 +282,6 @@
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.56px;
-
-  margin-left: 14px;
-  margin-right: 90px;
 }
 
 .header-switch-hidden {
@@ -312,4 +331,9 @@ body.dark .burger-cross:hover {
 }
 body.dark .burger-cross:focus {
   stroke: #4f2ee8;
+}
+
+@media screen and (min-width: 1439px) {
+  .head-loggedup-btn {
+  }
 }
