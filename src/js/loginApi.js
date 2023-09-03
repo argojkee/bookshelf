@@ -7,7 +7,10 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 // import { headBtnAuthorization } from './header';
+import { showBtnWhenAuth } from './header';
+import { showHomeAndShop } from './header';
 
+const userNameEl = document.querySelector('.head-username');
 const checkLog = document.querySelector('.loginCheck');
 const loginForm = document.getElementById('formUp');
 
@@ -33,6 +36,12 @@ export const logUp = (name, emailValue, passValue) => {
       saveUser(userCredential);
       createUserInfo(name, userCredential);
     })
+    .then(resp => {
+      userNameEl.textContent =
+        name.length > 6 ? `${name.slice(0, 6)}...` : name;
+      showBtnWhenAuth();
+      showHomeAndShop();
+    })
     .catch(error => errorAlert(error));
 };
 
@@ -40,6 +49,15 @@ export const logIn = (emailValue, passValue) => {
   checkLog.textContent = 'Сhecking the user...';
   signInWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => saveUser(userCredential))
+    .then(resp => {
+      getName(localStorage.getItem('bookshelId')).then(name => {
+        userNameEl.textContent =
+          name.length > 6 ? `${name.slice(0, 6)}...` : name;
+        showBtnWhenAuth();
+        showHomeAndShop();
+      });
+    })
+    .catch(err => console.log(err))
     .catch(error => errorAlert(error));
 };
 

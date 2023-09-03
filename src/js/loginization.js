@@ -1,8 +1,6 @@
 import { logUp, logIn } from './loginApi';
 
 import { checkButtonsOnCloseModal } from './header';
-import { showBtnWhenAuth } from './header';
-import { showHomeAndShop } from './header';
 
 const form = document.getElementById('formUp');
 const bUp = document.querySelector('.sUpBtb');
@@ -42,9 +40,8 @@ bIn.addEventListener('click', () => {
 form.addEventListener('submit', e => {
   e.preventDefault();
   sing();
+
   form.reset();
-  showBtnWhenAuth();
-  showHomeAndShop();
 });
 
 function sing() {

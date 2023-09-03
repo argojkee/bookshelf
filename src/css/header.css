@@ -7,10 +7,22 @@
   align-items: center;
 }
 
+.head-logged-btn.isHidden,
+.head-signup-btn.isHidden,
+.js-shop-btn.isHidden,
+.header-home.isHidden {
+  display: none;
+}
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 375px) {
+  .header-container {
+    width: 100%;
+  }
 }
 
 .buttons-container {
@@ -19,10 +31,21 @@
   position: relative;
 }
 
+/* @media screen and (min-width: 768px) {
+  .buttons-container {
+    width: 248px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .buttons-container {
+    width: 248px;
+  }
+} */
+
 .themetoggle {
   cursor: pointer;
 }
-
 
 @media screen and (min-width: 768px) {
   .header {
@@ -109,8 +132,6 @@
   }
 }
 
-@media screen and (min-width: 375px) and (max-width: 768px) {
-}
 .themetoggle {
   position: relative;
   width: 40px;
@@ -123,6 +144,10 @@
   transition-duration: 350ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 5ms;
+}
+
+.themetoggle.isHidden {
+  display: none;
 }
 
 .themetoggleswitch {
@@ -277,6 +302,9 @@
   transform: translate(0, -50%);
   right: 0;
   top: 50%;
+}
+.head-loggedup-btn.deleted {
+  display: none;
 }
 
 .head-loggedup-span {
