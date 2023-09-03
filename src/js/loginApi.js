@@ -54,7 +54,6 @@ export const logIn = (emailValue, passValue) => {
         headBtnAuthorization();
       });
     })
-    .catch(err => console.log(err))
     .catch(error => errorAlert(error));
 };
 
@@ -81,7 +80,7 @@ const createUserInfo = async (nameValue, userCredential) => {
     });
     addBase([]);
   } catch (e) {
-    console.error('Error adding document: ', e);
+    errorAlert(e);
   }
 };
 
