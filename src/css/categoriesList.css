@@ -1,5 +1,10 @@
+@media screen and (max-width: 767px) {
+  .all-categories-container {
+    width: 100%;
+  }
+}
+
 .all-categories-container {
-  min-width: 307px;
   height: 228px;
   overflow-y: scroll;
 }

@@ -39,7 +39,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  cursor: pointer;
   background-color: rgb(79, 46, 232);
   backdrop-filter: blur(2px);
   border: none;
