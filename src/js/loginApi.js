@@ -6,7 +6,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { headBtnAuthorization } from './header';
+// import { headBtnAuthorization } from './header';
+
+const checkLog = document.querySelector('.loginCheck');
+const loginForm = document.getElementById('formUp');
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA7-4KyX1RYgBEpGnLc5cIem7b-B1uXswI',
@@ -23,6 +26,8 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 export const logUp = (name, emailValue, passValue) => {
+  checkLog.textContent = 'Сhecking the user...';
+
   createUserWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => {
       saveUser(userCredential);
@@ -32,6 +37,7 @@ export const logUp = (name, emailValue, passValue) => {
 };
 
 export const logIn = (emailValue, passValue) => {
+  checkLog.textContent = 'Сhecking the user...';
   signInWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => saveUser(userCredential))
     .catch(error => errorAlert(error));
@@ -41,6 +47,10 @@ const saveUser = userCredential => {
   const user = userCredential.user;
   localStorage.setItem('bookshelId', user.uid);
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
+  loginForm.disable = false;
+  checkLog.textContent = '';
+
+  document.body.style.overflowY = 'scroll';
   // console.log(user);
 };
 
@@ -54,8 +64,6 @@ const createUserInfo = async (nameValue, userCredential) => {
       name: nameValue,
     });
     addBase([]);
-    headBtnAuthorization();
-    document.querySelector('.loginBacdropLogIn').classList.remove('isHidden');
   } catch (e) {
     console.error('Error adding document: ', e);
   }

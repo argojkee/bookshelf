@@ -14,11 +14,13 @@ const nameLabel = document.querySelector('.nameCont');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const pass = document.getElementById('pass');
+const submit = document.querySelector('.loginBtn');
 
 let logIs = true;
 
 loginClose.addEventListener('click', () => {
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
+  document.body.style.overflowY = 'scroll';
   checkButtonsOnCloseModal();
 });
 
@@ -39,7 +41,6 @@ bIn.addEventListener('click', () => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-
   sing();
   form.reset();
   showBtnWhenAuth();
@@ -48,8 +49,9 @@ form.addEventListener('submit', e => {
 
 function sing() {
   if (logIs) {
-    logUp(name.value, email.value, pass.value);
+    if (name.value.trim() && email.value.trim() && pass.value.trim())
+      logUp(name.value, email.value, pass.value);
   } else {
-    logIn(email.value, pass.value);
+    if (email.value.trim() && pass.value.trim()) logIn(email.value, pass.value);
   }
 }
