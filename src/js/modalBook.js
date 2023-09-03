@@ -138,7 +138,6 @@ function openModal(event) {
   overlayBook.classList.toggle('active');
   bookSet.bookID = event.target.closest('a').dataset.id;
   addModalBookMarkup(bookSet.bookID);
-  modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
 }
 
 //закриття модалки
@@ -180,29 +179,30 @@ function renderBook(obj) {
   ).innerHTML = `<h1 class="modal-book-title">${book.title}</h1>
       <h2 class="modal-book-author">${book.author}</h2>
       <p class="modal-book-review">
-        ${book.description}
+        ${book.description || 'description will be added soon...'}
       </p>
       <ul class="modal-book-buy-list">
         <li>
           <a href="${
             book.buy_links.find(link => link.name === 'Amazon').url
           }" target="_blank"
-            ><img class="modal-book-amazon shopping-list-buy-link-img" src="${amazonImage}"> 
+            ><img class="modal-book-buy-link-img modal-book-amazon" src="${amazonImage}" width="62" height="19"> 
           </a>
         </li>
         <li>
           <a href="${
             book.buy_links.find(link => link.name === 'Apple Books').url
           }" target="_blank"
-            ><img class="modal-book-apple shopping-list-buy-link-img" src="${appleBookImage}">
+            ><img class="modal-book-buy-link-img modal-book-apple" src="${appleBookImage}" width="33" height="32">
           </a>
         </li>
         <li>
           <a href="${
             book.buy_links.find(link => link.name === 'Bookshop').url
           }" target="_blank"
-            ><img class="modal-book-shop shopping-list-buy-link-img" src="${bookShopImage}">
+            ><img class="modal-book-buy-link-img modal-book-shop" src="${bookShopImage}" width="38" height="36">
           </a>
         </li>
       </ul>`;
+  modalBook.classList.toggle('hidden'); //perenis vidkruttya modalku
 }
