@@ -47,9 +47,20 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 375px) {
+  .header {
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .header {
     min-height: 72px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
