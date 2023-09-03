@@ -4,6 +4,7 @@ import { getName } from './loginApi.js';
 const regBtn = document.getElementById('head-signup-btn');
 const infoUserBtn = document.getElementById('head-logged-steven');
 const logOutBtn = document.querySelector('.head-loggedup-btn');
+const spanUserName = document.querySelector('.head-username');
 
 // Dark theme for local storage
 document.querySelector('.themetoggle').addEventListener('click', event => {
@@ -64,13 +65,13 @@ export function headBtnAuthorization() {
   }
 }
 
-//Отображение нопок авторизации когда авторизирован
+//Отображение кнопок авторизации когда авторизирован
 export function showBtnWhenAuth() {
   infoUserBtn.style.display = 'flex';
   regBtn.style.display = 'none';
 }
 
-//Отображение нопок авторизации когда не авторизирован
+//Отображение кнопок авторизации когда не авторизирован
 
 function hideBtnWhenNotAuth() {
   infoUserBtn.style.display = 'none';
@@ -154,3 +155,13 @@ function onLogoutClick() {
     window.location.pathname = '/index.html';
   }
 }
+
+// Switching  UserName in a Header UserButton
+const switchingUserName = async () => {
+  if (localStorage.getItem('bookshelId')) {
+    
+      let headerUserName = await getName();
+      spanUserName.textContent = headerUserName;
+   }
+}
+  switchingUserName();
