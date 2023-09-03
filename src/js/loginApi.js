@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getDocs, setDoc, doc, collection, getDoc } from 'firebase/firestore';
+import { setDoc, doc, getDoc } from 'firebase/firestore';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -61,10 +61,15 @@ const createUserInfo = async (nameValue, userCredential) => {
   }
 };
 
-export const addBase = array => {
+export const addBase = async array => {
   const uid = localStorage.getItem('bookshelId');
   const userBase = doc(db, uid, 'shopBase');
-  setDoc(userBase, { shopBase: [...array] }, { merge: true });
+  try {
+    await setDoc(userBase, { shopBase: [...array] }, { merge: true });
+    return true;
+  } catch (e) {
+    return false;
+  }
 };
 
 export const getBase = async () => {
