@@ -150,6 +150,9 @@ const jumpingEl = document.querySelectorAll('.jump-block');
 // відкриття модалки
 function openModal(event) {
   event.preventDefault();
+  if (!event.target.closest('.content_book')) {
+    return;
+  }
   document.addEventListener('keydown', onEsc);
 
   let paddingOffSet = window.innerWidth - document.body.offsetWidth + 'px';
@@ -163,9 +166,6 @@ function openModal(event) {
   disableBodyScroll(targetModal);
 
   //   console.log(event.target.closest('li'));
-  if (!event.target.closest('.content_book')) {
-    return;
-  }
 
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
