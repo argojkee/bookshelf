@@ -1,9 +1,7 @@
-const menuBurger = document.querySelector('.js-cross-switch');
-menuBurger.addEventListener('click', onMenuOpen);
+const menuModalbtn = document.querySelector('.js-cross-switch');
+const menuBurger = document.querySelector('.modal-burger');
 
-function onMenuOpen(event) {
-  event.preventDefault();
-  if (event.target.include()) {
-    return;
-  }
-}
+menuModalbtn.addEventListener('click', () => {
+  menuModalbtn.classList.toggle('is-open');
+  menuBurger.classList.toggle('is-open');
+});
