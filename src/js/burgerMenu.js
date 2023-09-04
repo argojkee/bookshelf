@@ -13,6 +13,7 @@ const shoppingLinkBurger = document.querySelector('.section-burger_item-cart');
 const listBurgerLinks = document.querySelector('.section-burger_list');
 const userTextBurger = document.querySelector('.modal-user_title');
 const bodyEl = document.querySelector('body');
+const addPhotoContainer = document.querySelector('.image-btn-burger-container');
 
 listBurgerLinks.addEventListener('click', onBurgerLinkClick);
 
@@ -37,6 +38,7 @@ menuModalbtn.addEventListener('click', () => {
   bodyEl.classList.toggle('scroll-lock');
 
   if (localStorage.getItem('bookshelId')) {
+    addPhotoContainer.classList.remove('isHidden');
     logInBtn.classList.add('isHidden');
     userInfo.classList.remove('isHidden');
     linkList.classList.remove('isHidden');
@@ -46,6 +48,7 @@ menuModalbtn.addEventListener('click', () => {
     userInfo.classList.add('isHidden');
     linkList.classList.add('isHidden');
     logOutBtn.classList.add('isHidden');
+    addPhotoContainer.classList.add('isHidden');
   }
 });
 

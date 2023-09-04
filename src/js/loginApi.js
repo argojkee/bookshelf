@@ -30,6 +30,8 @@ const burgerUresInfo = document.querySelector('.modal-user');
 const headerBtn = document.querySelector('.head-logged-btn');
 const headerPhoto = document.querySelector('.header-user-photo');
 const userImgBurger = document.querySelector('.user-image-burger');
+const burgerBigPhoto = document.querySelector('.upload-photo');
+
 // import { loadFile, getFile } from './loginApi';
 //Photo end
 
@@ -191,11 +193,12 @@ export function checkAndSelectPhoto() {
       burgerUresInfo.classList.add('photo-is-loaded');
       headerPhoto.src = url;
       userImgBurger.src = url;
+      burgerBigPhoto.src = url;
     } else {
       buttonHeader.classList.remove('photo-is-loaded');
       burgerUresInfo.classList.remove('photo-is-loaded');
       headerPhoto.src = '#';
-      userImgBurger.src = '';
+      burgerBigPhoto.src = require('../images/uploadphoto.webp');
     }
   });
 }
