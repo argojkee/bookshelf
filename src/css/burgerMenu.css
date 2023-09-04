@@ -154,7 +154,7 @@ ul.section-burger_list {
   justify-content: center;
   flex-direction: column;
   row-gap: 16px;
-  max-width: 188px;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -199,16 +199,22 @@ ul.section-burger_list {
 .burger-link-item.current .current-link_burger {
   background-color: #eac645;
   color: #111111;
-  border-radius: 36px;
-  padding: 8px 16px;
+  font-weight: bold;
   fill: currentColor;
 }
 
-.burger-link-item:hover,
-.burger-link-item:focus {
+.btn-home,
+.shopping-click {
+  border-radius: 36px;
+  padding: 8px 16px;
+}
+
+.btn-home:focus,
+.shopping-click:focus,
+.btn-home:hover,
+.shopping-click:hover {
   background-color: #eac645;
   color: #111111;
-  border-radius: 36px;
 }
 
 .isHidden {
@@ -226,5 +232,10 @@ ul.section-burger_list {
 }
 
 .burger-link-item.current .svg-cart_white {
+  fill: #111;
+}
+
+.shopping-click:hover .svg-cart_white,
+.shopping-click:focus .svg-cart_white {
   fill: #111;
 }
