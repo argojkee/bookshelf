@@ -67,6 +67,6 @@ function onBurgerLinkClick(e) {
     if (shoppingLinkBurger.classList.contains('current')) {
       return;
     }
-    window.location.pathname = '/shopping.html';
+    window.location.pathname = '/bookshelf/shopping.html';
   }
 }
