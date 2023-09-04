@@ -6,6 +6,7 @@ const infoUserBtn = document.getElementById('head-logged-steven');
 const logOutBtn = document.querySelector('.head-loggedup-btn');
 const spanUserName = document.querySelector('.head-username');
 const themetoggleEl = document.querySelector('.themetoggle');
+const bodyEl = document.querySelector('body');
 
 // Dark theme for local storage
 themetoggleEl.addEventListener('click', event => {
@@ -63,9 +64,8 @@ export function headBtnAuthorization() {
     infoUserBtn.classList.add('isHidden');
   } else {
     checkOnLogin();
-    themetoggleEl.classList.remove('isHidden');
   }
-
+  themetoggleEl.classList.remove('isHidden');
   logOutBtn.classList.remove('deleted');
 }
 
@@ -106,7 +106,7 @@ regBtn.addEventListener('click', onRegBtnClick);
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
   document.addEventListener('keydown', forEscape);
-  document.body.style.overflow = 'hidden';
+  bodyEl.classList.add('scroll-lock');
 }
 
 const forEscape = ({ key }) => {
@@ -124,7 +124,6 @@ export function checkButtonsOnCloseModal() {
     hideHomeAndShop();
     if (localStorage.getItem('bookshelId')) {
       showBtnWhenAuth();
-      //!Когда будет готов бургер - написать логику его закрытия
     } else {
       hideBtnWhenNotAuth();
     }
@@ -164,7 +163,7 @@ function onLogoutClick() {
   hideBtnWhenNotAuth();
   logOutBtn.classList.add('isHidden');
   if (window.location.href.includes('shopping')) {
-    window.location.pathname = '/index.html';
+    window.location.pathname = '/bookshelf/index.html';
   }
 }
 
@@ -180,5 +179,3 @@ const switchingUserName = async () => {
   headBtnAuthorization();
 };
 switchingUserName();
-
-const gg = 'afkdskjgslkfsklf';

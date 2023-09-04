@@ -7,14 +7,6 @@
   align-items: center;
 }
 
-@media screen and (min-width: 375px) {
-  .header {
-    max-width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .header {
     min-height: 72px;
@@ -31,7 +23,6 @@
     margin-right: auto;
   }
 }
-
 
 .head-logged-btn.isHidden,
 .head-signup-btn.isHidden,
@@ -72,7 +63,6 @@
 .themetoggle {
   cursor: pointer;
 }
-
 
 .header-container {
   box-sizing: border-box;
@@ -152,6 +142,10 @@
   .header-selected-page {
     display: none;
   }
+}
+
+.header {
+  width: 100%;
 }
 
 .themetoggle {
