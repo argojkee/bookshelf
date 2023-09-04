@@ -7,7 +7,7 @@ const bUp = document.querySelector('.sUpBtb');
 const bIn = document.querySelector('.sInBtb');
 const btnText = document.querySelector('.loginBtnText');
 const loginClose = document.querySelector('.loginClose');
-const backdropBurger = document.querySelector('backdrop-burger');
+const backdropBurger = document.querySelector('.backdrop-burger');
 
 const nameLabel = document.querySelector('.nameCont');
 const name = document.getElementById('name');
@@ -25,8 +25,11 @@ let logIs = true;
 loginClose.addEventListener('click', () => {
   backDrop.classList.add('isHidden');
 
-  if (!backdropBurger.classList.contains('is-open')) {
-    document.querySelector('body').classList.remove = 'scroll-lock';
+  if (
+    !backdropBurger.classList.contains('is-open') ||
+    window.innerWidth > 768
+  ) {
+    document.querySelector('body').classList.remove('scroll-lock');
   }
 
   checkButtonsOnCloseModal();

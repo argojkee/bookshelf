@@ -1,12 +1,5 @@
 @media only screen and (max-width: 767px) {
   a.btn-home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 72px;
-    height: 34px;
-
     border-radius: 36px;
     color: #fff;
 
@@ -86,7 +79,6 @@
     gap: 4px;
 
     color: #fff;
-    padding: 8px 16px;
   }
 
   .svg-cart_white {
@@ -158,11 +150,13 @@
 
 ul.section-burger_list {
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
+  flex-direction: column;
   justify-content: center;
   flex-direction: column;
   row-gap: 16px;
+  max-width: 188px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: 768px) {
@@ -180,10 +174,12 @@ ul.section-burger_list {
   }
 }
 
-.burger-link-item.current {
+.burger-link-item.current .current-link_burger {
   background-color: #eac645;
   color: #111111;
   border-radius: 36px;
+  padding: 8px 16px;
+  fill: currentColor;
 }
 
 .burger-link-item:hover,
@@ -205,10 +201,6 @@ ul.section-burger_list {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.burger-link-item.current .current-link_burger {
-  color: inherit;
 }
 
 .burger-link-item.current .svg-cart_white {

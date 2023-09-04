@@ -6,6 +6,7 @@ const infoUserBtn = document.getElementById('head-logged-steven');
 const logOutBtn = document.querySelector('.head-loggedup-btn');
 const spanUserName = document.querySelector('.head-username');
 const themetoggleEl = document.querySelector('.themetoggle');
+const bodyEl = document.querySelector('body');
 
 // Dark theme for local storage
 themetoggleEl.addEventListener('click', event => {
@@ -105,7 +106,7 @@ regBtn.addEventListener('click', onRegBtnClick);
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
   document.addEventListener('keydown', forEscape);
-  document.body.style.overflow = 'hidden';
+  bodyEl.classList.add('scroll-lock');
 }
 
 const forEscape = ({ key }) => {
@@ -123,7 +124,6 @@ export function checkButtonsOnCloseModal() {
     hideHomeAndShop();
     if (localStorage.getItem('bookshelId')) {
       showBtnWhenAuth();
-      //!Когда будет готов бургер - написать логику его закрытия
     } else {
       hideBtnWhenNotAuth();
     }
