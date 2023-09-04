@@ -9,7 +9,9 @@ const fundsMarkup = fondlist
       <span class="fund-number">${(index + 1)
         .toString()
         .padStart(2, '0')}</span>
-        <img class="fund-image" src="${fund.img}" alt=""/>
+        <img class="fund-image" src="${fund.img}" alt="" width=${
+      fund.width
+    } heigt=${fund.height}/>
     </a>
   </li>
 

@@ -62,7 +62,5 @@
 }
 
 .fund-image {
-  /* width: 149px; */
-  height: 32px;
   filter: brightness(0) invert(1);
 }
