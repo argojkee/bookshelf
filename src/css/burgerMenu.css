@@ -172,6 +172,27 @@ ul.section-burger_list {
   .header {
     max-width: 100%;
   }
+  .burger-user-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .photo-burger-btn {
+    width: 160px;
+    color: white;
+    border: 1px solid #111;
+    border-radius: 36px;
+  }
+  .upload-photo {
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.image-btn-burger-container.isHidden {
+  display: none;
 }
 
 .burger-link-item.current .current-link_burger {

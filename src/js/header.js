@@ -60,6 +60,7 @@ if (document.location.href.includes('shopping')) {
 export function headBtnAuthorization() {
   if (window.screen.availWidth < 768) {
     hideHomeAndShop();
+
     regBtn.classList.add('isHidden');
     infoUserBtn.classList.add('isHidden');
   } else {
