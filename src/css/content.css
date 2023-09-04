@@ -13,14 +13,14 @@ body.dark .content_btnSeeMore {
 
 /* ******************** */
 
-.title_theme{
-   font-weight: 700px;
+.title_theme {
+  font-weight: 700px;
   font-size: 32px;
   line-height: 1.2;
 }
 
-.title_theme{
-   font-weight: 700px;
+.title_theme {
+  font-weight: 700px;
   font-size: 32px;
   line-height: 1.2;
 }
@@ -38,7 +38,7 @@ body.dark .content_btnSeeMore {
   display: block;
 }
 /* кнопка */
-.content_btnSeeMore {  
+.content_btnSeeMore {
   display: block;
   margin-left: auto;
   width: 124px;
@@ -46,15 +46,14 @@ body.dark .content_btnSeeMore {
   border-radius: 40px;
   border: 2px solid var(--primary-stilization-color);
   padding: 14px, 28px, 14px, 28px;
-
+  cursor: pointer;
   transition: all 2s ease;
 }
 
-
-
-.content_list_categories{
+.content_list_categories {
   display: flex;
   flex-direction: column;
+  row-gap: 40px;
 }
 
 .content_btnSeeMore:focus,
@@ -179,17 +178,21 @@ body.dark .content_btnSeeMore {
     width: calc((100% - 50px) / 3);
   }
 
-  .title_theme{
-   font-weight: 700px;
-  font-size: 48px;
-  line-height: 52px;
-}
+  .title_theme {
+    font-weight: 700px;
+    font-size: 48px;
+    line-height: 52px;
+  }
 
-  .title_blue{
-   font-weight: 700px;
-  font-size: 48px;
-  line-height: 52px;
-}
+  .title_blue {
+    font-weight: 700px;
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .content_btnSeeMore {
+    margin-top: 32px;
+  }
   .content_list_topBooks {
     display: flex;
     flex-wrap: wrap;
@@ -233,7 +236,7 @@ body.dark .content_btnSeeMore {
   height: 12px;
   border-radius: 50%;
   display: block;
-  margin:200px auto;
+  margin: 200px auto;
   position: relative;
   color: #7b7474;
   box-sizing: border-box;
@@ -242,40 +245,40 @@ body.dark .content_btnSeeMore {
 
 @keyframes content-animloader {
   0% {
-    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
   25% {
-    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 2px;
   }
   50% {
-    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 2px, -38px 0 0 -2px;
   }
   75% {
-    box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    box-shadow: 14px 0 0 2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
   100% {
-    box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    box-shadow: 14px 0 0 -2px, 38px 0 0 2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
 }
 
 .loaderBTN {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #546c44;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    }
+  width: 48px;
+  height: 48px;
+  border: 5px solid #546c44;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
 
-    @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    } 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* loader на кнопку SeeMore */
