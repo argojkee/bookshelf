@@ -241,11 +241,8 @@
     align-items: center;
     cursor: pointer;
     margin-left: 24px;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 4px 12px;
-    /* background-image: url('../images/head-images/Stiven-face.webp'); */
-    background-repeat: no-repeat;
-    background-position: bottom 4px right 137px;
 
     width: 184px;
     height: 45px;
