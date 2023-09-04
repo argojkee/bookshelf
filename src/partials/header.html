@@ -69,7 +69,21 @@
     </button>
     <ul class="header-list-btns isHidden deleted">
       <li>
-        <button type="button" class="header-add-photo">Add photo</button>
+        <!-- <button type="button" class="header-add-photo">Add photo</button> -->
+        <button type="button" class="header-add-photo">
+          <label
+            class="add-photo-label-header"
+            for="fileLoad"
+            style="padding: 20px; display: inline-block"
+            >Load photo</label
+          >
+        </button>
+        <input
+          id="fileLoadHeader"
+          type="file"
+          accept="image/png, image/gif, image/jpeg"
+          style="display: none"
+        />
       </li>
       <li>
         <button type="button" class="head-loggedup-btn">

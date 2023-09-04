@@ -31,7 +31,7 @@ const headerBtn = document.querySelector('.head-logged-btn');
 const headerPhoto = document.querySelector('.header-user-photo');
 const userImgBurger = document.querySelector('.user-image-burger');
 const burgerBigPhoto = document.querySelector('.upload-photo');
-
+const headerUploadBtn = document.querySelector('.header-add-photo');
 // import { loadFile, getFile } from './loginApi';
 //Photo end
 
@@ -187,18 +187,25 @@ if (localStorage.getItem('bookshelId')) {
 }
 
 export function checkAndSelectPhoto() {
-  getFile().then(url => {
-    if (url) {
-      buttonHeader.classList.add('photo-is-loaded');
-      burgerUresInfo.classList.add('photo-is-loaded');
-      headerPhoto.src = url;
-      userImgBurger.src = url;
-      burgerBigPhoto.src = url;
-    } else {
-      buttonHeader.classList.remove('photo-is-loaded');
-      burgerUresInfo.classList.remove('photo-is-loaded');
-      headerPhoto.src = '#';
-      burgerBigPhoto.src = require('../images/uploadphoto.webp');
-    }
-  });
+  getFile()
+    .then(url => {
+      if (url) {
+        buttonHeader.classList.add('photo-is-loaded');
+        burgerUresInfo.classList.add('photo-is-loaded');
+        headerPhoto.src = url;
+        userImgBurger.src = url;
+        burgerBigPhoto.src = url;
+      } else {
+        buttonHeader.classList.remove('photo-is-loaded');
+        burgerUresInfo.classList.remove('photo-is-loaded');
+        headerPhoto.src = '#';
+        burgerBigPhoto.src = require('../images/uploadphoto.webp');
+      }
+    })
+    .catch(err => console.log(err));
 }
+
+//UPLOAD ON HEADER BUTTON
+
+const inputElementHeader = document.getElementById('fileLoadHeader');
+inputElement.addEventListener('change', handleFiles, false);

@@ -312,6 +312,10 @@
     transform: translate(0, 50%);
   }
 
+  .add-photo-label-header {
+    cursor: pointer;
+  }
+
   .header-add-photo {
     cursor: pointer;
     display: flex;
