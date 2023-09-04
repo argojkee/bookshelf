@@ -1,3 +1,5 @@
+import { getName } from './loginApi';
+
 const menuModalbtn = document.querySelector('.js-cross-switch');
 const menuBurger = document.querySelector('.modal-burger');
 const logOutBtn = document.querySelector('.section-burger_logOut');
@@ -9,8 +11,15 @@ const backdropBurger = document.querySelector('.backdrop-burger');
 const homeLinkBurger = document.querySelector('.section-burger_item');
 const shoppingLinkBurger = document.querySelector('.section-burger_item-cart');
 const listBurgerLinks = document.querySelector('.section-burger_list');
+const userTextBurger = document.querySelector('.modal-user_title');
 
 listBurgerLinks.addEventListener('click', onBurgerLinkClick);
+
+if (localStorage.getItem('bookshelId')) {
+  getName(localStorage.getItem('bookshelId')).then(name => {
+    userTextBurger.textContent = name;
+  });
+}
 
 if (window.location.href.includes('shopping')) {
   shoppingLinkBurger.classList.add('current');
