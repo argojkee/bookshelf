@@ -119,7 +119,7 @@ function createMarkup(books) {
                         <p class="shopping-list-item-category">${list_name}</p>
                     </div>
                     <button type="button" class="shopping-list-delete-btn" aria-label="delete-button">
-                        <svg class="delete-btn-icon" aria-label="delete-button-icon-trash" width="16" height="16">
+                        <svg class="delete-btn-icon" aria-label="trash-icon" width="16" height="16">
                             <use class="delete-btn-icon-use" xlink:href="#icon-trash">
                         </svg>
                     </button>
