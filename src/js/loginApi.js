@@ -137,6 +137,7 @@ export const getBase = async () => {
   // console.log(data.data().shopBase);
   return data.data().shopBase;
 };
+
 export const getName = async () => {
   const uid = localStorage.getItem('bookshelId');
   const name = await getDoc(doc(db, uid, 'name'));
