@@ -63,9 +63,8 @@ export function headBtnAuthorization() {
     infoUserBtn.classList.add('isHidden');
   } else {
     checkOnLogin();
-    themetoggleEl.classList.remove('isHidden');
   }
-
+  themetoggleEl.classList.remove('isHidden');
   logOutBtn.classList.remove('deleted');
 }
 
