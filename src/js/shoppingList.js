@@ -5,9 +5,6 @@ import { getBase, addBase } from './loginApi';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const lorem =
-  'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ipsa possimus debitis dignissimos ipsum consequuntur voluptatibus facere vero itaque magni, vel veniam delectus provident molestiae id libero totam excepturi perferendis!';
-
 const refs = {
   ul: document.querySelector('.shopping-list'),
   shoppingListIsEmptyMessage: document.querySelector(
@@ -25,18 +22,18 @@ const options = {
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
   template: {
-    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-    currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    page: '<a href="#" class="tui-page-btn pagination-page">{{page}}</a>',
+    currentPage: '<strong class="tui-page-btn pagination-page tui-is-selected">{{page}}</strong>',
     moveButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}">' +
+      '<a href="#" class="tui-page-btn pagination-page tui-{{type}}">' +
         '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</a>',
     disabledMoveButton:
-      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="tui-page-btn pagination-page tui-is-disabled tui-{{type}}">' +
         '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</span>',
     moreButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<a href="#" class="tui-page-btn pagination-page tui-{{type}}-is-ellip">' +
         '<span class="tui-ico-ellip">...</span>' +
       '</a>'
   }
@@ -68,7 +65,7 @@ getBase()
 refs.ul.addEventListener('click', deleteItem);
 
 function createMarkup(books) {
-  console.log(books);
+  // console.log(books);
   const markup = books
     .map(
       ({
@@ -80,9 +77,6 @@ function createMarkup(books) {
         buy_links,
         _id,
       }) => {
-        if (!description) {
-          description = lorem;
-        }
 
         const currentBuyLinks = buy_links
           ?.filter(
