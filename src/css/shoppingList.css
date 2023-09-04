@@ -373,7 +373,7 @@ body.dark .shopping-list-buy-link-img:focus {
 #pagination .tui-prev,
 #pagination .tui-next,
 #pagination .tui-last {
-  background-color: #EAC645;
+  background-color: #eac645;
   color: var(--primary-color-text);
 }
 
@@ -389,6 +389,38 @@ body.dark .shopping-list-buy-link-img:focus {
 
 #pagination .tui-is-disabled {
   background-color: var(--primary-color-text);
+}
+
+#pagination .tui-ico-ellip {
+  background: none;
+  /* font-size: 20px;
+  height: 20px; */
+  display: flex;
+  justify-content: center;
+  content: '...';
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  #pagination .tui-ico-ellip {
+    font-size: 10px;
+    height: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  #pagination .tui-ico-ellip {
+    font-size: 15px;
+    height: 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #pagination .tui-ico-ellip {
+    font-size: 20px;
+    height: 20px;
+    margin-bottom: 12px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -424,4 +456,8 @@ body.dark #pagination .tui-last {
 body.dark #pagination .tui-is-selected {
   background-color: var(--primary-color-text-dark-theme);
   color: #000;
+}
+
+body.dark #pagination .tui-ico-ellip {
+  color: white;
 }
