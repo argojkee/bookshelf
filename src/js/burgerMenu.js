@@ -5,10 +5,12 @@ const logInBtn = document.querySelector('.section-burger_SingUp');
 const modalLogin = document.querySelector('.loginBacdropLogIn');
 const userInfo = document.querySelector('.modal-user');
 const linkList = document.querySelector('.section-burger_list');
+const backdropBurger = document.querySelector('.backdrop-burger');
 
 menuModalbtn.addEventListener('click', () => {
   menuModalbtn.classList.toggle('is-open');
   menuBurger.classList.toggle('is-open');
+  backdropBurger.classList.toggle('is-open');
 
   if (localStorage.getItem('bookshelId')) {
     logInBtn.classList.add('isHidden');

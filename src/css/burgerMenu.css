@@ -112,6 +112,7 @@
   .backdrop-burger {
     z-index: 5;
     position: absolute;
+    pointer-events: none;
     top: 100%;
     left: 0;
     width: 100vw;
@@ -120,6 +121,9 @@
     /* display: none; */
     visibility: visible;
     opacity: 1;
+  }
+  .backdrop-burger.is-open {
+    pointer-events: all;
   }
 }
 

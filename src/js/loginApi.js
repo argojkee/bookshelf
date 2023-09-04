@@ -17,6 +17,7 @@ const userTextBurger = document.querySelector('.modal-user_title');
 const menuModalbtn = document.querySelector('.js-cross-switch');
 const burgerIcon = document.querySelector('.burger-head');
 const closeBurgerIcon = document.querySelector('.burger-cross');
+const backdropBurger = document.querySelector('.backdrop-burger');
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA7-4KyX1RYgBEpGnLc5cIem7b-B1uXswI',
@@ -49,6 +50,7 @@ export const logUp = (name, emailValue, passValue) => {
       menuModalbtn.classList.toggle('is-open');
       burgerIcon.classList.remove('header-switch-hidden');
       closeBurgerIcon.classList.add('header-switch-hidden');
+      backdropBurger.classList.remove('is-open');
     })
     .catch(error => errorAlert(error));
 };
@@ -67,6 +69,7 @@ export const logIn = (emailValue, passValue) => {
         menuModalbtn.classList.toggle('is-open');
         burgerIcon.classList.remove('header-switch-hidden');
         closeBurgerIcon.classList.add('header-switch-hidden');
+        backdropBurger.classList.remove('is-open');
       });
     })
     .catch(error => errorAlert(error));
