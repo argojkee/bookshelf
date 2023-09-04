@@ -4,14 +4,11 @@ import { renderMarkupTopBooks, countTopBooks } from './contentFunctions';
 
 //кі-сть загружених книг однієї категорії після того, як користувач натиснув на кнопку SEEMORE
 let numberOfBooksShown = countTopBooks();
-//категорія, по кнопкі якій натиснули
-let selectedCategory = '';
-
 const HowManyBooksToLoad = 5;
+
+const spanLoader = document.querySelector('content_loadBooks');
 const containerBook = document.querySelector('.container-books');
 const content = document.querySelector('.content');
-const categoryItem = document.querySelector('.content_category');
-
 containerBook.innerHTML = `<div class="content-error"> 
               <img 
               src="${require('../images/shopping-list/Books.png')}"
@@ -23,7 +20,6 @@ getTopBooks();
 
 export function getTopBooks() {
   containerBook.innerHTML = '';
-  containerBook.innerHTML = '';
   fetchToAllBooks()
     .then(result => {
       return result.data;
@@ -34,76 +30,62 @@ export function getTopBooks() {
     });
 }
 
-function getBooksByCat(butElem, category) {
-  // hideButton(butElem);
-  // butElem.classList.add('loader');
-
-  fetchBooksByCategory(category)
+function getBooksByCat(butElem) {
+  // spanLoader.classList.add('content_loaderBTN');
+  fetchBooksByCategory(butElem.name)
     .then(result => {
       butElem.classList.remove('loader');
       return result.data;
     })
     .then(data => {
       renderDataBycat(butElem, data);
-
       butElem.innerHTML = 'SEE MORE';
     })
     .catch();
 }
 
-//ховаємо кнопку
-function hideButton(butElem) {
-  butElem.hidden = true;
-  butElem.innerHTML = '';
-}
-
+//ф-ція оброблює дані по конкретній категорії - малює розмітку та вставляє її перед кнопкой
 export function renderDataBycat(butElem, data) {
-  let markup = createMarkupWithFiveBooks(butElem, data);
-  butElem.classList.remove('loader');
+  let markup = createMarkupOfBooksOneCategory(butElem, data);
   butElem.previousElementSibling.insertAdjacentHTML('beforeend', markup);
 }
 
-const test = document.querySelector('.container-books');
-test.addEventListener('click', handleSumitSeeMore);
+const containerBooks = document.querySelector('.container-books');
+containerBooks.addEventListener('click', handleSumitSeeMore);
 
 function handleSumitSeeMore(e) {
   e.preventDefault();
   if (e.target.type !== 'button') {
     return;
   }
-
-  //якщо натиснули на нову категорію, то скидаємо параметри і заново беремо список книг
-  if (e.target.name !== selectedCategory) {
-    numberOfBooksShown = countTopBooks();
-  }
-  selectedCategory = e.target.name;
-  getBooksByCat(e.target, selectedCategory);
+  getBooksByCat(e.target);
+ 
 }
 
-//створюється розмітка при натисненні кнопки SeeMore. Т к декілька книг вже загружено, то
-//ці перші книги не загружає, догружає ще декілька(HowManyBooksToLoad).
-//Коли доходе до кінця, видаляє кнопку.
-function createMarkupWithFiveBooks(elem, arrayBooks) {
-  let counter = 0;
-  let loaded = 0;
+
+function hiddenBtnSeeMore(elem) {
+  elem.classList.add('hidden');
+}
+
+//ф-ція малює розмітку з книгами однієї категорії
+function createMarkupOfBooksOneCategory(elem, arrayBooks) {
   let markup = arrayBooks
     .map((book, index) => {
-      if (index >= numberOfBooksShown && counter < HowManyBooksToLoad) {
-        counter += 1;
-        loaded += 1;
-
-        //якщо загрузили останню книгу, то видаляємл кнопку
+      if (index >= numberOfBooksShown) {
+        //якщо загрузили останню книгу, то видаляємо кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
+          //якщо категорії не закінчились, то не робимо анімацію для зголовка
+          //наступної категорії, т к їїнемає
           if (elem.parentNode.nextSibling != null) {
             elem.parentNode.nextSibling.firstElementChild.classList.add(
               'contend_categoryMove'
             );
           }
-            
+
           Notiflix.Notify.info('this is all. Check out other category books');
         }
-        
+
         return `<li class="content_book">
                           <a data-id=${book._id} href="${book.book_image}" class="content-book-link" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
@@ -115,15 +97,7 @@ function createMarkupWithFiveBooks(elem, arrayBooks) {
       }
     })
     .join('');
-  numberOfBooksShown += loaded;
-  loaded = 0;
   return markup;
-}
-
-
-function hiddenBtnSeeMore(elem) {
-  elem.classList.add('hidden');
-  // categoryItem.classList.add('contend_categoryMove');
 }
 
 //налаштування для Notflix
