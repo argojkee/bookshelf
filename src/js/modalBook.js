@@ -128,18 +128,21 @@ let userBooks = () => {
 
   if (!getUserID) {
     //massage;
-    booksChangeBtn.style.display = 'none';
-    booksChangeBtn.style.visibility = 'hidden';
-    booksStatusText.classList.add('.unlogin');
+    
+    // deactivate button
+    booksChangeBtn.disabled= true;
+    
+    booksChangeBtn.classList.add('dis');
+    booksStatusText.classList.add('unlogin');
     booksStatusText.textContent =
       "Please, 'LogIn' if you want to add book to book list!";
     return;
   }
 
-  booksChangeBtn.style.display = 'block';
-  booksChangeBtn.style.visibility = 'visible';
+  // activate button
+  booksChangeBtn.disabled= false;
+  booksChangeBtn.classList.remove('dis');
   booksStatusText.classList.remove('.unlogin');
-  booksChangeBtn.style.visibility = 'visible';
 
   // read book array data from LocalStorage
   getBooks();
@@ -165,11 +168,6 @@ function openModal(event) {
   jumpingEl.forEach(el => {
     el.style.paddingRight = paddingOffSet;
   });
-
-  // 'body' scroll off
-  disableBodyScroll(targetModal);
-
-  //   console.log(event.target.closest('li'));
 
   // 'body' scroll off
   disableBodyScroll(targetModal);

@@ -1,15 +1,18 @@
 .team-gallery {
-   
+    /* position: absolute; */
+    z-index: 0;
+
     display: flex;
     flex-direction: row;
-    gap: 10px;
+
     justify-content: center;
     align-items: center;
 }
 
 .developer{
     
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(206, 206, 206, 0.7);
+    
     width: 60px;
     height: 60px;
     border-radius: 50px;
@@ -20,11 +23,8 @@
 }
 
 .footer-cover {
-    position: relative;
-    bottom: -70px; 
-
-    /* bottom: 70px;
-    z-index: 5; */
+    position: absolute;
+    z-index: 7;
 
     display: flex;
     justify-content: center;
@@ -50,4 +50,168 @@
 
 .hidden {
     opacity: 0;
+}
+
+.user0 {
+    position: absolute;
+    z-index: 1;
+
+    backdrop-filter: blur(2px);
+    width: 30px;
+    height: 30px;
+    left: calc(100vw / 2 - 125px);
+}
+
+.user1 {
+   position: absolute;
+   z-index: 2;
+
+   backdrop-filter: blur(2px);
+   width: 35px;
+   height: 35px;
+   left: calc(100vw / 2 - 115px);
+}
+
+.user2 {
+   position: absolute;
+   z-index: 3;
+
+   backdrop-filter: blur(2px);
+   width: 40px;
+   height: 40px;
+   left: calc(100vw / 2 - 105px);
+}
+
+.user3 {
+   position: absolute;
+   z-index: 4;
+
+   backdrop-filter: blur(2px);
+   width: 45px;
+   height: 45px;
+   left: calc(100vw / 2 - 90px);
+}
+
+.user4 {
+    position: absolute;
+    z-index: 5;
+
+    width: 50px;
+    height: 50px;
+    left: calc(100vw / 2 - 70px);
+    backdrop-filter: blur(2px);
+
+}
+
+.user5 {
+    position: absolute;
+    z-index: 6;
+
+    width: 70px;
+    height: 70px;
+    left: calc(100vw / 2 - 40px);
+
+    backdrop-filter: blur(2px);
+    border: 2px solid;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user6 {
+    position: absolute;
+    z-index: 5;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(2px);
+    width: 50px;
+    height: 50px;
+    right: calc(100vw / 2 - 70px);;
+}
+
+.user7 {
+    position: absolute;
+    z-index: 4;
+
+    backdrop-filter: blur(2px);
+    width: 45px;
+    height: 45px;
+    right: calc(100vw / 2 - 90px);
+}
+
+.user8 {
+    position: absolute;
+    z-index: 3;
+
+    backdrop-filter: blur(2px);
+    width: 40px;
+    height: 40px;
+    right: calc(100vw / 2 - 105px);
+}
+
+.user9 {
+    position: absolute;
+    z-index: 2;
+
+    backdrop-filter: blur(2px);
+    width: 35px;
+    height: 35px;
+    right: calc(100vw / 2 - 115px);
+}
+
+.user10 {
+    position: absolute;
+    z-index: 1;
+
+    backdrop-filter: blur(2px);
+    width: 30px;
+    height: 30px;
+    right: calc(100vw / 2 - 125px);
+}
+
+.footer-pointer {
+
+    position: relative;
+    
+    bottom: calc(100vh / 2 - 300px);
+    left: calc(100vw / 2 - 40px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 20px;
+    color: rgb(79, 46, 232);
+
+    border: none;
+    border-radius: 6px;
+}
+
+.pointer-hidden {
+    display: none;
+}
+
+.inform-hidden {
+    display: none;
+}
+
+.footer-inform {
+    position: relative;
+    
+    display: none;
+    bottom: calc(100vh / 2 - 120px);
+    left: calc(100vw / 2 - 103px);
+
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 150px;
+    color: rgb(79, 46, 232);
+
+    border: 2px solid rgb(189, 187, 187);
+    border-radius: 50px;
 }
