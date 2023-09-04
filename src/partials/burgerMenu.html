@@ -1,7 +1,18 @@
 <div class="backdrop-burger">
   <div class="modal-burger">
     <div class="modal-user">
-      <img src="/src/images/head-images/Stiven-face.webp" alt="modal-user" />
+      <img
+        src="/src/images/head-images/Stiven-face.webp"
+        alt="modal-user"
+        class="user-image-burger"
+      />
+      <span class="user-photo-container">
+        <svg
+          width="19"
+          height="19"
+          class="user-photo-icon js-user-icon-burger"
+        ></svg>
+      </span>
       <h2 class="modal-user_title"></h2>
     </div>
     <ul class="section-burger_list">
@@ -36,5 +47,18 @@
           <use href="./images/sprite.svg#icon-arrow-login"></use></svg
       ></span>
     </button>
+    <div>
+      <button style="background-color: green">
+        <label for="fileLoad" style="padding: 20px; display: inline-block"
+          >Load photo</label
+        >
+      </button>
+      <input
+        id="fileLoad"
+        type="file"
+        accept="image/png, image/gif, image/jpeg"
+        style="display: none"
+      />
+    </div>
   </div>
 </div>
