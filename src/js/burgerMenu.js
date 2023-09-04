@@ -6,6 +6,19 @@ const modalLogin = document.querySelector('.loginBacdropLogIn');
 const userInfo = document.querySelector('.modal-user');
 const linkList = document.querySelector('.section-burger_list');
 const backdropBurger = document.querySelector('.backdrop-burger');
+const homeLinkBurger = document.querySelector('.section-burger_item');
+const shoppingLinkBurger = document.querySelector('.section-burger_item-cart');
+const listBurgerLinks = document.querySelector('.section-burger_list');
+
+listBurgerLinks.addEventListener('click', onBurgerLinkClick);
+
+if (window.location.href.includes('shopping')) {
+  shoppingLinkBurger.classList.add('current');
+  homeLinkBurger.classList.remove('current');
+} else {
+  shoppingLinkBurger.classList.remove('current');
+  homeLinkBurger.classList.add('current');
+}
 
 menuModalbtn.addEventListener('click', () => {
   menuModalbtn.classList.toggle('is-open');
@@ -35,4 +48,25 @@ function onLogoutClick() {
 
 function onLoginClick() {
   modalLogin.classList.remove('isHidden');
+}
+
+function onBurgerLinkClick(e) {
+  e.preventDefault();
+  if (e.target.closest('section-burger_item')) {
+    return;
+  }
+
+  if (e.target.closest('.section-burger_item')) {
+    if (homeLinkBurger.classList.contains('current')) {
+      return;
+    }
+
+    window.location.pathname = '/bookshelf/index.html';
+  } else {
+    console.log('hello');
+    if (shoppingLinkBurger.classList.contains('current')) {
+      return;
+    }
+    window.location.pathname = '/shopping.html';
+  }
 }

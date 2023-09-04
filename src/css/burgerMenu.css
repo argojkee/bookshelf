@@ -8,13 +8,16 @@
     height: 34px;
 
     border-radius: 36px;
-    background-color: #eac645;
-    color: #111111;
 
     font-family: DM Sans;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.28;
+  }
+
+  .burger-link-item.current {
+    background-color: #eac645;
+    color: #111111;
   }
 
   /* .shopping-click :hover,
@@ -113,7 +116,7 @@
     z-index: 5;
     position: absolute;
     pointer-events: none;
-    top: 100%;
+    top: calc(100% + 1px);
     left: 0;
     width: 100vw;
     height: 100vh;
