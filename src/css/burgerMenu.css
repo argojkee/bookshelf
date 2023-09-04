@@ -179,9 +179,10 @@ ul.section-burger_list {
   }
   .photo-burger-btn {
     width: 160px;
-    color: white;
+    color: #111;
     border: 1px solid #111;
     border-radius: 36px;
+    background-color: white;
   }
   .upload-photo {
     width: 100px;
