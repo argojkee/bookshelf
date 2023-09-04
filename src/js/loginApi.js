@@ -12,6 +12,11 @@ import { headBtnAuthorization } from './header';
 const userNameEl = document.querySelector('.head-username');
 const checkLog = document.querySelector('.loginCheck');
 const loginForm = document.getElementById('formUp');
+const burgerMenu = document.querySelector('.modal-burger');
+const userTextBurger = document.querySelector('.modal-user_title');
+const menuModalbtn = document.querySelector('.js-cross-switch');
+const burgerIcon = document.querySelector('.burger-head');
+const closeBurgerIcon = document.querySelector('.burger-cross');
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA7-4KyX1RYgBEpGnLc5cIem7b-B1uXswI',
@@ -39,6 +44,11 @@ export const logUp = (name, emailValue, passValue) => {
       userNameEl.textContent =
         name.length > 6 ? `${name.slice(0, 6)}...` : name;
       headBtnAuthorization();
+      burgerMenu.classList.remove('is-open');
+      userTextBurger.textContent = name;
+      menuModalbtn.classList.toggle('is-open');
+      burgerIcon.classList.remove('header-switch-hidden');
+      closeBurgerIcon.classList.add('header-switch-hidden');
     })
     .catch(error => errorAlert(error));
 };
@@ -51,7 +61,12 @@ export const logIn = (emailValue, passValue) => {
       getName(localStorage.getItem('bookshelId')).then(name => {
         userNameEl.textContent =
           name.length > 6 ? `${name.slice(0, 6)}...` : name;
+        userTextBurger.textContent = name;
         headBtnAuthorization();
+        burgerMenu.classList.remove('is-open');
+        menuModalbtn.classList.toggle('is-open');
+        burgerIcon.classList.remove('header-switch-hidden');
+        closeBurgerIcon.classList.add('header-switch-hidden');
       });
     })
     .catch(error => errorAlert(error));

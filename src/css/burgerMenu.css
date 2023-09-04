@@ -187,3 +187,9 @@ ul.section-burger_list {
     max-width: 100%;
   }
 }
+
+.isHidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
