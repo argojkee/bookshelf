@@ -12,6 +12,7 @@ const homeLinkBurger = document.querySelector('.section-burger_item');
 const shoppingLinkBurger = document.querySelector('.section-burger_item-cart');
 const listBurgerLinks = document.querySelector('.section-burger_list');
 const userTextBurger = document.querySelector('.modal-user_title');
+const bodyEl = document.querySelector('body');
 
 listBurgerLinks.addEventListener('click', onBurgerLinkClick);
 
@@ -33,6 +34,7 @@ menuModalbtn.addEventListener('click', () => {
   menuModalbtn.classList.toggle('is-open');
   menuBurger.classList.toggle('is-open');
   backdropBurger.classList.toggle('is-open');
+  bodyEl.classList.toggle('scroll-lock');
 
   if (localStorage.getItem('bookshelId')) {
     logInBtn.classList.add('isHidden');

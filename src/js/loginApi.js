@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { setDoc, doc, getDoc, getName } from 'firebase/firestore';
+import { setDoc, doc, getDoc } from 'firebase/firestore';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -18,6 +18,7 @@ const menuModalbtn = document.querySelector('.js-cross-switch');
 const burgerIcon = document.querySelector('.burger-head');
 const closeBurgerIcon = document.querySelector('.burger-cross');
 const backdropBurger = document.querySelector('.backdrop-burger');
+const bodyEl = document.querySelector('body');
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA7-4KyX1RYgBEpGnLc5cIem7b-B1uXswI',
@@ -45,6 +46,7 @@ export const logUp = (name, emailValue, passValue) => {
       userNameEl.textContent =
         name.length > 6 ? `${name.slice(0, 6)}...` : name;
       headBtnAuthorization();
+
       burgerMenu.classList.remove('is-open');
       userTextBurger.textContent = name;
       menuModalbtn.classList.toggle('is-open');
@@ -53,6 +55,13 @@ export const logUp = (name, emailValue, passValue) => {
       backdropBurger.classList.remove('is-open');
     })
     .catch(error => errorAlert(error));
+};
+
+export const getName = async () => {
+  const uid = localStorage.getItem('bookshelId');
+  const name = await getDoc(doc(db, uid, 'name'));
+  // console.log(name.data().name);
+  return name.data().name;
 };
 
 export const logIn = (emailValue, passValue) => {
@@ -82,13 +91,15 @@ const saveUser = userCredential => {
   // loginForm.disable = false;
   checkLog.textContent = '';
 
-  document.body.style.overflowY = 'scroll';
+  // document.body.style.overflowY = 'scroll';
+  bodyEl.classList.remove('scroll-lock');
   // console.log(user);
 };
 
 const errorAlert = error => {
   window.alert(error);
   checkLog.textContent = '';
+  bodyEl.classList.add('scroll-lock');
 };
 
 const createUserInfo = async (nameValue, userCredential) => {
@@ -118,11 +129,4 @@ export const getBase = async () => {
   const data = await getDoc(doc(db, uid, 'shopBase'));
   // console.log(data.data().shopBase);
   return data.data().shopBase;
-};
-
-export const getName = async () => {
-  const uid = localStorage.getItem('bookshelId');
-  const name = await getDoc(doc(db, uid, 'name'));
-  // console.log(name.data().name);
-  return name.data().name;
 };
