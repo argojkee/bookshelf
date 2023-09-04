@@ -13,6 +13,18 @@ body.dark .content_btnSeeMore {
 
 /* ******************** */
 
+.title_theme{
+   font-weight: 700px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.title_theme{
+   font-weight: 700px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
 .content {
   width: 100%;
   /* background-color: yellow; */
@@ -26,11 +38,9 @@ body.dark .content_btnSeeMore {
   display: block;
 }
 /* кнопка */
-.content_btnSeeMore {
+.content_btnSeeMore {  
   display: block;
   margin-left: auto;
-  margin-bottom: 40px;
-  cursor: pointer;
   width: 124px;
   height: 46px;
   border-radius: 40px;
@@ -39,6 +49,8 @@ body.dark .content_btnSeeMore {
 
   transition: all 2s ease;
 }
+
+
 
 .content_list_categories{
   display: flex;
@@ -167,6 +179,17 @@ body.dark .content_btnSeeMore {
     width: calc((100% - 50px) / 3);
   }
 
+  .title_theme{
+   font-weight: 700px;
+  font-size: 48px;
+  line-height: 52px;
+}
+
+  .title_blue{
+   font-weight: 700px;
+  font-size: 48px;
+  line-height: 52px;
+}
   .content_list_topBooks {
     display: flex;
     flex-wrap: wrap;
@@ -234,3 +257,25 @@ body.dark .content_btnSeeMore {
     box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
   }
 }
+
+.loaderBTN {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #546c44;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+/* loader на кнопку SeeMore */
