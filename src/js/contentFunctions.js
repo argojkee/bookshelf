@@ -10,8 +10,7 @@ export function renderMarkupTopBooks(array) {
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
                       return `<li class="content_book">
-                          <a data-id=${book._id} href="${book.book_image}" >
-                          <a data-id=${book._id} href="${book.book_image}" >
+                          <a data-id=${book._id} href="${book.book_image}" >              
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                          
                          <span class="content_textname" id="content_book_name">${book.title}</span>
@@ -22,10 +21,12 @@ export function renderMarkupTopBooks(array) {
                   })
                   .join('')}</ul>
           
-                <button class="content_btnSeeMore" type="button" name="${
-                  kategory.list_name
-                }" 
-                 action="submit">SEE MORE</button>         
+               
+                <button class="content_btnSeeMore"
+                        type="button"
+                        name="${kategory.list_name}" 
+                        action="submit">SEE MORE
+                </button>                                                    
           </li>`;
     })
     .join('')}</ul>`;
