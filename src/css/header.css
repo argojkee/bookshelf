@@ -316,6 +316,27 @@
     cursor: pointer;
   }
 
+  .head-loggedup-btn,
+  .header-add-photo {
+    transition: 250ms linear;
+  }
+
+  .head-loggedup-btn:hover,
+  .header-add-photo:hover,
+  .head-loggedup-btn:focus,
+  .header-add-photo:focus {
+    background-color: #eac645;
+    color: white;
+  }
+  .head-loggedup-btn:hover .head-loggedup-span,
+  .head-loggedup-btn:focus .head-loggedup-span {
+    color: white;
+  }
+
+  .head-loggedup-btn {
+    transition: 250ms linear;
+  }
+
   .header-add-photo {
     cursor: pointer;
     display: flex;
