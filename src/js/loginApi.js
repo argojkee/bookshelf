@@ -6,6 +6,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 // import { headBtnAuthorization } from './header';
 import { showBtnWhenAuth } from './header';
 import { showHomeAndShop } from './header';
@@ -111,3 +113,34 @@ export const getName = async () => {
   // console.log(name.data().name);
   return name.data().name;
 };
+
+// ============== LOAD IMG FUNCTION =================================================
+// ==================================================================================
+
+// БЕРЕМ КАРТИНКУ С КОМПА
+const inputElement = document.getElementById('fileLoad');
+inputElement.addEventListener('change', handleFiles, false);
+function handleFiles() {
+  loadFile(this.files[0]);
+}
+
+// ЗАКИДЫВАЕМ НА СЕРВЕР
+const storage = getStorage(app);
+export const loadFile = async file => {
+  const storageRef = ref(storage, localStorage.getItem('bookshelId'));
+  uploadBytes(storageRef, file).then(() => {
+    // тут добавь код для перерисовки аватарки
+    // что-то типа getFile().then(url => document.querySelector('.yourImgClass').src = url)
+  });
+};
+
+// БЕРЕМ ИЗ СЕРВЕРА ССЫЛКУ НА КАРТИНКУ
+export const getFile = async () => {
+  getDownloadURL(ref(storage, localStorage.getItem('bookshelId')))
+    .then(url => {
+      return url;
+    })
+    .catch(error => {});
+};
+// ===============================================================================
+// ===============================================================================
