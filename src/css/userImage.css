@@ -1,0 +1,11 @@
+.head-logged-btn.photo-is-loaded .user-photo-container {
+  display: none;
+}
+
+/* .head-logged-btn.photo-is-loaded {
+  background-image: url('../images/head-images/Stiven-face.webp');
+} */
+
+.modal-user.photo-is-loaded .user-image-burger {
+  display: block;
+}

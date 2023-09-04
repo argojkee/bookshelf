@@ -48,6 +48,20 @@
   position: relative;
 }
 
+.user-photo-container {
+  background-color: white;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-photo-icon {
+  fill: #4f2ee8;
+}
+
 /* @media screen and (min-width: 768px) {
   .buttons-container {
     width: 248px;
@@ -227,8 +241,9 @@
     align-items: center;
     cursor: pointer;
     margin-left: 24px;
-
-    background-image: url('../images/head-images/Stiven-face.webp');
+    justify-content: space-between;
+    padding: 4px 12px;
+    /* background-image: url('../images/head-images/Stiven-face.webp'); */
     background-repeat: no-repeat;
     background-position: bottom 4px right 137px;
 
@@ -238,6 +253,7 @@
     background-color: #4f2ee8;
   }
 }
+
 .head-username {
   color: #fff;
   font-family: DM Sans;
@@ -245,7 +261,7 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.44px;
-  margin-left: 58px;
+
   margin-right: 4px;
 }
 
@@ -258,6 +274,7 @@
   .head-signup-btn {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 184px;
     height: 48px;
     cursor: pointer;
