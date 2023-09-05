@@ -6,6 +6,7 @@ import { renderMarkupTopBooks, countTopBooks } from './contentFunctions';
 let numberOfBooksShown = countTopBooks();
 const HowManyBooksToLoad = 5;
 
+const categoriesList = document.querySelector('.all-categories-container');
 const spanLoader = document.querySelector('content_loadBooks');
 const containerBook = document.querySelector('.container-books');
 const content = document.querySelector('.content');
@@ -19,7 +20,10 @@ containerBook.innerHTML = `<div class="content-error">
 getTopBooks();
 
 export function getTopBooks() {
+  categoriesList.classList.add('lock-click-categories');
   containerBook.innerHTML = '';
+  content.classList.add('content-loader');
+
   fetchToAllBooks()
     .then(result => {
       return result.data;
@@ -27,6 +31,7 @@ export function getTopBooks() {
     .then(data => {
       content.classList.remove('content-loader');
       containerBook.innerHTML = renderMarkupTopBooks(data);
+      categoriesList.classList.remove('lock-click-categories');
     });
 }
 
@@ -59,9 +64,7 @@ function handleSumitSeeMore(e) {
     return;
   }
   getBooksByCat(e.target);
- 
 }
-
 
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');

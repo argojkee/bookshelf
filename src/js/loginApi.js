@@ -7,8 +7,20 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import Notiflix from 'notiflix';
 // import { headBtnAuthorization } from './header';
 import { headBtnAuthorization } from './header';
+
+Notiflix.Notify.init({
+  width: '480px',
+  position: 'right-bottom',
+  distance: '10px',
+  opacity: 1,
+  fontSize: '20px',
+  clickToClose: true,
+  timeout: 3000,
+  background: '#4f2ee8',
+});
 // import { checkAndSelectPhoto } from './addUserPhoto';
 
 const userNameEl = document.querySelector('.head-username');
@@ -50,8 +62,7 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 export const logUp = (name, emailValue, passValue) => {
-  checkLog.textContent = 'Сhecking the user...';
-
+  Notiflix.Notify.info('Сhecking the user...');
   createUserWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => {
       saveUser(userCredential);
@@ -59,46 +70,66 @@ export const logUp = (name, emailValue, passValue) => {
     })
     .then(resp => {
       userNameEl.textContent =
-        name.length > 5 ? `${name.slice(0, 5)}...` : name;
+        name.length > 6 ? `${name.slice(0, 5)}...` : name;
       headBtnAuthorization();
 
+      buttonHeader.classList.remove('photo-is-loaded');
+      burgerUresInfo.classList.remove('photo-is-loaded');
+      headerPhoto.src = '#';
+      burgerBigPhoto.src = require('../images/uploadphoto.webp');
       burgerMenu.classList.remove('is-open');
-      userTextBurger.textContent = name;
+      userTextBurger.textContent = name.length > 14 ? name.slice(0, 12) : name;
       menuModalbtn.classList.toggle('is-open');
       burgerIcon.classList.remove('header-switch-hidden');
       closeBurgerIcon.classList.add('header-switch-hidden');
       backdropBurger.classList.remove('is-open');
+      Notiflix.Notify.success('You are registered...');
+      loginForm.reset();
     })
     .catch(error => errorAlert(error));
 };
 
 export const logIn = (emailValue, passValue) => {
-  checkLog.textContent = 'Сhecking the user...';
+  Notiflix.Notify.info('Сhecking the user...');
   signInWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => saveUser(userCredential))
     .then(resp => {
       checkAndSelectPhoto();
       getName(localStorage.getItem('bookshelId')).then(name => {
         userNameEl.textContent =
-          name.length > 5 ? `${name.slice(0, 5)}...` : name;
-        userTextBurger.textContent = name;
+          name.length > 6 ? `${name.slice(0, 5)}...` : name;
+        userTextBurger.textContent =
+          name.length > 14 ? name.slice(0, 12) : name;
         headBtnAuthorization();
         burgerMenu.classList.remove('is-open');
         menuModalbtn.classList.toggle('is-open');
         burgerIcon.classList.remove('header-switch-hidden');
         closeBurgerIcon.classList.add('header-switch-hidden');
         backdropBurger.classList.remove('is-open');
+        Notiflix.Notify.success('Access allowed...');
+        loginForm.reset();
       });
     })
     .catch(error => errorAlert(error));
+};
+
+const avatarStatus = async status => {
+  const uid = localStorage.getItem('bookshelId');
+  const userBase = doc(db, uid, 'avaState');
+  await setDoc(userBase, { avaState: status }, { merge: true });
+};
+
+const getAvatarStatus = async () => {
+  const uid = localStorage.getItem('bookshelId');
+  const state = await getDoc(doc(db, uid, 'avaState'));
+  // console.log(state.data().avaState);
+  return state.data().avaState;
 };
 
 const saveUser = userCredential => {
   const user = userCredential.user;
   localStorage.setItem('bookshelId', user.uid);
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
-  // loginForm.disable = false;
-  checkLog.textContent = '';
 
   // document.body.style.overflowY = 'scroll';
   bodyEl.classList.remove('scroll-lock');
@@ -106,8 +137,7 @@ const saveUser = userCredential => {
 };
 
 const errorAlert = error => {
-  window.alert(error);
-  checkLog.textContent = '';
+  Notiflix.Notify.failure(error.code);
   bodyEl.classList.add('scroll-lock');
 };
 
@@ -117,6 +147,7 @@ const createUserInfo = async (nameValue, userCredential) => {
       name: nameValue,
     });
     addBase([]);
+    avatarStatus(false);
   } catch (e) {
     errorAlert(e);
   }
@@ -162,21 +193,25 @@ export const loadFile = async file => {
     // тут добавь код для перерисовки аватарки
     // что-то типа getFile().then(url => document.querySelector('.yourImgClass').src = url)
     checkAndSelectPhoto();
+    avatarStatus(true);
   });
 };
 
 // БЕРЕМ ИЗ СЕРВЕРА ССЫЛКУ НА КАРТИНКУ
 export async function getFile() {
-  return getDownloadURL(ref(storage, localStorage.getItem('bookshelId')))
-    .then(url => {
+  const state = await getAvatarStatus();
+  if (state) {
+    return getDownloadURL(
+      ref(storage, localStorage.getItem('bookshelId'))
+    ).then(url => {
       return url;
-    })
-    .catch(err => {
-      buttonHeader.classList.remove('photo-is-loaded');
-      burgerUresInfo.classList.remove('photo-is-loaded');
-      headerPhoto.src = '#';
-      userImgBurger.src = '';
     });
+  } else {
+    buttonHeader.classList.remove('photo-is-loaded');
+    burgerUresInfo.classList.remove('photo-is-loaded');
+    headerPhoto.src = '#';
+    userImgBurger.src = '';
+  }
 }
 
 userPhotoHeaderSvg.innerHTML = `<use xlink:href="#icon-userphoto"></use>`;

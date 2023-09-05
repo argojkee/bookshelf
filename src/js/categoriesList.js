@@ -9,6 +9,8 @@ const refs = {
   container: document.querySelector(`.all-categories-box`),
   title: document.querySelector(`.all-categoris-title`),
   element: document.querySelector(`.all-categoris-element`),
+  booksContainer: document.querySelector('.container-books'),
+  categoriesList: document.querySelector('.all-categories-container'),
 };
 
 // визначаю місе куди буде рендериться розмітка кник відповідної категорії
@@ -57,7 +59,7 @@ function showCategoryBook() {
   }
 
   const categoryName = clickedElement.dataset.name;
-  console.log(`Clicked on category: ${categoryName}`);
+
   changeCurrent(clickedElement);
 
   // якщо вибрано категорію `All categories`
@@ -68,6 +70,9 @@ function showCategoryBook() {
   // якщо вибрана категорія то рендериться
   // розмітка всіх книг відповідної категорії
   else {
+    refs.booksContainer.innerHTML = '';
+    refs.categoriesList.classList.add('lock-click-categories');
+    refs.booksContainer.classList.add('content-loader');
     getBooksFromCategories(categoryName);
   }
 }
@@ -92,8 +97,10 @@ function getBooksFromCategories(category) {
   fetchBooksByCategory(category)
     .then(response => {
       console.log('Received data from server:', response.data);
-      containerBook.innerHTML = '';
+
+      refs.booksContainer.classList.remove('content-loader');
       renderDataBooks(response.data, category);
+      refs.categoriesList.classList.remove('lock-click-categories');
     })
     .catch(error => {
       console.error('Error:', error);
@@ -101,15 +108,14 @@ function getBooksFromCategories(category) {
 }
 
 function renderDataBooks(booksData, categoriBooks) {
-  
-  const words = categoriBooks.split(' '); 
-  const firstPart = words.slice(0, -1).join(' '); 
-  const secondPart = words[words.length - 1]; 
+  const words = categoriBooks.split(' ');
+  const firstPart = words.slice(0, -1).join(' ');
+  const secondPart = words[words.length - 1];
 
   const markupCategori = `<h1 class="title-container-topBooks">
     <span class="title_theme">${firstPart}</span>
     <span class="title_blue">${secondPart}</span></h1>`;
-  
+
   const markup = booksData
     .map((book, indexBook) => {
       return `<li class="content_book" data-id=${book._id}>

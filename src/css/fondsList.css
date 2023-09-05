@@ -4,7 +4,7 @@
   }
 
   .funds-list {
-    height: 205px;
+    height: 211px;
   }
 }
 
@@ -47,6 +47,11 @@
   gap: 20px;
 }
 
+.fund-img-wrapper {
+  width: 100%;
+  height: 32px;
+}
+
 .fund-item-link {
   display: flex;
   align-items: center;
@@ -61,4 +66,7 @@
 
 .fund-image {
   filter: brightness(0) invert(1);
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
