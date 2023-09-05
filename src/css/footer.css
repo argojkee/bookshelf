@@ -1,353 +1,428 @@
 .html {
-    overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 .team-gallery {
-    /* position: absolute; */
-    z-index: 0;
+  /* position: absolute; */
+  z-index: 0;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
+.developer {
+  background-color: rgb(206, 206, 206, 0.7);
+  background-size: contain;
 
-.developer{
-    
-    background-color: rgb(206, 206, 206, 0.7);
-    background-size: contain;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
 
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-img-0 {
-    background-image: none;
+  background-image: none;
 }
 
 .back-img-1 {
-    background-image: url('../images/footer/Yurii\ Yakovchyk.jpg');
+  background-image: url('../images/footer/Yurii\ Yakovchyk.jpg');
 }
 
 .back-img-2 {
-    background-image: url('../images/footer/Dmytro\ Shevchenko.jpg');
+  background-image: url('../images/footer/Dmytro\ Shevchenko.jpg');
 }
 
 .back-img-3 {
-    background-image: url('../images/footer/Maksym\ Osovik.jpg');
+  background-image: url('../images/footer/Maksym\ Osovik.jpg');
 }
 
 .back-img-4 {
-    background-image: none;
+  background-image: none;
 }
 
 .back-img-5 {
-    background-image: url('../images/footer/Maksym\ Haydabura.jpg');
+  background-image: url('../images/footer/Maksym\ Haydabura.jpg');
 }
 
 .back-img-6 {
-    background-image: url('../images/footer/Olena\ Peredrii.jpg');
+  background-image: url('../images/footer/Olena\ Peredrii.jpg');
 }
 
 .back-img-7 {
-    background-image: url('../images/footer/Yurii\ Vovk.jpg');
+  background-image: url('../images/footer/Yurii\ Vovk.jpg');
 }
 
 .back-img-8 {
-    background-image: url('../images/footer/Igor\ Lunyakin.jpg');
+  background-image: url('../images/footer/Igor\ Lunyakin.jpg');
 }
 
 .back-img-9 {
-    background-image: none;
+  background-image: none;
 }
 
 .footer-cover {
-    position: absolute;
-    z-index: 7;
+  position: absolute;
+  z-index: 7;
 
-    opacity: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100vw;
+  opacity: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100vw;
 
-    background-color: var(--primary-color-text-dark-theme);
-
+  background-color: var(--primary-color-text-dark-theme);
 }
 
 .footer-decor {
-    
-    display: flex;
-
-    box-sizing: content-box;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    border: 1px solid #202024;
-    border-radius: 8px 8px 0 0;
+  display: flex;
+  width: 100%;
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border: 1px solid #202024;
+  border-radius: 8px 8px 0 0;
 }
 
+@media screen and (max-width: 375px) {
+  .footer-decor {
+    width: 100%;
+  }
+}
 .footer-button {
-
-    width: 130px;
-    height: 40px;
-    border: 2px solid rgb(79, 46, 232);
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 130px;
+  height: 40px;
+  border: 2px solid rgb(79, 46, 232);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-button:hover,
 .footer-button:focus {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .hidden {
-    opacity: 0;
+  opacity: 0;
 }
 
 .user0 {
-    position: absolute;
-    z-index: 1;
+  position: absolute;
+  z-index: 1;
 
-    backdrop-filter: blur(2px);
-    width: 30px;
-    height: 30px;
-    left: calc(100vw / 2 - 130px);
+  backdrop-filter: blur(2px);
+  width: 30px;
+  height: 30px;
+  left: calc(100vw / 2 - 130px);
 }
 
 .user1 {
-   position: absolute;
-   z-index: 2;
+  position: absolute;
+  z-index: 2;
 
-   backdrop-filter: blur(2px);
-   width: 35px;
-   height: 35px;
-   left: calc(100vw / 2 - 125px);
+  backdrop-filter: blur(2px);
+  width: 35px;
+  height: 35px;
+  left: calc(100vw / 2 - 125px);
 }
 
 .user2 {
-   position: absolute;
-   z-index: 3;
+  position: absolute;
+  z-index: 3;
 
-   backdrop-filter: blur(2px);
-   width: 40px;
-   height: 40px;
-   left: calc(100vw / 2 - 115px);
+  backdrop-filter: blur(2px);
+  width: 40px;
+  height: 40px;
+  left: calc(100vw / 2 - 115px);
 }
 
 .user3 {
-   position: absolute;
-   z-index: 4;
+  position: absolute;
+  z-index: 4;
 
-   backdrop-filter: blur(2px);
-   width: 50px;
-   height: 50px;
-   left: calc(100vw / 2 - 100px);
+  backdrop-filter: blur(2px);
+  width: 50px;
+  height: 50px;
+  left: calc(100vw / 2 - 100px);
 }
 
 .user4 {
-    position: absolute;
-    z-index: 5;
+  position: absolute;
+  z-index: 5;
 
-    width: 60px;
-    height: 60px;
-    left: calc(100vw / 2 - 80px);
-    backdrop-filter: blur(2px);
-
+  width: 60px;
+  height: 60px;
+  left: calc(100vw / 2 - 80px);
+  backdrop-filter: blur(2px);
 }
 
 .user5 {
-    position: absolute;
-    z-index: 6;
+  position: absolute;
+  z-index: 6;
 
-    background-size:cover;
-    width: 90px;
-    height: 90px;
-    left: calc(100vw / 2 - 55px);
+  background-size: cover;
+  width: 90px;
+  height: 90px;
+  left: calc(100vw / 2 - 55px);
 
-    backdrop-filter: blur(2px);
-    border: 2px solid;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(2px);
+  border: 2px solid;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user6 {
-    position: absolute;
-    z-index: 5;
+  position: absolute;
+  z-index: 5;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    backdrop-filter: blur(2px);
-    width: 60px;
-    height: 60px;
-    left: calc(100vw / 2 + 10px);
+  backdrop-filter: blur(2px);
+  width: 60px;
+  height: 60px;
+  left: calc(100vw / 2 + 10px);
 }
 
 .user7 {
-    position: absolute;
-    z-index: 4;
+  position: absolute;
+  z-index: 4;
 
-    backdrop-filter: blur(2px);
-    width: 50px;
-    height: 50px;
-    left: calc(100vw / 2 + 35px);
+  backdrop-filter: blur(2px);
+  width: 50px;
+  height: 50px;
+  left: calc(100vw / 2 + 35px);
 }
 
 .user8 {
-    position: absolute;
-    z-index: 3;
+  position: absolute;
+  z-index: 3;
 
-    backdrop-filter: blur(2px);
-    width: 40px;
-    height: 40px;
-    left: calc(100vw / 2 + 60px);
+  backdrop-filter: blur(2px);
+  width: 40px;
+  height: 40px;
+  left: calc(100vw / 2 + 60px);
 }
 
 .user9 {
-    position: absolute;
-    z-index: 2;
+  position: absolute;
+  z-index: 2;
 
-    backdrop-filter: blur(2px);
-    width: 35px;
-    height: 35px;
-    left: calc(100vw / 2 + 75px);
+  backdrop-filter: blur(2px);
+  width: 35px;
+  height: 35px;
+  left: calc(100vw / 2 + 75px);
 }
 
 .user10 {
-    position: absolute;
-    z-index: 1;
+  position: absolute;
+  z-index: 1;
 
-    backdrop-filter: blur(2px);
-    width: 30px;
-    height: 30px;
-    left: calc(100vw / 2 + 85px);
+  backdrop-filter: blur(2px);
+  width: 30px;
+  height: 30px;
+  left: calc(100vw / 2 + 85px);
 }
 
 .footer-pointer {
+  position: relative;
 
-    position: relative;
-    
-    bottom: calc(100vh / 2 - 300px);
-    left: calc(100vw / 2 - 45px);
+  left: calc(100vw / 2 - 45px);
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 70px;
+  height: 20px;
+  color: #4f2ee8;
 
-    width: 70px;
-    height: 20px;
-    color: #4f2ee8;
-
-    border: none;
-    border-radius: 6px;
+  border: none;
+  border-radius: 6px;
 }
-
-.pointer-hidden {
+@media screen and (max-width: 1439px) {
+  .footer-pointer {
     display: none;
+  }
+}
+.pointer-hidden {
+  display: none;
 }
 
 .inform-hidden {
-    display: none;
+  display: none;
 }
 
 .footer-inform {
-    position: relative;
-    z-index: 7;
+  position: relative;
+  z-index: 7;
 
-    visibility: hidden;
-    bottom: calc(100vh / 2 - 120px);
-    left: calc(100vw / 2 - 110px);
+  visibility: hidden;
+  bottom: 220px;
+  left: calc(100vw / 2 - 110px);
 
-    backdrop-filter: blur(4px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-    width: 200px;
-    height: 150px;
-    color: #5230e8;
+  width: 200px;
+  height: 150px;
+  color: #5230e8;
 
-    border: 2px solid rgb(189, 187, 187);
-    border-radius: 50px;
-
+  border: 2px solid rgb(189, 187, 187);
+  border-radius: 50px;
 }
 
 .footer {
-    height: 100px;
+  height: 100px;
 }
 
 .font {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .footer-left {
+  position: absolute;
+  display: none;
 
-    position: absolute;
-    display: none;
+  backdrop-filter: blur(2px);
 
-    backdrop-filter: blur(2px);
+  left: calc(100vw / 2 - 180px);
 
-    left: calc(100vw / 2 - 180px);
-
-    height: 20px;
-    width: 50px;
-    color: #5230e8;
-    font-weight: bold;
+  height: 20px;
+  width: 50px;
+  color: #5230e8;
+  font-weight: bold;
 }
 
 .footer-right {
+  position: absolute;
+  display: none;
 
-    position: absolute;
-    display: none;
-   
-    backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 
-    left: calc(100vw / 2 + 120px);
+  left: calc(100vw / 2 + 120px);
 
-    height: 20px;
-    width: 50px;
-    color: #5230e8;
-    font-weight: bold;
+  height: 20px;
+  width: 50px;
+  color: #5230e8;
+  font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-    .footer-left {
-        display: block;
-    }
+@media screen and (max-width: 1439px) {
+  .footer-left {
+    display: block;
+  }
 
-    /* .footer-inform {
+  /* .footer-inform {
         visibility: visible;
     } */
 
-    .footer-right {
-        display: block;
-    }
+  .footer-right {
+    display: block;
   }
-  
+}
 
 /* ---------- Dark ------------- */
 body.dark .footer-decor {
-    background-color: #202024;
-    border: 2px solid #fff;
-  }
+  background-color: #202024;
+  border: 2px solid #fff;
+}
 
 body.dark .footer-cover {
-    background-color: #202024;
-    border: none;
+  background-color: #202024;
+  border: none;
 }
-  
+
 body.dark .footer-inform {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 80%, rgba(79,46,232,0.5) 100%);
-    backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 80%,
+    rgba(79, 46, 232, 0.5) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+.footer {
+  margin-top: 300px;
+}
+
+@media screen and (max-width: 440px) {
+  .user0 {
+    width: 20px;
+    height: 20px;
+    left: calc(50vw - 120px);
+  }
+
+  .user1 {
+    width: 25px;
+    height: 25px;
+    left: calc(50vw - 115px);
+  }
+  .user2 {
+    width: 30px;
+    height: 30px;
+    left: calc(50vw - 105px);
+  }
+  .user3 {
+    width: 40px;
+    height: 40px;
+    left: calc(50vw - 90px);
+  }
+  .user4 {
+    width: 50px;
+    height: 50px;
+    left: calc(50vw - 70px);
+  }
+  .user5 {
+    width: 70px;
+    height: 70px;
+    left: calc(50vw - 40px);
+  }
+  .user6 {
+    width: 50px;
+    height: 50px;
+  }
+  .user7 {
+    width: 40px;
+    height: 40px;
+  }
+  .user8 {
+    width: 30px;
+    height: 30px;
+  }
+  .user9 {
+    width: 25px;
+    height: 25px;
+  }
+  .user10 {
+    width: 20px;
+    height: 20px;
+  }
+  .footer-left,
+  .footer-right {
+    width: 30px;
+    font-size: 80%;
+  }
+
+  .footer-left {
+    left: calc(50vw - 150px);
+  }
+
+  .footer-right {
+    left: calc(50vw + 110px);
+  }
+}
+body {
+  overflow-x: hidden;
 }
