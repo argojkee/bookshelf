@@ -98,6 +98,19 @@ export const logIn = (emailValue, passValue) => {
     .catch(error => errorAlert(error));
 };
 
+const avatarStatus = async status => {
+  const uid = localStorage.getItem('bookshelId');
+  const userBase = doc(db, uid, 'avaState');
+  await setDoc(userBase, { avaState: status }, { merge: true });
+};
+
+const getAvatarStatus = async () => {
+  const uid = localStorage.getItem('bookshelId');
+  const state = await getDoc(doc(db, uid, 'avaState'));
+  // console.log(state.data().avaState);
+  return state.data().avaState;
+};
+
 const saveUser = userCredential => {
   const user = userCredential.user;
   localStorage.setItem('bookshelId', user.uid);
@@ -122,6 +135,7 @@ const createUserInfo = async (nameValue, userCredential) => {
       name: nameValue,
     });
     addBase([]);
+    avatarStatus(false);
   } catch (e) {
     errorAlert(e);
   }
@@ -167,21 +181,25 @@ export const loadFile = async file => {
     // тут добавь код для перерисовки аватарки
     // что-то типа getFile().then(url => document.querySelector('.yourImgClass').src = url)
     checkAndSelectPhoto();
+    avatarStatus(true);
   });
 };
 
 // БЕРЕМ ИЗ СЕРВЕРА ССЫЛКУ НА КАРТИНКУ
 export async function getFile() {
-  return getDownloadURL(ref(storage, localStorage.getItem('bookshelId')))
-    .then(url => {
+  const state = await getAvatarStatus();
+  if (state) {
+    return getDownloadURL(
+      ref(storage, localStorage.getItem('bookshelId'))
+    ).then(url => {
       return url;
-    })
-    .catch(err => {
-      buttonHeader.classList.remove('photo-is-loaded');
-      burgerUresInfo.classList.remove('photo-is-loaded');
-      headerPhoto.src = '#';
-      userImgBurger.src = '';
     });
+  } else {
+    buttonHeader.classList.remove('photo-is-loaded');
+    burgerUresInfo.classList.remove('photo-is-loaded');
+    headerPhoto.src = '#';
+    userImgBurger.src = '';
+  }
 }
 
 userPhotoHeaderSvg.innerHTML = `<use xlink:href="#icon-userphoto"></use>`;
