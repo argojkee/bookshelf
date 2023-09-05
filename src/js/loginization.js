@@ -54,7 +54,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   sing();
 
-  form.reset();
+  // form.reset();
 });
 
 function sing() {
