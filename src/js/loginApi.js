@@ -62,6 +62,10 @@ export const logUp = (name, emailValue, passValue) => {
         name.length > 5 ? `${name.slice(0, 5)}...` : name;
       headBtnAuthorization();
 
+      buttonHeader.classList.remove('photo-is-loaded');
+      burgerUresInfo.classList.remove('photo-is-loaded');
+      headerPhoto.src = '#';
+      burgerBigPhoto.src = require('../images/uploadphoto.webp');
       burgerMenu.classList.remove('is-open');
       userTextBurger.textContent = name;
       menuModalbtn.classList.toggle('is-open');
