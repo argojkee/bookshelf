@@ -8,7 +8,7 @@ const bIn = document.querySelector('.sInBtb');
 const btnText = document.querySelector('.loginBtnText');
 const loginClose = document.querySelector('.loginClose');
 const backdropBurger = document.querySelector('.backdrop-burger');
-
+const bodyEl = document.querySelector('body');
 const nameLabel = document.querySelector('.nameCont');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
@@ -17,12 +17,18 @@ const pass = document.getElementById('pass');
 
 const backDrop = document.querySelector('.loginBacdropLogIn');
 backDrop.addEventListener('click', e => {
-  if (e.target === backDrop) backDrop.classList.add('isHidden');
+  if (e.target === backDrop) {
+    bodyEl.style.paddingRight = 0;
+    bodyEl.classList.remove('scroll-lock');
+    backDrop.classList.add('isHidden');
+  }
 });
 
 let logIs = true;
 
 loginClose.addEventListener('click', () => {
+  bodyEl.style.paddingRight = 0;
+  bodyEl.classList.remove('scroll-lock');
   backDrop.classList.add('isHidden');
 
   if (

@@ -107,6 +107,9 @@ const registerModal = document.querySelector('.loginBacdropLogIn');
 regBtn.addEventListener('click', onRegBtnClick);
 
 function onRegBtnClick() {
+  let paddingOffSet = window.innerWidth - document.body.offsetWidth + 'px';
+
+  bodyEl.style.paddingRight = paddingOffSet;
   registerModal.classList.remove('isHidden');
   document.addEventListener('keydown', forEscape);
   bodyEl.classList.add('scroll-lock');
@@ -114,8 +117,11 @@ function onRegBtnClick() {
 
 const forEscape = ({ key }) => {
   if (key === 'Escape') {
+    bodyEl.style.paddingRight = 0;
     registerModal.classList.add('isHidden');
     document.removeEventListener('keydown', forEscape);
+    bodyEl.classList.remove('scroll-lock');
+
     //
   }
 };
