@@ -238,7 +238,7 @@ const rightEvent = (e) => {
 
 const buttonEvent = () => {
 
-    if(document.documentElement.scrollWidth <= 768) {
+    if(document.documentElement.scrollWidth <= 1439 ) {
         informWindow.style.visibility = 'visible';
         fifthElement.removeEventListener("mouseover", active);
     }
