@@ -32,7 +32,8 @@
     border: 1.5px solid #111;
     background-color: #fff;
   }
-
+  .photo-burger-btn:hover,
+  .photo-burger-btn:focus,
   button.section-burger_logOut:hover,
   button.section-burger_logOut:focus {
     border: 1.5px solid #111;

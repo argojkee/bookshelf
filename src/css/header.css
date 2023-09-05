@@ -292,11 +292,11 @@
   letter-spacing: -0.56px;
 
   margin-left: 14px;
-
 }
 
-.signup-arrow-svg{margin-right: 14px;}
-
+.signup-arrow-svg {
+  margin-right: 14px;
+}
 
 @media screen and (max-width: 768px) {
   .header-list-btns {
