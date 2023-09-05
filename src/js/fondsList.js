@@ -11,7 +11,7 @@ const fundsMarkup = fondlist
         .padStart(2, '0')}</span>
         <img class="fund-image" src="${fund.img}" alt="" width=${
       fund.width
-    } heigt=${fund.height}/>
+    } height=${fund.height}/>
     </a>
   </li>
 
