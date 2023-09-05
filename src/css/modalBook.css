@@ -294,3 +294,20 @@ body.dark .modal-btn-status-text {
     width: 100%;
   }
 }
+
+/* status button */
+.unlogin {
+  font-size: 16px;
+}
+
+.dis {
+  background-color: none;
+  border: 2px solid #202024;
+}
+
+.dis:hover,
+.dis:focus{
+  color: #202024;
+  background-color: var(--primary-color-text-dark-theme);
+  border: 2px solid #202024;
+}
