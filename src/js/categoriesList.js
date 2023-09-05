@@ -93,14 +93,23 @@ function getBooksFromCategories(category) {
     .then(response => {
       console.log('Received data from server:', response.data);
       containerBook.innerHTML = '';
-      renderDataBooks(response.data);
+      renderDataBooks(response.data, category);
     })
     .catch(error => {
       console.error('Error:', error);
     });
 }
 
-function renderDataBooks(booksData) {
+function renderDataBooks(booksData, categoriBooks) {
+  
+  const words = categoriBooks.split(' '); 
+  const firstPart = words.slice(0, -1).join(' '); 
+  const secondPart = words[words.length - 1]; 
+
+  const markupCategori = `<h1 class="title-container-topBooks">
+    <span class="title_theme">${firstPart}</span>
+    <span class="title_blue">${secondPart}</span></h1>`;
+  
   const markup = booksData
     .map((book, indexBook) => {
       return `<li class="content_book" data-id=${book._id}>
@@ -113,6 +122,6 @@ function renderDataBooks(booksData) {
           </li>`;
     })
     .join('');
-  const markupList = `<ul class="content_list_topBooks">${markup}</ul>`;
+  const markupList = `${markupCategori}<ul class="content_list_topBooks">${markup}</ul>`;
   containerBook.insertAdjacentHTML('beforeend', markupList);
 }

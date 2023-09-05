@@ -15,5 +15,5 @@ $('.carousel').slick({
   verticalSwiping: true,
   // slidesToScroll: 3,
   // centerMode: true,
-  initialSlide: 0,
+  initialSlide: 1,
 });

@@ -84,6 +84,9 @@ body.dark .all-categories-container::-webkit-scrollbar-thumb {
 .all-categoris-title:hover,
 .all-categoris-title:focus {
   color: var(--primary-stilization-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 .all-categories-box {
@@ -121,6 +124,9 @@ body.dark .all-categories-container::-webkit-scrollbar-thumb {
 .all-categoris-element:hover,
 .all-categoris-element:focus {
   color: var(--primary-stilization-color);
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .all-categories-container .current {

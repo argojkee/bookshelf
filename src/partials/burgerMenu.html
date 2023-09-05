@@ -1,23 +1,62 @@
 <div class="backdrop-burger">
   <div class="modal-burger">
-    <div class="modal-user">
-      <img src="/src/images/head-images/Stiven-face.webp" alt="modal-user" />
-      <h2 class="modal-user_title">Stephen</h2>
+    <div class="burger-user-container">
+      <div class="modal-user">
+        <img src="#" alt="modal-user" class="user-image-burger" />
+        <span class="user-photo-container">
+          <svg
+            width="19"
+            height="19"
+            class="user-photo-icon js-user-icon-burger"
+          ></svg>
+        </span>
+        <h2 class="modal-user_title"></h2>
+      </div>
+      <div class="image-btn-burger-container">
+        <img src="#" alt="upload photo" class="upload-photo" />
+        <div class="upload-data-container">
+          <button type="button" class="photo-burger-btn">
+            <label
+              class="add-photo-label"
+              for="fileLoad"
+              style="padding: 20px; display: inline-block"
+              >Load photo</label
+            >
+          </button>
+          <input
+            id="fileLoad"
+            type="file"
+            accept="image/png, image/gif, image/jpeg"
+            style="display: none"
+          />
+        </div>
+      </div>
     </div>
     <ul class="section-burger_list">
-      <li class="section-burger_item">
-        <button class="btn-home" type="button" data-btn="btn-home">HOME</button>
+      <li class="section-burger_item burger-link-item">
+        <a
+          href="./index.html"
+          class="btn-home current-link_burger"
+          data-btn="btn-home"
+          >HOME</a
+        >
       </li>
-      <li class="section-burger_item-cart">
-        <a href="./shopping.html" class="shopping-click">
-          <span class="modal-shoping link">Shopping list</span>
+      <li class="section-burger_item-cart burger-link-item">
+        <a href="./shopping.html" class="shopping-click current-link_burger">
+          SHOPPING LIST
           <svg width="20" height="20" class="svg-cart_white">
             <use href="./images/sprite.svg#icon-cart"></use>
           </svg>
         </a>
       </li>
     </ul>
-
+    <button class="section-burger_SingUp">
+      Sign up
+      <span class="modal-icon"
+        ><svg width="20" height="20" class="svg-cart_white">
+          <use href="./images/sprite.svg#icon-arrow-login"></use></svg
+      ></span>
+    </button>
     <button class="section-burger_logOut">
       Log out
       <span class="modal-icon"

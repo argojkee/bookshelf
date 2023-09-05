@@ -6,6 +6,9 @@ const infoUserBtn = document.getElementById('head-logged-steven');
 const logOutBtn = document.querySelector('.head-loggedup-btn');
 const spanUserName = document.querySelector('.head-username');
 const themetoggleEl = document.querySelector('.themetoggle');
+const bodyEl = document.querySelector('body');
+const headerBtnsList = document.querySelector('.header-list-btns');
+// const regListBtn =
 
 // Dark theme for local storage
 themetoggleEl.addEventListener('click', event => {
@@ -59,14 +62,14 @@ if (document.location.href.includes('shopping')) {
 export function headBtnAuthorization() {
   if (window.screen.availWidth < 768) {
     hideHomeAndShop();
+
     regBtn.classList.add('isHidden');
     infoUserBtn.classList.add('isHidden');
   } else {
     checkOnLogin();
-    themetoggleEl.classList.remove('isHidden');
   }
-
-  logOutBtn.classList.remove('deleted');
+  themetoggleEl.classList.remove('isHidden');
+  headerBtnsList.classList.remove('deleted');
 }
 
 //Отображение кнопок авторизации когда авторизирован
@@ -106,7 +109,7 @@ regBtn.addEventListener('click', onRegBtnClick);
 function onRegBtnClick() {
   registerModal.classList.remove('isHidden');
   document.addEventListener('keydown', forEscape);
-  document.body.style.overflow = 'hidden';
+  bodyEl.classList.add('scroll-lock');
 }
 
 const forEscape = ({ key }) => {
@@ -124,7 +127,6 @@ export function checkButtonsOnCloseModal() {
     hideHomeAndShop();
     if (localStorage.getItem('bookshelId')) {
       showBtnWhenAuth();
-      //!Когда будет готов бургер - написать логику его закрытия
     } else {
       hideBtnWhenNotAuth();
     }
@@ -149,10 +151,10 @@ export function checkOnLogin() {
 infoUserBtn.addEventListener('click', onUserBtnClick);
 
 function onUserBtnClick() {
-  if (logOutBtn.classList.contains('isHidden')) {
-    logOutBtn.classList.remove('isHidden');
+  if (headerBtnsList.classList.contains('isHidden')) {
+    headerBtnsList.classList.remove('isHidden');
   } else {
-    logOutBtn.classList.add('isHidden');
+    headerBtnsList.classList.add('isHidden');
   }
 }
 
@@ -162,7 +164,8 @@ function onLogoutClick() {
   localStorage.removeItem('bookshelId');
   hideHomeAndShop();
   hideBtnWhenNotAuth();
-  logOutBtn.classList.add('isHidden');
+
+  headerBtnsList.classList.add('isHidden');
   if (window.location.href.includes('shopping')) {
     window.location.pathname = '/bookshelf/index.html';
   }
