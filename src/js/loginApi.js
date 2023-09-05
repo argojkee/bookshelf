@@ -25,7 +25,7 @@ Notiflix.Notify.init({
 
 const userNameEl = document.querySelector('.head-username');
 const checkLog = document.querySelector('.loginCheck');
-const loginForm = document.getElementById('.formUp');
+const loginForm = document.getElementById('formUp');
 const burgerMenu = document.querySelector('.modal-burger');
 const userTextBurger = document.querySelector('.modal-user_title');
 const menuModalbtn = document.querySelector('.js-cross-switch');
