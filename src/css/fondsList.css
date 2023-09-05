@@ -4,12 +4,12 @@
   }
 
   .funds-list {
-    height: 188px;
+    height: 205px;
   }
 }
 
 .funds-wrapper {
-  overflow-y: hidden;
+  overflow-y: auto;
   height: 352px;
   padding: 24px 40px;
   border-radius: 16px;
