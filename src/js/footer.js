@@ -1,5 +1,11 @@
 const footerButton = document.querySelector('.footer-button');
 
+const leftButton = document.querySelector('.footer-left');
+
+const rightButton = document.querySelector('.footer-right');
+
+const footerSectionElement = document.querySelector('.footer');
+
 const footerCover = document.querySelector('.footer-cover');
 
 const bodyScrollLock = require('body-scroll-lock');
@@ -12,12 +18,19 @@ const informWindow = document.querySelector('.footer-inform');
 
 const informName = document.querySelector('.footer-inform-name');
 
+const informPosition = document.querySelector('.footer-inform-position');
+
 const informSection = document.querySelector('.footer-inform-section');
 
 const informGit = document.querySelector('.footer-inform-git');
 
+const bodyElement = document.querySelector('body');
+
+
+const developerElement = document.querySelector('.developer');
 const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
 
 let classArr = ['user0', 'user1', 'user2', 'user3', 'user4', 'user5', 'user6', 'user7', 'user8', 'user9', 'user10'];
 let elementSet = [];
@@ -25,38 +38,49 @@ let bufferArr = [];
 let id = [];
 
 const usersData = {
-    0: {name: "",
+    "_0": {name: "",
+    position:"Front-End",
     section: "",
     gitURL: "",},
-    1: {name: "",
-    section: "",
+    "_1": {name: "Yurii Yakovchyk",
+    position:"Front-End",
+    section: "Category list",
     gitURL: "",},
-    2: {name: "",
-    section: "",
+    "_2": {name: "Dmytro Shevchenko",
+    position:"Front-End",
+    section: "ModalWindow",
     gitURL: "",},
-    3: {name: "",
-    section: "",
+    "_3": {name: "Maksym Osovik",
+    position:"Front-End",
+    section: "Authorization",
     gitURL: "",},
-    4: {name: "",
-    section: "",
+    "_4": {name: "Oleksandr Kalinovskyi",
+    position:"Scrum Master",
+    section: "Funds",
     gitURL: "",},
-    5: {name: "Dmitry Shevchenko",
-    section: "ModalWindow, Footer, ScrolUp Button",
-    gitURL: "../gihub.com",},
-    6: {name: "",
-    section: "",
+    "_5": {name: "Maksym Haydabura",
+    position:"Team Lead",
+    section: "All project",
     gitURL: "",},
-    7: {name: "",
-    section: "",
+    "_6": {name: "Olena Peredrii",
+    position:"Front-End",
+    section: "Modal window",
     gitURL: "",},
-    8: {name: "",
-    section: "",
+    "_7": {name: "Yurii Vovk",
+    position:"Front-End",
+    section: "Mobile menu",
     gitURL: "",},
-    9: {name: "",
-    section: "",
+    "_8": {name: "Oleksii Melnichenko",
+    position:"Front-End",
+    section: "Header",
     gitURL: "",},
-    10: {name: "",
-    section: "",
+    "_9": {name: "Ruslana Matviienko",
+    position:"Front-End",
+    section: "Main content",
+    gitURL: "",},
+    "_10": {name: "Igor Lunyakin",
+    position:"Front-End",
+    section: "Shopping list",
     gitURL: "",},
 }
 
@@ -72,10 +96,20 @@ const addMouseEvent = () => {
 
 const userMainInform = (data) => {
     
+
+    // Put Name
+    informName.textContent = usersData[data].name;
+    // Put section
+    informSection.textContent = usersData[data].section;
+    // Put gitURL
+    informGit.textContent = usersData[data].gitURL;
+    // Put position
+    informPosition.textContent = usersData[data].position;
+
 }
 
 const createElementbyId = (data) => {
-    console.log(id);
+    // console.log(id);
     if(id.length !== 0) {
 
         id[0].dataset.number = 0;
@@ -95,8 +129,10 @@ const createElementbyId = (data) => {
             
             bindUserAndClass.dataset.number = 5;
             id.splice(0, 0, bindUserAndClass);
+
+            let informRow = bindUserAndClass.getAttribute("id");
             // output main information about user
-            userMainInform(id);
+            userMainInform(informRow);
         }
 
         //clear previous class
@@ -127,20 +163,29 @@ const right = () => {
 
 const wheelEvent = (e) => {
 
-    if(e.deltaY > 50) {
+    if(e.deltaY > 60) {
         right();
     }
 
-    if(e.deltaY < -50) {
+    if(e.deltaY < -60) {
         left();
     }
 };
 
 const active = () => {
     
+    let scrollBody = window.innerWidth - document.body.offsetWidth + 'px';
+
+    bodyElement.style.paddingRight = scrollBody;
+    
+    // developerElement.style.paddingRight = scrollBody;
+
     pointerBatton.classList.toggle('pointer-hidden');
    
     fifthElement.style.borderColor = "blue";
+  
+    informWindow.style.visibility = "visible";
+
     disableBodyScroll(fifthElement);
     addEventListener("wheel", wheelEvent);
 
@@ -148,22 +193,64 @@ const active = () => {
 
 const lockActive = () => {
     
+    bodyElement.style.paddingRight = 0;
+
     pointerBatton.classList.toggle('pointer-hidden');
     informWindow.classList.toggle('inform-hidden');
 
+
     fifthElement.style.borderColor = "grey";
+   
+    informWindow.style.visibility = "hidden";
+
     enableBodyScroll(fifthElement);
     removeEventListener("wheel", wheelEvent);
 
 };
 
 
+const bodyEvent = (e) => {
+
+    if(!e.composedPath().includes(footerSectionElement)) {
+
+        footerCover.classList.remove('hidden');
+        bodyElement.removeEventListener('click', bodyEvent)
+        footerCover.style.zIndex = "8";
+        footerButton.style.display = 'block';
+
+        informWindow.style.visibility = 'hidden';
+        leftButton.removeEventListener('click', leftEvent);
+        rightButton.removeEventListener('click', rightEvent);
+    }
+        
+};
+
+const leftEvent = (e) => {
+    
+        left();
+};
+
+const rightEvent = (e) => {
+    
+        right();
+};
+
+
 const buttonEvent = () => {
+
+    if(document.documentElement.scrollWidth <= 768) {
+        informWindow.style.visibility = 'visible';
+        fifthElement.removeEventListener("mouseover", active);
+    }
+
+    document.addEventListener('click', bodyEvent);
+
+    leftButton.addEventListener('click', leftEvent);
+    rightButton.addEventListener('click', rightEvent);
 
     footerCover.classList.add('hidden');
     footerCover.style.zIndex = "0";
     footerButton.style.display = 'none';
-    informWindow.classList.visimility = "visible";
     addMouseEvent();
 }
 
