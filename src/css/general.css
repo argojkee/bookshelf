@@ -47,6 +47,20 @@
   font-display: swap;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  border: 10px solid #e0e0e0; /* отступ вокруг бегунка */
+  height: 300px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  border-color: rgba(17, 17, 17, 0.6);
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
 }
