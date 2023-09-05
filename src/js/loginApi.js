@@ -59,7 +59,7 @@ export const logUp = (name, emailValue, passValue) => {
     })
     .then(resp => {
       userNameEl.textContent =
-        name.length > 8 ? `${name.slice(0, 7)}...` : name;
+        name.length > 6 ? `${name.slice(0, 5)}...` : name;
       headBtnAuthorization();
 
       buttonHeader.classList.remove('photo-is-loaded');
@@ -84,7 +84,7 @@ export const logIn = (emailValue, passValue) => {
       checkAndSelectPhoto();
       getName(localStorage.getItem('bookshelId')).then(name => {
         userNameEl.textContent =
-          name.length > 8 ? `${name.slice(0, 7)}...` : name;
+          name.length > 6 ? `${name.slice(0, 5)}...` : name;
         userTextBurger.textContent =
           name.length > 14 ? name.slice(0, 12) : name;
         headBtnAuthorization();

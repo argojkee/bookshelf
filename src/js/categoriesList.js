@@ -10,6 +10,7 @@ const refs = {
   title: document.querySelector(`.all-categoris-title`),
   element: document.querySelector(`.all-categoris-element`),
   booksContainer: document.querySelector('.container-books'),
+  categoriesList: document.querySelector('.all-categories-container'),
 };
 
 // визначаю місе куди буде рендериться розмітка кник відповідної категорії
@@ -70,6 +71,7 @@ function showCategoryBook() {
   // розмітка всіх книг відповідної категорії
   else {
     refs.booksContainer.innerHTML = '';
+    refs.categoriesList.classList.add('lock-click-categories');
     refs.booksContainer.classList.add('content-loader');
     getBooksFromCategories(categoryName);
   }
@@ -98,6 +100,7 @@ function getBooksFromCategories(category) {
 
       refs.booksContainer.classList.remove('content-loader');
       renderDataBooks(response.data, category);
+      refs.categoriesList.classList.remove('lock-click-categories');
     })
     .catch(error => {
       console.error('Error:', error);
