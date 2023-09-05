@@ -7,13 +7,25 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import Notiflix from 'notiflix';
 // import { headBtnAuthorization } from './header';
 import { headBtnAuthorization } from './header';
+
+Notiflix.Notify.init({
+  width: '480px',
+  position: 'right-bottom',
+  distance: '10px',
+  opacity: 1,
+  fontSize: '20px',
+  clickToClose: true,
+  timeout: 3000,
+  background: '#4f2ee8',
+});
 // import { checkAndSelectPhoto } from './addUserPhoto';
 
 const userNameEl = document.querySelector('.head-username');
 const checkLog = document.querySelector('.loginCheck');
-const loginForm = document.getElementById('formUp');
+const loginForm = document.getElementById('.formUp');
 const burgerMenu = document.querySelector('.modal-burger');
 const userTextBurger = document.querySelector('.modal-user_title');
 const menuModalbtn = document.querySelector('.js-cross-switch');
@@ -50,8 +62,7 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 export const logUp = (name, emailValue, passValue) => {
-  checkLog.textContent = 'Сhecking the user...';
-
+  Notiflix.Notify.info('Сhecking the user...');
   createUserWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => {
       saveUser(userCredential);
@@ -72,12 +83,14 @@ export const logUp = (name, emailValue, passValue) => {
       burgerIcon.classList.remove('header-switch-hidden');
       closeBurgerIcon.classList.add('header-switch-hidden');
       backdropBurger.classList.remove('is-open');
+      Notiflix.Notify.success('You are registered...');
+      loginForm.reset();
     })
     .catch(error => errorAlert(error));
 };
 
 export const logIn = (emailValue, passValue) => {
-  checkLog.textContent = 'Сhecking the user...';
+  Notiflix.Notify.info('Сhecking the user...');
   signInWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => saveUser(userCredential))
     .then(resp => {
@@ -93,6 +106,8 @@ export const logIn = (emailValue, passValue) => {
         burgerIcon.classList.remove('header-switch-hidden');
         closeBurgerIcon.classList.add('header-switch-hidden');
         backdropBurger.classList.remove('is-open');
+        Notiflix.Notify.success('Access allowed...');
+        loginForm.reset();
       });
     })
     .catch(error => errorAlert(error));
@@ -115,8 +130,6 @@ const saveUser = userCredential => {
   const user = userCredential.user;
   localStorage.setItem('bookshelId', user.uid);
   document.querySelector('.loginBacdropLogIn').classList.add('isHidden');
-  // loginForm.disable = false;
-  checkLog.textContent = '';
 
   // document.body.style.overflowY = 'scroll';
   bodyEl.classList.remove('scroll-lock');
@@ -124,8 +137,7 @@ const saveUser = userCredential => {
 };
 
 const errorAlert = error => {
-  window.alert(error);
-  checkLog.textContent = '';
+  Notiflix.Notify.failure(error.code);
   bodyEl.classList.add('scroll-lock');
 };
 
