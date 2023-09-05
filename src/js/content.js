@@ -20,6 +20,8 @@ getTopBooks();
 
 export function getTopBooks() {
   containerBook.innerHTML = '';
+  content.classList.add('content-loader');
+
   fetchToAllBooks()
     .then(result => {
       return result.data;
@@ -59,9 +61,7 @@ function handleSumitSeeMore(e) {
     return;
   }
   getBooksByCat(e.target);
- 
 }
-
 
 function hiddenBtnSeeMore(elem) {
   elem.classList.add('hidden');
