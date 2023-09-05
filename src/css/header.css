@@ -7,14 +7,6 @@
   align-items: center;
 }
 
-@media screen and (min-width: 375px) {
-  .header {
-    max-width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .header {
     min-height: 72px;
@@ -31,7 +23,6 @@
     margin-right: auto;
   }
 }
-
 
 .head-logged-btn.isHidden,
 .head-signup-btn.isHidden,
@@ -57,6 +48,20 @@
   position: relative;
 }
 
+.user-photo-container {
+  background-color: white;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-photo-icon {
+  fill: #4f2ee8;
+}
+
 /* @media screen and (min-width: 768px) {
   .buttons-container {
     width: 248px;
@@ -72,7 +77,6 @@
 .themetoggle {
   cursor: pointer;
 }
-
 
 .header-container {
   box-sizing: border-box;
@@ -154,6 +158,10 @@
   }
 }
 
+.header {
+  width: 100%;
+}
+
 .themetoggle {
   position: relative;
   width: 40px;
@@ -233,10 +241,8 @@
     align-items: center;
     cursor: pointer;
     margin-left: 24px;
-
-    background-image: url('../images/head-images/Stiven-face.webp');
-    background-repeat: no-repeat;
-    background-position: bottom 4px right 137px;
+    justify-content: space-around;
+    padding: 4px 12px;
 
     width: 184px;
     height: 45px;
@@ -244,6 +250,7 @@
     background-color: #4f2ee8;
   }
 }
+
 .head-username {
   color: #fff;
   font-family: DM Sans;
@@ -251,7 +258,7 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.44px;
-  margin-left: 58px;
+
   margin-right: 4px;
 }
 
@@ -264,6 +271,7 @@
   .head-signup-btn {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 184px;
     height: 48px;
     cursor: pointer;
@@ -284,16 +292,69 @@
   letter-spacing: -0.56px;
 
   margin-left: 14px;
-  margin-right: 90px;
+}
+
+.signup-arrow-svg {
+  margin-right: 14px;
 }
 
 @media screen and (max-width: 768px) {
-  .head-loggedup-btn {
+  .header-list-btns {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .header-list-btns {
+    display: flex;
+    flex-direction: column;
+    transition: linear 250ms;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 50%);
+  }
+
+  .add-photo-label-header {
+    cursor: pointer;
+  }
+
+  .head-loggedup-btn,
+  .header-add-photo {
+    transition: 250ms linear;
+  }
+
+  .head-loggedup-btn:hover,
+  .header-add-photo:hover,
+  .head-loggedup-btn:focus,
+  .header-add-photo:focus {
+    background-color: #eac645;
+    color: white;
+  }
+  .head-loggedup-btn:hover .head-loggedup-span,
+  .head-loggedup-btn:focus .head-loggedup-span {
+    color: white;
+  }
+
+  .head-loggedup-btn {
+    transition: 250ms linear;
+  }
+
+  .header-add-photo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background-color: #fff;
+    height: 48px;
+    justify-content: space-between;
+
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 184px;
+  }
+
   .head-loggedup-btn {
     cursor: pointer;
     display: flex;
@@ -303,29 +364,20 @@
     background-color: #fff;
     height: 48px;
     justify-content: space-between;
-    position: absolute;
-    visibility: visible;
-    pointer-events: all;
-    opacity: 1;
+
     padding-left: 24px;
     padding-right: 24px;
     width: 184px;
-    margin-left: 24px;
-    transition: linear 250ms;
-    top: 100%;
-    right: 0;
   }
 }
 
-.head-loggedup-btn.isHidden {
+.header-list-btns.isHidden {
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
   transform: translate(0, -50%);
-  right: 0;
-  top: 50%;
 }
-.head-loggedup-btn.deleted {
+.header-list-btns.deleted {
   display: none;
 }
 

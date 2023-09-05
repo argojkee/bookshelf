@@ -190,7 +190,7 @@
 
 .modal-book-buy-link-img:hover,
 .modal-book-buy-link-img:focus {
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 /* -------Стилі іконок для темної теми------------- */

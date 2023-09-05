@@ -9,7 +9,7 @@
 
 .slick-next {
   background-color: white;
-  bottom: -48px;
+  bottom: -50px;
   border-radius: 50%;
   position: absolute;
 
@@ -20,6 +20,12 @@
   justify-content: center;
   align-items: center;
 }
+
+/* @media screen and (max-width: 767px) {
+  .slick-next {
+    bottom: -50px;
+  }
+} */
 
 .slick-arrow.slick-next::before {
   display: table;

@@ -29,7 +29,7 @@
   </nav>
   <div class="buttons-container">
     <button type="button" class="themetoggle isHidden">
-      <div class="themetoggleswitch"></div>
+      <span class="themetoggleswitch"></span>
     </button>
 
     <button type="button" class="js-cross-switch">
@@ -46,22 +46,47 @@
       class="head-logged-btn isHidden"
       id="head-logged-steven"
     >
+      <span class="user-photo-container"
+        ><svg
+          class="user-photo-icon js-user-icon-header"
+          width="19"
+          height="19"
+        ></svg>
+        <img src="#" alt="user-photo" class="header-user-photo" />
+      </span>
+
       <span class="head-username"></span>
+
       <svg width="23" height="26">
         <use href="./images/sprite.svg#icon-header-arrow"></use>
       </svg>
     </button>
     <button type="button" class="head-signup-btn isHidden" id="head-signup-btn">
       <span class="head-signup-span">Sign up</span>
-      <svg width="20" height="20">
+      <svg width="20" height="20" class="signup-arrow-svg">
         <use href="./images/sprite.svg#icon-arrow-login"></use>
       </svg>
     </button>
-    <button type="button" class="head-loggedup-btn deleted isHidden">
-      <span class="head-loggedup-span">Log out</span>
-      <svg width="20" height="20">
-        <use href="./images/sprite.svg#icon-arrow-login"></use>
-      </svg>
-    </button>
+    <ul class="header-list-btns isHidden deleted">
+      <li>
+        <label class="add-photo-label-header" for="fileLoad"></label>
+        <!-- <button type="button" class="header-add-photo">Add photo</button> -->
+        <button type="button" class="header-add-photo">Load photo</button>
+        <input
+          id="fileLoadHeader"
+          type="file"
+          accept="image/png, image/gif, image/jpeg"
+          style="display: none"
+        />
+      </li>
+      <li>
+        <button type="button" class="head-loggedup-btn">
+          <span class="head-loggedup-span">Log out</span>
+          <svg width="20" height="20">
+            <use href="./images/sprite.svg#icon-arrow-login"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
   </div>
 </div>

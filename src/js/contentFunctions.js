@@ -21,10 +21,12 @@ export function renderMarkupTopBooks(array) {
                   })
                   .join('')}</ul>
           
-                <button class="content_btnSeeMore" type="button" name="${
-                  kategory.list_name
-                }" 
-                 action="submit">SEE MORE</button>         
+               
+                <button class="content_btnSeeMore"
+                        type="button"
+                        name="${kategory.list_name}" 
+                        action="submit">SEE MORE
+                </button>                                                    
           </li>`;
     })
     .join('')}</ul>`;

@@ -7,7 +7,8 @@ const bUp = document.querySelector('.sUpBtb');
 const bIn = document.querySelector('.sInBtb');
 const btnText = document.querySelector('.loginBtnText');
 const loginClose = document.querySelector('.loginClose');
-
+const backdropBurger = document.querySelector('.backdrop-burger');
+const bodyEl = document.querySelector('body');
 const nameLabel = document.querySelector('.nameCont');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
@@ -16,14 +17,27 @@ const pass = document.getElementById('pass');
 
 const backDrop = document.querySelector('.loginBacdropLogIn');
 backDrop.addEventListener('click', e => {
-  if (e.target === backDrop) backDrop.classList.add('isHidden');
+  if (e.target === backDrop) {
+    bodyEl.style.paddingRight = 0;
+    bodyEl.classList.remove('scroll-lock');
+    backDrop.classList.add('isHidden');
+  }
 });
 
 let logIs = true;
 
 loginClose.addEventListener('click', () => {
+  bodyEl.style.paddingRight = 0;
+  bodyEl.classList.remove('scroll-lock');
   backDrop.classList.add('isHidden');
-  document.body.style.overflow = 'scroll';
+
+  if (
+    !backdropBurger.classList.contains('is-open') ||
+    window.innerWidth > 768
+  ) {
+    document.querySelector('body').classList.remove('scroll-lock');
+  }
+
   checkButtonsOnCloseModal();
 });
 
@@ -46,7 +60,7 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   sing();
 
-  form.reset();
+  // form.reset();
 });
 
 function sing() {

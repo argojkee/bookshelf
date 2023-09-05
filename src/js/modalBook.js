@@ -183,7 +183,7 @@ function closeModal() {
   // 'body' scroll on
   enableBodyScroll(targetModal);
   document.removeEventListener('keydown', onEsc);
-
+  body.classList.remove('scroll-lock');
   const paddingOffSet = window.innerWidth - document.body.offsetWidth + 'px';
 
   body.style.paddingRight = '0px';
