@@ -131,7 +131,7 @@ let userBooks = () => {
     
     // deactivate button
     booksChangeBtn.disabled= true;
-    
+    booksChangeBtn.textContent = 'add to shopping list';
     booksChangeBtn.classList.add('dis');
     booksStatusText.classList.add('unlogin');
     booksStatusText.textContent =
