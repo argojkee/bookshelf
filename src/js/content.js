@@ -87,7 +87,7 @@ function createMarkupOfBooksOneCategory(elem, arrayBooks) {
             );
           }
 
-          Notiflix.Notify.info('this is all. Check out other category books');
+          Notiflix.Notify.info('this is all! Check out other category books');
         }
 
         return `<li class="content_book">
