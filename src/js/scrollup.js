@@ -62,6 +62,6 @@ function checkScroll() {
     elementsSet.case.style.top = `75vh`;
   } else if (document.body.offsetWidth <= 375) {
     elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 80}px`;
-    elementsSet.case.style.top = `75vh`;
+    elementsSet.case.style.top = `70vh`;
   }
 }
