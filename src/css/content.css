@@ -17,11 +17,11 @@ body.dark .content-loader {
 
 body.dark .content-book-link:hover,
 body.dark .content-book-link:focus {
-    box-shadow: 0px 2px 1px rgba(253, 255, 255, 0.08),
-      0px 1px 1px rgba(243, 243, 244, 0.16), 0px 1px 6px rgba(244, 244, 245, 0.08);
-  }
+  box-shadow: 0px 2px 1px rgba(253, 255, 255, 0.08),
+    0px 1px 1px rgba(243, 243, 244, 0.16), 0px 1px 6px rgba(244, 244, 245, 0.08);
+}
 
-body.dark .contend_categoryMove{
+body.dark .contend_categoryMove {
   animation-duration: 3s;
   animation-name: slideinDark;
 }
@@ -52,9 +52,8 @@ body.dark .contend_categoryMove{
 .content_textname {
   display: block;
 
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;  
+  text-overflow: ellipsis;
 }
 /* кнопка */
 .content_btnSeeMore {
@@ -147,13 +146,11 @@ body.dark .contend_categoryMove{
   }
 }
 
-
-  .content_list_topBooks {
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: space-between; */
-  }
-
+.content_list_topBooks {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
 
 .content_book {
   margin-bottom: 8px;
@@ -163,9 +160,9 @@ body.dark .contend_categoryMove{
 }
 
 .content_textname {
-  font-style: DM Sans;
-  font-weight: 700px;
-  font-weight: 16px;
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 16px;
   line-height: 18px;
   letter-spacing: 0.02em;
   margin-bottom: 4px;
@@ -236,7 +233,7 @@ body.dark .contend_categoryMove{
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   }
 
-  .content-book-link{
+  .content-book-link {
     overflow: hidden;
   }
 
@@ -265,7 +262,7 @@ body.dark .contend_categoryMove{
   .content_list_topBooks {
     display: flex;
     /* flex-wrap: wrap; */
-    
+
     flex-wrap: wrap;
     column-gap: 15px;
     justify-content: space-betweent;
