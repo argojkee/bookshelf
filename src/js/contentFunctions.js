@@ -25,8 +25,9 @@ export function renderMarkupTopBooks(array) {
                 <button class="content_btnSeeMore"
                         type="button"
                         name="${kategory.list_name}" 
-                        action="submit">SEE MORE
-                </button>                                                    
+                        action="submit">SEE MORE                        
+                </button>   
+                                                           
           </li>`;
     })
     .join('')}</ul>`;
