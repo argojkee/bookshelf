@@ -243,4 +243,4 @@ export function checkAndSelectPhoto() {
 //UPLOAD ON HEADER BUTTON
 
 const inputElementHeader = document.getElementById('fileLoadHeader');
-inputElement.addEventListener('change', handleFiles, false);
+inputElementHeader.addEventListener('change', handleFiles, false);
