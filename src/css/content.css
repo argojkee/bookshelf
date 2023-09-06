@@ -15,6 +15,10 @@ body.dark .content-loader{
   color: var(--secondary-stilization-color);
 }
 
+body.dark .contend_categoryMove{
+  animation-duration: 3s;
+  animation-name: slideinDark;
+}
 
 /* ******************** */
 
@@ -97,27 +101,6 @@ body.dark .content-loader{
   animation-name: slidein;
 }
 
-.content-book-link {
-  height: 100%;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-.contend_categoryMove {
-  animation-duration: 3s;
-  animation-name: slidein;
-}
-
 @keyframes slidein {
   0% {
     margin-left: 100%;
@@ -129,6 +112,23 @@ body.dark .content-loader{
     width: 100%;
     font-size: 34px;
     color: black;
+  }
+  100% {
+    font-size: 14px;
+  }
+}
+
+@keyframes slideinDark {
+  0% {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  50% {
+    margin-left: 0%;
+    width: 100%;
+    font-size: 34px;
+    color: rgb(245, 243, 243);
   }
   100% {
     font-size: 14px;
