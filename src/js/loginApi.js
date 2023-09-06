@@ -44,6 +44,7 @@ const headerPhoto = document.querySelector('.header-user-photo');
 const userImgBurger = document.querySelector('.user-image-burger');
 const burgerBigPhoto = document.querySelector('.upload-photo');
 const headerUploadBtn = document.querySelector('.header-add-photo');
+const headerListBtns = document.querySelector('.header-list-btns');
 // import { loadFile, getFile } from './loginApi';
 //Photo end
 
@@ -194,6 +195,7 @@ export const loadFile = async file => {
     // что-то типа getFile().then(url => document.querySelector('.yourImgClass').src = url)
     checkAndSelectPhoto();
     avatarStatus(true);
+    headerListBtns.classList.add('isHidden');
   });
 };
 

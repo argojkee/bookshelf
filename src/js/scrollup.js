@@ -47,11 +47,11 @@ checkScroll();
 function checkScroll() {
   if (document.body.offsetWidth >= 1440) {
     elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 620}px`;
-    elementsSet.case.style.top = `90vh`;
+    elementsSet.case.style.top = `80vh`;
   } else if (document.body.offsetWidth >= 768) {
     // elementsSet.case.style.left = `${document.body.offsetWidth - 80}px`;
     elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 290}px`;
-    elementsSet.case.style.top = `90vh`;
+    elementsSet.case.style.top = `80vh`;
   } else if (
     document.body.offsetWidth > 375 &&
     document.body.offsetWidth < 768
