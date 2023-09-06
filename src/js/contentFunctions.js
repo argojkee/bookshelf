@@ -47,19 +47,15 @@ export function countTopBooks() {
     return 1;
   } else if (
     document.documentElement.clientWidth > 767 &&
-    document.documentElement.clientWidth < 1140
+    document.documentElement.clientWidth < 1440
   ) {
     return 3;
-  } else if (document.documentElement.clientWidth > 1139) {
+    // для більших за планшет
+  } else if (document.documentElement.clientWidth > 1439) {
     return 5;
   }
 }
 
-// export function renderError(error) {
-//   return `<div class="content-error">
-//          ERROR
-//     </div>`;
-// }
 export function renderError() {
   return `<div class="content-error">
               <img
@@ -69,5 +65,4 @@ export function renderError() {
               height="400"
               class="content_imgError"/>
          </div>`;
-  // document.querySelector('.container-books').innerHTML = 'jasjdaj';
 }
