@@ -43,7 +43,7 @@
 }
 
 .back-img-4 {
-  background-image: none;
+  background-image: url('../images/footer/Oleksandr\ Kalinovskyi.jpg');
 }
 
 .back-img-5 {
@@ -59,11 +59,15 @@
 }
 
 .back-img-8 {
-  background-image: url('../images/footer/Igor\ Lunyakin.jpg');
+  background-image: url('../images/footer/Oleksii\ Melnichenko.jpg');
 }
 
 .back-img-9 {
-  background-image: none;
+  background-image: url('../images/footer/Ruslana\ Matviienko.jpg');
+}
+
+.back-img-10 {
+  background-image: url('../images/footer/Igor\ Lunyakin.jpg');
 }
 
 .footer-cover {
