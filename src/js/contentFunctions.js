@@ -7,17 +7,31 @@ export function renderMarkupTopBooks(array) {
       <h3 class="content_category">${kategory.list_name}</h3>
                 <ul class="content_list_topBooks">${kategory.books
                   .map((book, indexBook) => {
-                    if (indexBook < countTopBooks()) {
-                      return `<li class="content_book">
-                          <a data-id=${book._id} href="${book.book_image}"  class="content-book-link" >
+                    // if (indexBook < countTopBooks()) {
+                    return `<li class="${
+                      indexBook === 1 || indexBook === 2
+                        ? 'content_book tablet-book'
+                        : indexBook === 3 || indexBook === 4
+                        ? 'content_book mobile-book'
+                        : 'content_book'
+                    }">
+                          <a data-id=${book._id} href="${
+                      book.book_image
+                    }"  class="content-book-link" >
                         
-                          <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
+                          <img class="content__image" src="${
+                            book.book_image
+                          }" alt="${book.title}" loading="lazy" />
                          
-                          <span class="content_textname" id="content_book_name">${book.title}</span>
-                          <span class="content_textauthor" id="content_book_name">${book.author}</span>
+                          <span class="content_textname" id="content_book_name">${
+                            book.title
+                          }</span>
+                          <span class="content_textauthor" id="content_book_name">${
+                            book.author
+                          }</span>
                            </a>
                           </li>`;
-                    }
+                    // }
                   })
                   .join('')}</ul>
           
