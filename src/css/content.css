@@ -51,7 +51,7 @@ body.dark .contend_categoryMove {
 
 .content_textname {
   display: block;
-
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }

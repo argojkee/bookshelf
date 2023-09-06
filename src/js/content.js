@@ -46,7 +46,7 @@ function getBooksByCat(butElem) {
     .then(data => {
       butElem.nextElementSibling.style.display = 'none';
       renderDataBycat(butElem, data);
-      
+
       butElem.innerHTML = 'SEE MORE';
     })
     .catch();
@@ -84,7 +84,7 @@ function createMarkupOfBooksOneCategory(elem, arrayBooks) {
         //якщо загрузили останню книгу, то видаляємо кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
-          
+
           //якщо категорії не закінчились, то не робимо анімацію для зголовка
           //наступної категорії, т к їїнемає
           if (elem.parentNode.nextSibling != null) {
