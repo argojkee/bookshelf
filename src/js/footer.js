@@ -48,7 +48,12 @@ let bufferArr = [];
 let id = [];
 
 const usersData = {
-  _0: { name: '', position: 'Front-End', section: '', gitURL: '' },
+  _0: {
+    name: 'CodeCrafters',
+    position: 'Front-End',
+    section: 'BookShelf',
+    gitURL: '',
+  },
   _1: {
     name: 'Yurii Yakovchuk',
     position: 'Front-End',
@@ -167,7 +172,7 @@ const left = () => {
   classArr.splice(0, 1);
   // add first element to array end
   classArr.splice(classArr.length, 0, bufferArr[0]);
-  console.log(classArr);
+  // console.log(classArr);
 
   createElementbyId(classArr);
 };

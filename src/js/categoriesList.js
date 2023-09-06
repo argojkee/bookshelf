@@ -96,7 +96,7 @@ function changeCurrent(curentClic) {
 function getBooksFromCategories(category) {
   fetchBooksByCategory(category)
     .then(response => {
-      console.log('Received data from server:', response.data);
+      // console.log('Received data from server:', response.data);
 
       refs.booksContainer.classList.remove('content-loader');
       renderDataBooks(response.data, category);
