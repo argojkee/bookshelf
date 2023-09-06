@@ -15,8 +15,8 @@ body.dark .content-loader {
   color: var(--secondary-stilization-color);
 }
 
-body.dark .content-book-link:hover,
-body.dark .content-book-link:focus {
+body.dark .content_book:hover,
+body.dark .content_book:focus {
   box-shadow: 0px 2px 1px rgba(253, 255, 255, 0.08),
     0px 1px 1px rgba(243, 243, 244, 0.16), 0px 1px 6px rgba(244, 244, 245, 0.08);
 }
@@ -51,7 +51,7 @@ body.dark .contend_categoryMove {
 
 .content_textname {
   display: block;
-
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -235,8 +235,8 @@ body.dark .contend_categoryMove {
     height: 316px;
   }
 
-  .content-book-link:hover,
-  .content-book-link:focus {
+  .content_book:hover,
+  .content_book:focus {
     box-shadow: 0px 2px 1px rgba(16, 16, 24, 0.08),
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   }
