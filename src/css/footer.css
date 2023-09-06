@@ -490,9 +490,7 @@ body.dark .footer-inform {
     left: calc(50vw + 110px);
   }
 }
-body {
-  overflow-x: hidden;
-}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
