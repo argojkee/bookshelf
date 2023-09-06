@@ -43,11 +43,14 @@ elementsSet.case.addEventListener('mouseout', upButVieW);
 elementsSet.upButton.addEventListener('click', upButVieW);
 
 window.addEventListener('resize', checkScroll);
-
+checkScroll();
 function checkScroll() {
   if (document.body.offsetWidth >= 1440) {
-    elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 650}px`;
-  } else {
-    elementsSet.case.style.left = `${document.body.offsetWidth - 80}px`;
+    elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 620}px`;
+  } else if (document.body.offsetWidth >= 768) {
+    // elementsSet.case.style.left = `${document.body.offsetWidth - 80}px`;
+    elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 290}px`;
+  } else if (document.body.offsetWidth <= 375) {
+    elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 80}px`;
   }
 }
