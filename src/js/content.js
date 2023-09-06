@@ -37,13 +37,16 @@ export function getTopBooks() {
 
 // ф-ція отримує з бекенду дані про книги по конкретній категорії
 function getBooksByCat(butElem) {
+  butElem.nextElementSibling.style.display = 'block';
   fetchBooksByCategory(butElem.name)
     .then(result => {
       butElem.classList.remove('loader');
       return result.data;
     })
     .then(data => {
+      butElem.nextElementSibling.style.display = 'none';
       renderDataBycat(butElem, data);
+      
       butElem.innerHTML = 'SEE MORE';
     })
     .catch();
@@ -64,6 +67,8 @@ function handleSumitSeeMore(e) {
     return;
   }
 
+  e.target.innerHTML = '';
+  e.target.style.border = 'none';
   getBooksByCat(e.target);
 }
 
@@ -79,10 +84,11 @@ function createMarkupOfBooksOneCategory(elem, arrayBooks) {
         //якщо загрузили останню книгу, то видаляємо кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
+          
           //якщо категорії не закінчились, то не робимо анімацію для зголовка
           //наступної категорії, т к їїнемає
           if (elem.parentNode.nextSibling != null) {
-            elem.parentNode.nextSibling.firstElementChild.classList.add(
+            elem.parentNode.nextElementSibling.firstElementChild.classList.add(
               'contend_categoryMove'
             );
           }

@@ -15,6 +15,12 @@ body.dark .content-loader {
   color: var(--secondary-stilization-color);
 }
 
+body.dark .content-book-link:hover,
+body.dark .content-book-link:focus {
+    box-shadow: 0px 2px 1px rgba(253, 255, 255, 0.08),
+      0px 1px 1px rgba(243, 243, 244, 0.16), 0px 1px 6px rgba(244, 244, 245, 0.08);
+  }
+
 body.dark .contend_categoryMove{
   animation-duration: 3s;
   animation-name: slideinDark;
@@ -45,11 +51,16 @@ body.dark .contend_categoryMove{
 
 .content_textname {
   display: block;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
 }
 /* кнопка */
 .content_btnSeeMore {
-  display: block;
-  margin-left: auto;
+  display: inline-block;
+  /* margin-left: auto; */
+  float: right;
   width: 124px;
   height: 46px;
   border-radius: 40px;
@@ -94,6 +105,7 @@ body.dark .contend_categoryMove{
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
+  margin-bottom: 18px;
 }
 
 .contend_categoryMove {
@@ -135,9 +147,13 @@ body.dark .contend_categoryMove{
   }
 }
 
-.content_list_topBooks {
-  margin-top: 18px;
-}
+
+  .content_list_topBooks {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+  }
+
 
 .content_book {
   margin-bottom: 8px;
@@ -161,6 +177,11 @@ body.dark .contend_categoryMove{
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 1.2em;
+
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content_textname {
@@ -215,6 +236,10 @@ body.dark .contend_categoryMove{
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   }
 
+  .content-book-link{
+    overflow: hidden;
+  }
+
   .content_btnSeeMore {
     margin-top: 32px;
   }
@@ -222,7 +247,8 @@ body.dark .contend_categoryMove{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-space-between;
-    gap: 25px;
+    column-gap: 25px;
+    row-gap: 40px;
   }
 
   .content-error {
@@ -239,9 +265,10 @@ body.dark .contend_categoryMove{
   .content_list_topBooks {
     display: flex;
     /* flex-wrap: wrap; */
-    justify-content: space-betweent;
+    
     flex-wrap: wrap;
     column-gap: 15px;
+    justify-content: space-betweent;
   }
 
   .content__image {
@@ -290,10 +317,11 @@ body.dark .contend_categoryMove{
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: 100px;
+  display: inline-block;
+  top: 50px;
+  float: right;
   position: relative;
+
   color: var(--primary-stilization-color);
   box-sizing: border-box;
   animation: content-animloader 2s linear infinite;
