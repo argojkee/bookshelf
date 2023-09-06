@@ -4,7 +4,7 @@ export function renderMarkupTopBooks(array) {
   <ul class="content_list_categories">${array
     .map(kategory => {
       return `<li class="content_categoryItem ${kategory.list_name}">
-      <span class="content_category">${kategory.list_name}</span>
+      <h3 class="content_category">${kategory.list_name}</h3>
                 <ul class="content_list_topBooks">${kategory.books
                   .map((book, indexBook) => {
                     if (indexBook < countTopBooks()) {
@@ -13,20 +13,21 @@ export function renderMarkupTopBooks(array) {
                         
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                          
-                         <span class="content_textname" id="content_book_name">${book.title}</span>
-                         <span class="content_textauthor" id="content_book_name">${book.author}</span>
+                          <span class="content_textname" id="content_book_name">${book.title}</span>
+                          <span class="content_textauthor" id="content_book_name">${book.author}</span>
                            </a>
                           </li>`;
                     }
                   })
                   .join('')}</ul>
           
-               
+                
                 <button class="content_btnSeeMore"
                         type="button"
                         name="${kategory.list_name}" 
                         action="submit">SEE MORE                        
-                </button>   
+                </button>
+                <span class="content_loaderBTN" style="display: none"></span>
                                                            
           </li>`;
     })
