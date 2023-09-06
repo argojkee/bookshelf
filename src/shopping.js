@@ -5,6 +5,7 @@ import './js/slick-slider';
 import './js/modalBook';
 import './js/burgerMenu';
 import './js/loginization';
+import './js/addUserPhoto';
 import './js/loginApi';
 import './js/scrollup';
 import './js/shoppingList';
