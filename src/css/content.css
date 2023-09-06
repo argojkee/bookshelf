@@ -11,6 +11,11 @@ body.dark .content_btnSeeMore {
   color: var(--primary-color-text-dark-theme);
 }
 
+body.dark .content-loader{
+  color: var(--secondary-stilization-color);
+}
+
+
 /* ******************** */
 
 .title_theme {
@@ -258,7 +263,7 @@ body.dark .content_btnSeeMore {
   display: block;
   margin: 200px auto;
   position: relative;
-  color: #7b7474;
+  color: var(--primary-stilization-color);
   box-sizing: border-box;
   animation: content-animloader 2s linear infinite;
 }
@@ -281,24 +286,34 @@ body.dark .content_btnSeeMore {
   }
 }
 
-.loaderBTN {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #546c44;
-  border-bottom-color: transparent;
+.content_loaderBTN {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  display: inline-block;
+  display: block;
+  margin-left: auto;
+  margin-right: 100px;
+  position: relative;
+  color: var(--primary-stilization-color);
   box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  animation: content-animloader 2s linear infinite;
 }
 
-@keyframes rotation {
+@keyframes content-animloader {
   0% {
-    transform: rotate(0deg);
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
+  }
+  25% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 2px;
+  }
+  50% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 2px, -38px 0 0 -2px;
+  }
+  75% {
+    box-shadow: 14px 0 0 2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
   100% {
-    transform: rotate(360deg);
+    box-shadow: 14px 0 0 -2px, 38px 0 0 2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
 }
 
-/* loader на кнопку SeeMore */
