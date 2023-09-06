@@ -9,3 +9,4 @@ import './js/burgerMenu';
 import './js/addUserPhoto';
 import './js/loginization';
 import './js/scrollup';
+import './js/footer';

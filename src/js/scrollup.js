@@ -41,3 +41,13 @@ document.addEventListener('scroll', upButVieW);
 elementsSet.case.addEventListener('mouseover', upButVieW);
 elementsSet.case.addEventListener('mouseout', upButVieW);
 elementsSet.upButton.addEventListener('click', upButVieW);
+
+window.addEventListener('resize', checkScroll);
+
+function checkScroll() {
+  if (document.body.offsetWidth >= 1440) {
+    elementsSet.case.style.left = `${document.body.offsetWidth / 2 + 650}px`;
+  } else {
+    elementsSet.case.style.left = `${document.body.offsetWidth - 80}px`;
+  }
+}

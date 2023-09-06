@@ -128,18 +128,21 @@ let userBooks = () => {
 
   if (!getUserID) {
     //massage;
-    booksChangeBtn.style.display = 'none';
-    booksChangeBtn.style.visibility = 'hidden';
-    booksStatusText.classList.add('.unlogin');
+
+    // deactivate button
+    booksChangeBtn.disabled = true;
+    booksChangeBtn.textContent = 'add to shopping list';
+    booksChangeBtn.classList.add('dis');
+    booksStatusText.classList.add('unlogin');
     booksStatusText.textContent =
       "Please, 'LogIn' if you want to add book to book list!";
     return;
   }
 
-  booksChangeBtn.style.display = 'block';
-  booksChangeBtn.style.visibility = 'visible';
+  // activate button
+  booksChangeBtn.disabled = false;
+  booksChangeBtn.classList.remove('dis');
   booksStatusText.classList.remove('.unlogin');
-  booksChangeBtn.style.visibility = 'visible';
 
   // read book array data from LocalStorage
   getBooks();
@@ -169,11 +172,6 @@ function openModal(event) {
   // 'body' scroll off
   disableBodyScroll(targetModal);
 
-  //   console.log(event.target.closest('li'));
-
-  // 'body' scroll off
-  disableBodyScroll(targetModal);
-
   modalBook.classList.toggle('active');
   overlayBook.classList.toggle('active');
   bookSet.bookID = event.target.closest('a').dataset.id;
@@ -185,7 +183,7 @@ function closeModal() {
   // 'body' scroll on
   enableBodyScroll(targetModal);
   document.removeEventListener('keydown', onEsc);
-
+  body.classList.remove('scroll-lock');
   const paddingOffSet = window.innerWidth - document.body.offsetWidth + 'px';
 
   body.style.paddingRight = '0px';

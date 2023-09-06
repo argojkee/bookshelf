@@ -10,14 +10,16 @@
         </a>
       </li>
       <li class="li-header-margin">
-        <a class="header-home header-selected-page isHidden" href="./index.html"
+        <a
+          class="header-home header-selected-page isHidden nav-header-link"
+          href="./index.html"
           >Home</a
         >
       </li>
       <li>
         <a
           href="./shopping.html"
-          class="logo-block hideshopcard js-shop-btn isHidden"
+          class="logo-block hideshopcard js-shop-btn isHidden nav-header-link"
         >
           <span class="header-shopping link">Shopping list</span>
           <svg width="20" height="20" class="svg-cart">
@@ -29,7 +31,7 @@
   </nav>
   <div class="buttons-container">
     <button type="button" class="themetoggle isHidden">
-      <div class="themetoggleswitch"></div>
+      <span class="themetoggleswitch"></span>
     </button>
 
     <button type="button" class="js-cross-switch">
@@ -69,15 +71,9 @@
     </button>
     <ul class="header-list-btns isHidden deleted">
       <li>
+        <label class="add-photo-label-header" for="fileLoad"></label>
         <!-- <button type="button" class="header-add-photo">Add photo</button> -->
-        <button type="button" class="header-add-photo">
-          <label
-            class="add-photo-label-header"
-            for="fileLoad"
-            style="padding: 20px; display: inline-block"
-            >Load photo</label
-          >
-        </button>
+        <button type="button" class="header-add-photo">Load photo</button>
         <input
           id="fileLoadHeader"
           type="file"

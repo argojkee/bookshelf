@@ -4,6 +4,10 @@
   }
 }
 
+.all-categories-container.lock-click-categories {
+  pointer-events: none;
+}
+
 .all-categories-container {
   height: 228px;
   overflow-y: scroll;

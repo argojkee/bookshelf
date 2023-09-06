@@ -97,6 +97,10 @@ body.dark .content-loader{
   animation-name: slidein;
 }
 
+.content-book-link {
+  height: 100%;
+}
+
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -177,6 +181,12 @@ body.dark .content-loader{
   margin-bottom: 14px;
 }
 
+@media screen and (max-width: 767px) {
+  .content__image {
+    height: 485px;
+  }
+}
+
 /* tablet styles * для планшетів */
 @media (min-width: 768px) {
   .content_book {
@@ -193,6 +203,16 @@ body.dark .content-loader{
     font-weight: 700px;
     font-size: 48px;
     line-height: 52px;
+  }
+
+  .content__image {
+    height: 316px;
+  }
+
+  .content-book-link:hover,
+  .content-book-link:focus {
+    box-shadow: 0px 2px 1px rgba(16, 16, 24, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   }
 
   .content_btnSeeMore {

@@ -11,8 +11,8 @@ html {
   backdrop-filter: blur(2px);
   border: none;
   border-radius: 50%;
-
-  top: 90vh;
+  z-index: 20;
+  top: 85vh;
   right: 10px;
 
   width: 64px;

@@ -27,3 +27,26 @@
   height: 37px;
   border-radius: 50%;
 }
+
+.add-photo-label-header,
+.add-photo-label {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-add-photo,
+.photo-burger-btn {
+  color: #111;
+  letter-spacing: -0.56px;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+.photo-burger-btn {
+  height: 48px;
+  transition: 250ms linear;
+}

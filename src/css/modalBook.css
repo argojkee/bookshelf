@@ -190,7 +190,7 @@
 
 .modal-book-buy-link-img:hover,
 .modal-book-buy-link-img:focus {
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 /* -------Стилі іконок для темної теми------------- */
@@ -293,4 +293,34 @@ body.dark .modal-btn-status-text {
   .modal-book-review {
     width: 100%;
   }
+}
+
+/* status button */
+.unlogin {
+  font-size: 14px;
+}
+
+.dis {
+  background-color: transparent;
+  border: 2px solid #202024;
+}
+
+.dis:hover,
+.dis:focus {
+  color: #202024;
+  background-color: var(--primary-color-text-dark-theme);
+  border: 2px solid #202024;
+  cursor: not-allowed;
+}
+
+body.dark .dis {
+  border: 2px solid #202024;
+  color: var(--primary-color-text-dark-theme);
+  border: 2px solid var(--primary-color-text-dark-theme);
+}
+
+body.dark .dis:hover,
+body.dark .dis:focus {
+  background-color: transparent;
+  cursor: not-allowed;
 }
