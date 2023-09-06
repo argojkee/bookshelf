@@ -136,9 +136,13 @@
 .footer-decor {
   display: flex;
   flex-direction: column;
-
+  background-color: var(--header-background-color);
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+body.dark .footer-decor {
+  background-color: var(--header-background-color-dark-theme);
 }
 
 .footer-title {
@@ -415,7 +419,6 @@ body.dark .footer-title {
 
 /* ---------- Dark ------------- */
 body.dark .footer-decor {
-  background-color: #202024;
   border: 2px solid #fff;
 }
 
