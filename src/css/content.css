@@ -29,13 +29,13 @@ body.dark .contend_categoryMove {
 /* ******************** */
 
 .title_theme {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
 }
 
 .title_theme {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
 }
@@ -100,7 +100,7 @@ body.dark .contend_categoryMove {
 
 .content_category {
   color: var(--color-name-category);
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.02em;
@@ -154,7 +154,15 @@ body.dark .contend_categoryMove {
 
 .content_book {
   margin-bottom: 8px;
+  /* max-width: 335px; */
+  overflow: hidden;
 }
+@media screen and (max-width: 767px) {
+  .content_book {
+    width: 100%;
+  }
+}
+
 .title_blue {
   color: var(--primary-stilization-color);
 }
@@ -170,7 +178,7 @@ body.dark .contend_categoryMove {
 
 .content_textauthor {
   font-style: italic;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 1.2em;
@@ -186,7 +194,7 @@ body.dark .contend_categoryMove {
 }
 
 .content_textauthor {
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 12px;
   line-height: 14px;
 
@@ -212,13 +220,13 @@ body.dark .contend_categoryMove {
   }
 
   .title_theme {
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 48px;
     line-height: 52px;
   }
 
   .title_blue {
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 48px;
     line-height: 52px;
   }
