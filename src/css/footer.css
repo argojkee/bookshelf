@@ -490,6 +490,6 @@ body.dark .footer-inform {
     left: calc(50vw + 110px);
   }
 }
-/* body {
+body {
   overflow-x: hidden;
-} */
+}
