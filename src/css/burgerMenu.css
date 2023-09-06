@@ -190,6 +190,7 @@ ul.section-burger_list {
     height: 100px;
     margin-left: 30px;
     margin-bottom: 20px;
+    border-radius: 12px;
   }
 }
 
