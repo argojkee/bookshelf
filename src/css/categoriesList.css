@@ -19,12 +19,12 @@
 
 .all-categories-container::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  border: 8px solid #e0e0e0; /* отступ вокруг бегунка */
+  border: 8px solid #e0e0e0;
   height: 300px;
 }
 
 body.dark .all-categories-container::-webkit-scrollbar-thumb {
-  border-color: rgba(17, 17, 17, 0.6);
+  border-color: rgba(234, 198, 69, 0.6);
 }
 
 @media screen and (max-width: 767px) {
