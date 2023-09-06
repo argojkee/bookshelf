@@ -71,3 +71,24 @@ function sing() {
     if (email.value.trim() && pass.value.trim()) logIn(email.value, pass.value);
   }
 }
+
+//Show / hide password
+const passIcon = document.querySelector('.loginInputIcon.password');
+const passInput = document.querySelector('#pass');
+
+backDrop.addEventListener('click', onShowHidePassword);
+
+function onShowHidePassword(e) {
+  if (!e.target.closest('.loginInputIcon')) {
+    return;
+  }
+
+  passInput.classList.toggle('show');
+  if (passInput.classList.contains('show')) {
+    passIcon.innerHTML = `<use width="24" height="24" xlink:href="#icon-unlocked"></use>`;
+    passInput.setAttribute('type', 'text');
+  } else {
+    passInput.setAttribute('type', 'password');
+    passIcon.innerHTML = `<use width="24" height="24" xlink:href="#icon-password-lock"></use>`;
+  }
+}
