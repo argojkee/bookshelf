@@ -19,8 +19,10 @@ const backDrop = document.querySelector('.loginBacdropLogIn');
 backDrop.addEventListener('click', e => {
   if (e.target === backDrop) {
     bodyEl.style.paddingRight = 0;
-    bodyEl.classList.remove('scroll-lock');
     backDrop.classList.add('isHidden');
+    if (!backdropBurger.classList.contains('is-open')) {
+      bodyEl.classList.remove('scroll-lock');
+    }
   }
 });
 
@@ -28,7 +30,7 @@ let logIs = true;
 
 loginClose.addEventListener('click', () => {
   bodyEl.style.paddingRight = 0;
-  bodyEl.classList.remove('scroll-lock');
+
   backDrop.classList.add('isHidden');
 
   if (
