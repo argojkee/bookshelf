@@ -8,3 +8,4 @@ import './js/loginization';
 import './js/loginApi';
 import './js/scrollup';
 import './js/shoppingList';
+import './js/footer';
