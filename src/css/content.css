@@ -341,3 +341,15 @@ body.dark .contend_categoryMove {
     box-shadow: 14px 0 0 -2px, 38px 0 0 2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .tablet-book {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .mobile-book {
+    display: none;
+  }
+}
