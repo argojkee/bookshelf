@@ -8,6 +8,8 @@ const spanUserName = document.querySelector('.head-username');
 const themetoggleEl = document.querySelector('.themetoggle');
 const bodyEl = document.querySelector('body');
 const headerBtnsList = document.querySelector('.header-list-btns');
+const backdropBurger = document.querySelector('.backdrop-burger');
+
 // const regListBtn =
 
 // Dark theme for local storage
@@ -120,7 +122,9 @@ const forEscape = ({ key }) => {
     bodyEl.style.paddingRight = 0;
     registerModal.classList.add('isHidden');
     document.removeEventListener('keydown', forEscape);
-    bodyEl.classList.remove('scroll-lock');
+    if (!backdropBurger.classList.contains('is-open')) {
+      bodyEl.classList.remove('scroll-lock');
+    }
 
     //
   }
