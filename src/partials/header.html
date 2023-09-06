@@ -30,11 +30,15 @@
     </ul>
   </nav>
   <div class="buttons-container">
-    <button type="button" class="themetoggle isHidden">
+    <button
+      type="button"
+      class="themetoggle isHidden"
+      aria-label="change color theme"
+    >
       <span class="themetoggleswitch"></span>
     </button>
 
-    <button type="button" class="js-cross-switch">
+    <button type="button" class="js-cross-switch" aria-label="mobile menu">
       <svg width="28" height="28" class="burger-head">
         <use href="./images/sprite.svg#icon-burger"></use>
       </svg>
@@ -71,7 +75,7 @@
     </button>
     <ul class="header-list-btns isHidden deleted">
       <li>
-        <label class="add-photo-label-header" for="fileLoad"></label>
+        <label class="add-photo-label-header" for="fileLoadHeader"></label>
         <!-- <button type="button" class="header-add-photo">Add photo</button> -->
         <button type="button" class="header-add-photo">Load photo</button>
         <input
