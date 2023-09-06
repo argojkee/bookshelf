@@ -158,6 +158,12 @@ body.dark .contend_categoryMove {
   /* max-width: 335px; */
   overflow: hidden;
 }
+@media screen and (max-width: 767px) {
+  .content_book {
+    width: 100%;
+  }
+}
+
 .title_blue {
   color: var(--primary-stilization-color);
 }
