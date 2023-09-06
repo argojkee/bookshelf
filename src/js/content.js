@@ -3,10 +3,7 @@ import { fetchToAllBooks, fetchBooksByCategory } from '../services/books-api';
 import { renderMarkupTopBooks, countTopBooks } from './contentFunctions';
 
 //кі-сть загружених книг однієї категорії після того, як користувач натиснув на кнопку SEEMORE
-let numberOfBooksShown = countTopBooks();
-
 const categoriesList = document.querySelector('.all-categories-container');
-const spanLoader = document.querySelector('content_loadBooks');
 const containerBook = document.querySelector('.container-books');
 const content = document.querySelector('.content');
 containerBook.innerHTML = `<div class="content-error"> 
@@ -55,6 +52,7 @@ function getBooksByCat(butElem) {
 //ф-ція оброблює дані по конкретній категорії - малює розмітку та вставляє її перед кнопкой
 export function renderDataBycat(butElem, data) {
   let markup = createMarkupOfBooksOneCategory(butElem, data);
+  butElem.previousElementSibling.innerHTML = '';
   butElem.previousElementSibling.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -80,7 +78,7 @@ function hiddenBtnSeeMore(elem) {
 function createMarkupOfBooksOneCategory(elem, arrayBooks) {
   let markup = arrayBooks
     .map((book, index) => {
-      if (index >= numberOfBooksShown) {
+     
         //якщо загрузили останню книгу, то видаляємо кнопку
         if (index + 1 === arrayBooks.length) {
           hiddenBtnSeeMore(elem);
@@ -104,7 +102,6 @@ function createMarkupOfBooksOneCategory(elem, arrayBooks) {
                           <span class="content_textauthor" id="content_book_author">${book.author}</span>
                           </a>
                 </li>`;
-      }
     })
     .join('');
   return markup;
