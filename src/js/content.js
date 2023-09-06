@@ -4,7 +4,6 @@ import { renderMarkupTopBooks, countTopBooks } from './contentFunctions';
 
 //кі-сть загружених книг однієї категорії після того, як користувач натиснув на кнопку SEEMORE
 let numberOfBooksShown = countTopBooks();
-const HowManyBooksToLoad = 5;
 
 const categoriesList = document.querySelector('.all-categories-container');
 const spanLoader = document.querySelector('content_loadBooks');
@@ -19,6 +18,7 @@ containerBook.innerHTML = `<div class="content-error">
 
 getTopBooks();
 
+// ф-ція отримує з бекенду дані (ТОП книг)
 export function getTopBooks() {
   categoriesList.classList.add('lock-click-categories');
   containerBook.innerHTML = '';
@@ -35,8 +35,8 @@ export function getTopBooks() {
     });
 }
 
+// ф-ція отримує з бекенду дані про книги по конкретній категорії
 function getBooksByCat(butElem) {
-  // spanLoader.classList.add('content_loaderBTN');
   fetchBooksByCategory(butElem.name)
     .then(result => {
       butElem.classList.remove('loader');
@@ -63,6 +63,7 @@ function handleSumitSeeMore(e) {
   if (e.target.type !== 'button') {
     return;
   }
+
   getBooksByCat(e.target);
 }
 
