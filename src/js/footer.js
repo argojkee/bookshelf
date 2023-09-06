@@ -241,7 +241,10 @@ const buttonEvent = () => {
     if(document.documentElement.scrollWidth <= 1439 ) {
         informWindow.style.visibility = 'visible';
         fifthElement.removeEventListener("mouseover", active);
+        fifthElement.removeEventListener("mouseout", lockActive);
+        fifthElement.style.borderColor = "grey";
     }
+    
 
     document.addEventListener('click', bodyEvent);
 
@@ -251,7 +254,11 @@ const buttonEvent = () => {
     footerCover.classList.add('hidden');
     footerCover.style.zIndex = "0";
     footerButton.style.display = 'none';
-    addMouseEvent();
+
+    if(document.documentElement.scrollWidth > 1439 ) {
+
+        addMouseEvent();
+    }
 }
 
 footerButton.addEventListener('click', buttonEvent);
