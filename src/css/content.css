@@ -11,10 +11,9 @@ body.dark .content_btnSeeMore {
   color: var(--primary-color-text-dark-theme);
 }
 
-body.dark .content-loader{
+body.dark .content-loader {
   color: var(--secondary-stilization-color);
 }
-
 
 /* ******************** */
 
@@ -221,7 +220,7 @@ body.dark .content-loader{
   .content_list_topBooks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: flex-space-between;
     gap: 25px;
   }
 
@@ -239,7 +238,7 @@ body.dark .content-loader{
   .content_list_topBooks {
     display: flex;
     /* flex-wrap: wrap; */
-    justify-content: flex-start;
+    justify-content: space-betweent;
     flex-wrap: wrap;
     column-gap: 15px;
   }
@@ -316,4 +315,3 @@ body.dark .content-loader{
     box-shadow: 14px 0 0 -2px, 38px 0 0 2px, -14px 0 0 -2px, -38px 0 0 -2px;
   }
 }
-
