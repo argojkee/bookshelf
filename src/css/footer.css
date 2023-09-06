@@ -149,6 +149,10 @@
   letter-spacing: -0.36px;
 }
 
+body.dark .footer-title {
+  color: #111;
+}
+
 .footer-button {
   width: 60px;
   height: 60px;
