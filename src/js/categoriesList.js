@@ -65,7 +65,7 @@ function showCategoryBook() {
   // якщо вибрано категорію `All categories`
   // рендеряться всі книги
   if (categoryName === `All categories`) {
-    getTopBooks().finally(() => {
+    getTopBooks().then(resp => {
       if (window.innerWidth < 1439) {
         const titleCategory = document.querySelector(
           '.title-container-topBooks'
@@ -112,10 +112,7 @@ function getBooksFromCategories(category) {
       renderDataBooks(response.data, category);
       refs.categoriesList.classList.remove('lock-click-categories');
     })
-    .catch(error => {
-      console.error('Error:', error);
-    })
-    .finally(() => {
+    .then(resp => {
       if (window.innerWidth < 1439) {
         const titleCategory = document.querySelector(
           '.title-container-topBooks'
@@ -125,6 +122,9 @@ function getBooksFromCategories(category) {
           behavior: 'smooth',
         });
       }
+    })
+    .catch(error => {
+      console.error('Error:', error);
     });
 }
 
