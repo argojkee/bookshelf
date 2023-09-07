@@ -87,10 +87,10 @@ function onShowHidePassword(e) {
 
   passInput.classList.toggle('show');
   if (passInput.classList.contains('show')) {
-    passIcon.innerHTML = `<use width="24" height="24" xlink:href="#icon-unlocked"></use>`;
+    passIcon.innerHTML = `<use  xlink:href="#icon-unlocked"></use>`;
     passInput.setAttribute('type', 'text');
   } else {
     passInput.setAttribute('type', 'password');
-    passIcon.innerHTML = `<use width="24" height="24" xlink:href="#icon-password-lock"></use>`;
+    passIcon.innerHTML = `<use  xlink:href="#icon-password-lock"></use>`;
   }
 }

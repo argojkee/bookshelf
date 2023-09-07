@@ -9,7 +9,7 @@ $('.carousel').slick({
   autoplaySpeed: 1000,
   prevArrow: false,
   nextArrow:
-    '<button type="button" class="slick-next"><svg class="slick-icon" width="22" height="22"><use  xlink:href="#icon-arrow-up"></use></svg></button>',
+    '<button type="button" arial-label="show next fund" class="slick-next"><svg class="slick-icon" width="22" height="22"><use  xlink:href="#icon-arrow-up"></use></svg></button>',
   draggable: true,
   // easing: 'string' animation
   verticalSwiping: true,

@@ -66,3 +66,15 @@ html {
 
   color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .buttonup-case {
+    width: 42px;
+    height: 42px;
+  }
+
+  .buttonup.anima-up {
+    width: 32;
+    height: 32;
+  }
+}
