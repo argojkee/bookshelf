@@ -158,6 +158,15 @@ body.dark .contend_categoryMove {
   overflow: hidden;
 }
 @media screen and (max-width: 767px) {
+  .title_blue {
+    font-family: DM Sans;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -1.28px;
+  }
+
   .content_book {
     width: 100%;
   }
@@ -360,4 +369,8 @@ body.dark .contend_categoryMove {
   .mobile-book {
     display: none;
   }
+}
+
+.title_blue {
+  text-transform: capitalize;
 }
