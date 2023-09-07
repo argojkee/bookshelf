@@ -1,5 +1,8 @@
 import $ from 'jquery';
 import 'slick-carousel';
+const modalBook = document.querySelector('.js-book-overlay-modal');
+const burgerMenu = document.querySelector('.modal-burger');
+const modalLog = document.querySelector('.loginBacdropLogIn');
 
 refreshSlider();
 
@@ -22,4 +25,8 @@ function refreshSlider() {
   });
 }
 
-window.addEventListener('resize', refreshSlider);
+window.addEventListener('resize', () => {
+  try {
+    refreshSlider();
+  } catch {}
+});

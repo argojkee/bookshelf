@@ -188,8 +188,8 @@ ul.section-burger_list {
     margin-left: 2px;
   }
   .upload-photo {
-    max-width: 80px;
-    max-height: 100px;
+    width: 80px;
+    height: 100px;
     margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 12px;
