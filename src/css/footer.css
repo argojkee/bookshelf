@@ -375,6 +375,11 @@ body.dark .footer-title {
   font-weight: bold;
 }
 
+.footer-right,
+.footer-left {
+  cursor: pointer;
+}
+
 .footer-left {
   position: absolute;
   display: none;
