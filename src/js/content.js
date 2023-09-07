@@ -21,7 +21,7 @@ export function getTopBooks() {
   containerBook.innerHTML = '';
   content.classList.add('content-loader');
 
-  fetchToAllBooks()
+  return fetchToAllBooks()
     .then(result => {
       return result.data;
     })
@@ -78,23 +78,22 @@ function hiddenBtnSeeMore(elem) {
 function createMarkupOfBooksOneCategory(elem, arrayBooks) {
   let markup = arrayBooks
     .map((book, index) => {
-     
-        //якщо загрузили останню книгу, то видаляємо кнопку
-        if (index + 1 === arrayBooks.length) {
-          hiddenBtnSeeMore(elem);
+      //якщо загрузили останню книгу, то видаляємо кнопку
+      if (index + 1 === arrayBooks.length) {
+        hiddenBtnSeeMore(elem);
 
-          //якщо категорії не закінчились, то не робимо анімацію для зголовка
-          //наступної категорії, т к їїнемає
-          if (elem.parentNode.nextSibling != null) {
-            elem.parentNode.nextElementSibling.firstElementChild.classList.add(
-              'contend_categoryMove'
-            );
-          }
-
-          Notiflix.Notify.info('this is all. Check out other category books');
+        //якщо категорії не закінчились, то не робимо анімацію для зголовка
+        //наступної категорії, т к їїнемає
+        if (elem.parentNode.nextSibling != null) {
+          elem.parentNode.nextElementSibling.firstElementChild.classList.add(
+            'contend_categoryMove'
+          );
         }
 
-        return `<li class="content_book">
+        Notiflix.Notify.info('this is all. Check out other category books');
+      }
+
+      return `<li class="content_book">
                           <a data-id=${book._id} href="${book.book_image}" class="content-book-link" >
                           <img class="content__image" src="${book.book_image}" alt="${book.title}" loading="lazy" />
                           
