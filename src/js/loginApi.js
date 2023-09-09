@@ -63,6 +63,7 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 export const logUp = (name, emailValue, passValue) => {
+  Notiflix.Notify.info('Сhecking the user...');
   createUserWithEmailAndPassword(auth, emailValue, passValue)
     .then(userCredential => {
       saveUser(userCredential);
@@ -172,14 +173,8 @@ export const getBase = async () => {
 };
 
 export const getName = async () => {
-  data = null;
   const uid = localStorage.getItem('bookshelId');
   const name = await getDoc(doc(db, uid, 'name'));
-  if (!data) {
-    localStorage.removeItem('bookshelId');
-    Notiflix.Notify.warning('Your account has been deleted.\nRegister again.');
-    return;
-  }
   // console.log(name.data().name);
   return name.data().name;
 };
