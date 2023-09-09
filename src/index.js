@@ -10,3 +10,4 @@ import './js/addUserPhoto';
 import './js/loginization';
 import './js/scrollup';
 import './js/footer';
+import './js/reviews';

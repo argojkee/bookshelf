@@ -1,3 +1,5 @@
+// ----- slider "FIFTH ELEMENT" -----
+
 const footerButton = document.querySelector('.footer-button');
 
 const leftButton = document.querySelector('.footer-left');
