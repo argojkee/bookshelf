@@ -22,9 +22,7 @@ export function getTopBooks() {
   content.classList.add('content-loader');
 
   return fetchToAllBooks()
-    .then(result => {
-      return result.data;
-    })
+    .then(result => result.data)
     .then(data => {
       content.classList.remove('content-loader');
       containerBook.innerHTML = renderMarkupTopBooks(data);

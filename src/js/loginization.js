@@ -81,7 +81,7 @@ const passInput = document.querySelector('#pass');
 backDrop.addEventListener('click', onShowHidePassword);
 
 function onShowHidePassword(e) {
-  if (!e.target.closest('.loginInputIcon')) {
+  if (!e.target.closest('.loginInputIcon.password')) {
     return;
   }
 
