@@ -1,0 +1,127 @@
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
+
+.review-form {
+    width: 100%;
+}
+
+.review-textarea {
+    display: flex;
+    resize: none;
+
+    width: 80%;
+    height: 150px;
+
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    border-radius: 4px;
+    box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: var(--color-white);
+    padding: 8px 16px;
+    outline: none;
+}
+
+
+.review-text {
+
+    background-color: var(--color-white);
+    width: 80%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    padding: 10px 20px 0px 20px;
+
+    overflow-y: scroll;
+    /* overflow-x: scroll; */
+
+    word-wrap: break-word;
+}
+
+.review-textarea::placeholder,
+.review-input::placeholder {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.16;
+   
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.review-input {
+    display: flex;
+    resize: none;
+
+    width: 80%;
+    height: 30px;
+
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    border-radius: 4px;
+    box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+
+    background-color: var(--color-white);
+    padding: 8px 16px;
+    outline: none;
+}
+
+.review-send-button:hover,
+.review-send-button:focus{
+
+    transform: scale(1.1);
+    
+ }
+
+.review-send-button {
+    display: block; 
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px 32px;
+    width: 169px;  
+    /* background-color: var(--container-color); */
+
+    border: 2px solid rgb(79, 46, 232);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    outline: none;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--body-color);
+    cursor: pointer;
+
+    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.review-title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.5;
+
+    color: var(--section-color);
+    text-align: center;
+    text-shadow:0px 2px 1px rgb(97, 66, 238, 0.08), 0px 1px 1px rgb(97, 66, 238, 0.16), 0px 1px 6px rgb(97, 66, 238, 0.08);
+}
+
+@media screen and (max-width: 440px) {
+    .little {
+        padding:0 15px 0 15px;
+    }
+}
